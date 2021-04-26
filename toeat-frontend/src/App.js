@@ -4,8 +4,8 @@ import './css/main.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 //Rutas
-import Home from './containers/Home/Home';
-import Profile from './containers/Profile/Profile';
+import Home from './containers/Home/home';
+import Profile from './containers/Profile/profile';
 
 function App() {
   return (
