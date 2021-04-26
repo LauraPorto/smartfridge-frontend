@@ -1,6 +1,8 @@
 
 //Colores
-$palette: (#e4eddb, #307672, #144d53, #1a3c40);
+$palette: (#f8ede3, #307672, #144d53, #1a3c40);
+
+$brown: #7c7575;
 
 //Márgenes y medidas
 $mp-a: 0px;
@@ -32,6 +34,9 @@ $mp-z-a: 800px;
 $mp-z-b: 900px;
 $mp-z-c: 1200px;
 
+//Tamaño pantalla completament
+$maxWidth: 100vw;
+$maxHeight: 100vh;
 
 //Tamaños
 $size-aa: 1px;

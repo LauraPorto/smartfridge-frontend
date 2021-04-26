@@ -1,4 +1,11 @@
-.prueba {
-  height: 40em;
-  width: 40em;
-  background-color: chocolate; }
+.header-container {
+  background-color: #1a3c40;
+  margin: 0; }
+  .header-container .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around; }
+    .header-container .nav .nav-link {
+      color: #f8ede3;
+      text-decoration: none; }

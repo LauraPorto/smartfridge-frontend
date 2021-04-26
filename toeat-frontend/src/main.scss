@@ -3,7 +3,8 @@
 @import './scss/variables';
 
 //Componentes
-
+@import './components/Footer/footer';
+@import './components/Header/header';
 
 //Containers
 @import './containers/Home/home';
