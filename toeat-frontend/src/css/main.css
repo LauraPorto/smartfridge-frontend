@@ -1,11 +1,14 @@
 .header-container {
   background-color: #1a3c40;
-  margin: 0; }
+  height: 80px;
+  width: 100vw; }
   .header-container .nav {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: space-around; }
+    margin: 0em;
+    height: 80px; }
     .header-container .nav .nav-link {
       color: #f8ede3;
       text-decoration: none; }
