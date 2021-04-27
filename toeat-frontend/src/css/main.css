@@ -12,3 +12,7 @@
     .header-container .nav .nav-link {
       color: #f8ede3;
       text-decoration: none; }
+
+.main-page {
+  width: 100vw;
+  height: 100vh; }
