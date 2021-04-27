@@ -1,20 +1,22 @@
 .header-container {
     background-color: nth($palette, 4);
 
-    margin: 0;
+    height: $mp-o;
+    width: $maxWidth;
 
     .nav {
         display:flex;
         flex-direction: row;
+        justify-content: space-evenly;
         align-items: center;
-        justify-content: space-around;
 
+        margin: 0em;
+
+        height: $mp-o;
 
         .nav-link {
             color: nth($palette, 1);
             text-decoration: none;
         }
-
     }
-
 }
