@@ -21,3 +21,25 @@
   height: 38em;
   z-index: 1;
   margin-top: 0em; }
+
+.main-container {
+  background-color: grey;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .main-container .register-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #307672;
+    height: 40em;
+    width: 60em; }
+    .main-container .register-container .img-container {
+      width: 25em; }
+    .main-container .register-container .form-container {
+      width: 25em;
+      height: 30em;
+      background-color: beige; }
