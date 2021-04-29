@@ -1,5 +1,5 @@
 .header-container {
-  background-color: #1a3c40;
+  background-color: transparent;
   height: 80px;
   width: 100vw; }
   .header-container .nav {
@@ -10,9 +10,14 @@
     margin: 0em;
     height: 80px; }
     .header-container .nav .nav-link {
-      color: #f8ede3;
+      color: #1a3c40;
       text-decoration: none; }
 
-.main-page {
-  width: 100vw;
-  height: 100vh; }
+.main-container .header-div {
+  background-color: transparent !important;
+  z-index: 2; }
+
+.main-container .cover-page .cover-page-img {
+  height: 38em;
+  z-index: 1;
+  margin-top: 0em; }

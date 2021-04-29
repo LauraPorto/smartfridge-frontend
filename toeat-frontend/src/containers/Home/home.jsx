@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Header from '../../components/Header/header';
-import '../../assets/spices.jpg';
+import spices from '../../assets/spices.jpg';
 
 const Home = () => {
 
@@ -11,10 +11,12 @@ const Home = () => {
         <div>
             <div className="main-container">
                 <div className="header-div">
-                    <Header />
+                    <Header /> 
                 </div>
-                <div>
-                    <div className="cover-page"><img src='toeat-frontend/src/assets/vegetable3.jpg' className="img"></img></div>
+                <div className='cover-page'>
+                    <div className="cover-page-img">
+                        <img src={spices} style={{maxWidth: '100%', width: '100%', minHeight: '100vh', height: '38em'}}></img>
+                    </div>
                 </div>
 
             </div>

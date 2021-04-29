@@ -1,5 +1,5 @@
 .header-container {
-    background-color: nth($palette, 4);
+    background-color: transparent;
 
     height: $mp-o;
     width: $maxWidth;
@@ -15,7 +15,7 @@
         height: $mp-o;
 
         .nav-link {
-            color: nth($palette, 1);
+            color: nth($palette, 4);
             text-decoration: none;
         }
     }
