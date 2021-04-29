@@ -1,8 +1,17 @@
+.main-container {
 
-.main-page {
+    .header-div {
+        background-color: transparent !important;
+        z-index: 2;
+    }
 
-    width: $maxWidth;
-    height: $maxHeight;
+    .cover-page {
+        .cover-page-img{
+            height: 38em;
+            z-index: 1;
 
-  
+            margin-top:0em;
+        }
+
+    }
 }
