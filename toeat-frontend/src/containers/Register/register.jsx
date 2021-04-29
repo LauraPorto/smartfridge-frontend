@@ -51,7 +51,7 @@ const Register = () => {
             validated: true
         });
 
-        let result = await axios.post(`http://localhost:5000/user/register`, dataRegister);
+        let result = await axios.post('http://localhost:5000/user/signup', dataRegister);
         console.log(result, 'esto es result');
     }
 
@@ -66,9 +66,9 @@ const Register = () => {
                         <FormFeedback>{validationResult.name}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
-                        <Label for='surname1'>Surname:</Label>
-                        <Input type='text' id='surname1' name='surname1' onChange={handleState} valid={validationResult.validated && !validationResult.surname1} invalid={validationResult.validated && validationResult.surname1} />
-                        <FormFeedback>{validationResult.surname1}</FormFeedback>
+                        <Label for='surname'>Surname:</Label>
+                        <Input type='text' id='surname' name='surname' onChange={handleState} valid={validationResult.validated && !validationResult.surname} invalid={validationResult.validated && validationResult.surname} />
+                        <FormFeedback>{validationResult.surname}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for='phone'>Teléfono : </Label>
@@ -77,8 +77,8 @@ const Register = () => {
                     </FormGroup>
                     <FormGroup>
                         <Label for='surname2'>Country:</Label>
-                        <Input type='text' id='surname2' name='surname2' onChange={handleState} valid={validationResult.validated && !validationResult.surname2} invalid={validationResult.validated && validationResult.surname2} />
-                        <FormFeedback>{validationResult.surname2}</FormFeedback>
+                        <Input type='text' id='country' name='country' onChange={handleState} valid={validationResult.validated && !validationResult.country} invalid={validationResult.validated && validationResult.country} />
+                        <FormFeedback>{validationResult.country}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label form='email'>Email:</Label>
@@ -90,7 +90,7 @@ const Register = () => {
                         <Input type='password' id='password' name='password' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} />
                         <FormFeedback>{validationResult.password}</FormFeedback>
                     </FormGroup>
-                    <Button color='primary' onClick={sendData}>Registrarse</Button>
+                    <Button color='primary' onClick={sendData}>SIGN UP</Button>
                 </div>
             </div>
         </div>
