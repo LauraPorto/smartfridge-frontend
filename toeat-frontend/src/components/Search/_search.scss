@@ -1,0 +1,25 @@
+.search-container {
+
+    height: 4em;
+    width: 13em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: orange;
+
+    .search-box{
+        height: 2em;
+        width: 10em;
+
+        border-radius: 3px;
+        background-color:beige;
+    }
+
+    .search-button {
+        height: 1em;
+        width: 4em;
+    }
+}

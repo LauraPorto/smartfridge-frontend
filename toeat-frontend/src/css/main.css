@@ -13,6 +13,23 @@
       color: #1a3c40;
       text-decoration: none; }
 
+.search-container {
+  height: 4em;
+  width: 13em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: orange; }
+  .search-container .search-box {
+    height: 2em;
+    width: 10em;
+    border-radius: 3px;
+    background-color: beige; }
+  .search-container .search-button {
+    height: 1em;
+    width: 4em; }
+
 .main-container .header-div {
   background-color: transparent !important;
   z-index: 2; }
