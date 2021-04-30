@@ -30,14 +30,17 @@
     height: 1em;
     width: 4em; }
 
-.main-container .header-div {
-  background-color: transparent !important;
-  z-index: 2; }
-
-.main-container .cover-page .cover-page-img {
-  height: 38em;
-  z-index: 1;
-  margin-top: 0em; }
+.main-container-home {
+  justify-content: none !important; }
+  .main-container-home .header-div {
+    background-color: transparent;
+    position: absolute;
+    z-index: 2; }
+  .main-container-home .cover-page .cover-page-img {
+    height: 38em;
+    z-index: 1;
+    position: absolute;
+    margin-top: 0em; }
 
 .main-container {
   background-color: grey;

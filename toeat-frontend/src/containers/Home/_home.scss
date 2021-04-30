@@ -1,7 +1,10 @@
-.main-container {
+.main-container-home {
 
+    justify-content: none !important;
+    
     .header-div {
-        background-color: transparent !important;
+        background-color: transparent;
+        position: absolute; 
         z-index: 2;
     }
 
@@ -9,8 +12,9 @@
         .cover-page-img{
             height: 38em;
             z-index: 1;
-
+            position: absolute;
             margin-top:0em;
+     
         }
 
     }

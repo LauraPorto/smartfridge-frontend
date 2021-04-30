@@ -76,7 +76,7 @@ const Login = () => {
     return (
         <div className="login">
 
-            <div className="button-login button" onClick={toggleLogin}>Acceder </div>
+            <div className="button-login button" onClick={toggleLogin}>Log In</div>
 
             <Modal isOpen={state.open}>
                 <ModalHeader>
