@@ -64,7 +64,7 @@ const Login = () => {
 
         try {
 
-            let result = await axios.post('http://localhost:5000/user/login', dataLogin);
+            let result = await axios.post('http://localhost:3001/user/login', dataLogin);
                         
         } catch (error) {
             if(error.isAxiosError & error.response?.status === 403){
