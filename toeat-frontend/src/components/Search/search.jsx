@@ -1,9 +1,12 @@
 import React, {useState} from 'react'
 import axios from 'axios';
 
-// const API_KEY = d6e877dd55e74b919c1cf042e3e465bb;
+const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 
-const Search = () => {
+const query_path = '&query=';
+
+
+const Search = (props) => {
 
     //Hooks para el buscador
     const [search, setSearch] = useState({
@@ -13,12 +16,18 @@ const Search = () => {
     const handleState = (event) => {
         let data = { ...search, [event.target.name]: event.target.value };
         setSearch(data);
+        console.log(data, 'esto es searchData');
+
     }
+
 
     const toSearch = async () => {
 
-        let result = await axios.get(`https://api.spoonacular.com/food/search
-        `)
+
+        let result = await axios.get(`https://api.spoonacular.com/food/search${apiKey}${query_path}`);
+
+        console.log(result.data.searchResults, 'result.data');
+        return result;
     }
 
     return (
