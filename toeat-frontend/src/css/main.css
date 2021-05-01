@@ -37,7 +37,8 @@
     position: absolute;
     z-index: 2; }
   .main-container-home .cover-page .cover-page-img {
-    height: 38em;
+    height: 30em;
+    width: 100vw;
     z-index: 1;
     position: absolute;
     margin-top: 0em; }

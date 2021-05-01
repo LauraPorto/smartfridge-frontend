@@ -10,7 +10,8 @@
 
     .cover-page {
         .cover-page-img{
-            height: 38em;
+            height: 30em;
+            width: $maxWidth;
             z-index: 1;
             position: absolute;
             margin-top:0em;

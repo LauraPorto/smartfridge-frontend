@@ -14,7 +14,7 @@ const Home = () => {
             </div>
             <div className='cover-page'>
                 <div className="cover-page-img">
-                    <img src={spices} style={{maxWidth: '100%', width: 'auto', height: 'auto'}}></img>
+                    <img src={spices} style={{maxWidth: '100%', width: 'auto', height: 'auto', backgroundposition: 'top center', backgroundsize: 'cover'}}></img>
                 </div>
             </div>
 
