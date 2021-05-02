@@ -43,14 +43,20 @@
     flex-direction: column;
     align-items: center; }
     .main-container-home .cover-container .cover-page .cover-page-img {
-      height: 38em;
+      height: 52em;
       background-size: cover;
       width: 100vw;
       margin-top: 0em; }
     .main-container-home .cover-container .cover-page .your-ingredient {
       width: 100vw;
-      height: 40px;
-      background-color: green; }
+      height: 480px;
+      background: linear-gradient(135deg, #fcecfc 0%, #fba6e1 100%);
+      display: flex;
+      flex-direction: row; }
+      .main-container-home .cover-container .cover-page .your-ingredient .sub-text {
+        width: 50em; }
+      .main-container-home .cover-container .cover-page .your-ingredient .sub-img {
+        width: 55em; }
 
 .main-container {
   background-color: grey;
