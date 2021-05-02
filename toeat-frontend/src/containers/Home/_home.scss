@@ -21,17 +21,24 @@
 
 
             .cover-page-img{
-                height: 52em;
+                height: 48em;
                 background-size: cover;            
                 width: $maxWidth;
                 margin-top:0em;
         
             }
 
+            .discover-recipes-container {
+                height: 25em;
+                width: $maxWidth;
+
+                background-color: nth($palette, 1)
+            }
+
             .your-ingredient{
    
                 width: $maxWidth;
-                height: $mp-x;
+                height: 35em;
                 background: linear-gradient(135deg, rgba(252,236,252,1) 0%, rgba(251,166,225,1) 100%);
 
                 display: flex;
