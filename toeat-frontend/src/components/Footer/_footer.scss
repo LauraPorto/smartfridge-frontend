@@ -26,8 +26,7 @@
             }
 
             .input-footer{
-                width: 25em;
-                background-color: nth($palette, 4);
+                @include input($backgroundColor: nth($palette, 4), $borderColor: nth($palette, 1));
             }
             .button-footer{
                 width: 25em;

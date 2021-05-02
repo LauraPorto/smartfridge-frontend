@@ -8,14 +8,11 @@
     justify-content: center;
     align-items: center;
 
-    background-color: orange;
+   
 
     .search-box{
-        height: 2em;
-        width: 10em;
-
-        border-radius: 3px;
-        background-color:beige;
+      
+        @include input;
     }
 
     .search-button {
