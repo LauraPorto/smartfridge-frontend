@@ -1,22 +1,61 @@
 .main-container-home {
 
-    justify-content: none !important;
-    
-    .header-div {
-        background-color: transparent;
-        position: absolute; 
-        z-index: 2;
-    }
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
 
-    .cover-page {
-        .cover-page-img{
-            height: 30em;
-            width: $maxWidth;
-            z-index: 1;
-            position: absolute;
-            margin-top:0em;
-     
+    .cover-container {
+                
+        .header-div {
+            background-color: transparent;
+            position: absolute; 
+            z-index: 2;
         }
 
+        .cover-page {
+
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+
+
+            .cover-page-img{
+                height: 38em;
+                background-size: cover;            
+                width: $maxWidth;
+                margin-top:0em;
+        
+            }
+
+            .your-ingredient{
+                width: $maxWidth;
+                height: $mp-l;
+                background-color: green;
+            }
+        }
     }
+
 }
+// .page-food {
+
+//     width: $maxWidth;
+   
+//     display: flex; 
+//     flex-direction: row;
+//     justify-content: flex-end;
+    
+//     background-color: yellow;
+
+    
+
+//     .page-img{
+//         background-color: blue;
+//         width: $mp-m;
+//         height: $mp-m;
+//     }
+//     .page-text{
+//         background-color: green;
+//         width: $mp-m;
+//         height: $mp-m;
+//     }
+// }

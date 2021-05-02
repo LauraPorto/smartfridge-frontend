@@ -23,8 +23,9 @@ const Search = (props) => {
 
     const toSearch = async () => {
 
+        
 
-        let result = await axios.get(`https://api.spoonacular.com/food/search${apiKey}${query_path}`);
+        let result = await axios.get(`https://api.spoonacular.com/food/search${apiKey}&query=apple`);
 
         console.log(result.data.searchResults, 'result.data');
         return result;
