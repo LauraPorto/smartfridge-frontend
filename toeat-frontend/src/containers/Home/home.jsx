@@ -1,10 +1,13 @@
 import React from 'react'
 
+import Search from '../../components/Search/search';
+import Footer from '../../components/Footer/footer';
 import Header from '../../components/Header/header';
+
 import spices from '../../assets/spices.jpg';
 import spaghetti from '../../assets/spaghetti.jpg';
 import fruits from '../../assets/fruits.png';
-import Search from '../../components/Search/search';
+
 
 const Home = () => {
 
@@ -31,6 +34,13 @@ const Home = () => {
                         <div className="sub-img">
                             <img src={fruits} style={{maxWidth: '100%', width: 'auto', height: '30em'}}></img>
                         </div>
+                    </div>
+
+                    <div className="some-recipes">
+
+                    </div>
+                    <div className="footer-container">
+                        <Footer/>
                     </div>
                 </div>
 
