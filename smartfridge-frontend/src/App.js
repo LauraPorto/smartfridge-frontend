@@ -20,7 +20,6 @@ import Header from './components/Header/header';
 function App() {
   return (
     <div className="App">
-      <Header/>
       <BrowserRouter>
         <Switch>
           <Route path='/' exact component={Home}/>
