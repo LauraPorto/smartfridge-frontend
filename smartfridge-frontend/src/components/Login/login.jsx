@@ -6,9 +6,12 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input, L
 
 import {validateField, validateFields } from '../../uti';
 
+//Redux
+import { connect } from 'react-redux';
+import { LOGIN } from '../../redux/types/userType';
+import { ADMINLOGIN } from '../../redux/types/adminType';
 
-
-const Login = () => {
+const Login = (props) => {
     //Estado del Modal
     const [state, setState] = useState({
         open: false
@@ -31,7 +34,8 @@ const Login = () => {
     //Hook -> Estado del Login
     const [dataLogin, setLogin] = useState({
         email: '',
-        password: ''
+        password: '',
+        role: 'user'
     })
 
     //Handlers
@@ -63,9 +67,15 @@ const Login = () => {
 
 
         try {
-
             let result = await axios.post('http://localhost:3001/user/login', dataLogin);
-                        
+            if(dataLogin.role === 'user'){               
+                props.dispatch({type: LOGIN, payload: result.data});
+                return setTimeout(() => {history.push('/home-user')}, 200);
+            }else if(dataLogin.role === 'admin'){ //
+                props.dispatch({type: ADMINLOGIN, payload: result.data})
+                return setTimeout(() => {history.push('/home-admin')}, 200);
+            }
+                                
         } catch (error) {
             if(error.isAxiosError & error.response?.status === 403){
                 alert('El usuario no existe');  
@@ -104,4 +114,4 @@ const Login = () => {
 };
 
 
-export default Login;
+export default connect()(Login);
