@@ -1,0 +1,17 @@
+//Archivos scss
+@import './scss/mixin';
+@import './scss/variables';
+
+//Componentes
+@import './components/Footer/footer';
+@import './components/Header/header';
+@import './components/Login/login';
+@import './components/Search/search';
+
+//Containers
+@import './containers/Home/home';
+@import './containers/Profile/profile';
+@import './containers/Register/register';
+@import './containers/Store/store';
+@import './containers/Explore/explore';
+@import './containers/About/about';
