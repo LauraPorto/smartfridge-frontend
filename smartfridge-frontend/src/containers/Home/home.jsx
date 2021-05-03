@@ -15,10 +15,7 @@ const Home = () => {
     return (
         <div className="main-container-home">
             <div className="cover-container">
-                <div className="header-div">
-                    <Header /> 
-    
-                </div>
+                <div className="header-div"> <Header/> </div>
 
                 <div className='cover-page'>
                     <div className="cover-page-img">

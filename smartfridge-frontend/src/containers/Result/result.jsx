@@ -16,14 +16,12 @@ const Result = (props) => {
     //     return () => {
             
     //     }
-    // })
+    // }, [])
 
 
     return (
         <div>
-            <div className="header-result">
-                <Header/>
-            </div>
+            <div className="header-div"> <Header/> </div>
             <div className="main-store">
                 <Media>
                     <Media left top href="/RecipeInfo"> 

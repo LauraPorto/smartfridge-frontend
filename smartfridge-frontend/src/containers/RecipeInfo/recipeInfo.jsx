@@ -13,14 +13,11 @@ const RecipeInfo = (props) => {
         return () => {
             
         }
-    })
+    }, [])
 
 
     return (
         <div className="main-recipe-info">
-            <div>
-                <Header/>
-            </div>
             <div className="body-recipe-info">
                 <div className="img-recipe-info">
 

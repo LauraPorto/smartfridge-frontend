@@ -15,9 +15,7 @@ const Store = () => {
 
     return (
         <div>
-            <div className="header-store">
-                <Header/>
-            </div>
+            <div className="header-div"> <Header/> </div>
             <div className="search-store-container">
                 <Search/>
             </div>
