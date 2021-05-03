@@ -2,8 +2,7 @@ import React, {useState} from 'react'
 import axios from 'axios';
 
 const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
-
-const query_path = '&query=';
+const query = '&query=';
 
 
 const Search = (props) => {
@@ -16,19 +15,22 @@ const Search = (props) => {
     const handleState = (event) => {
         let data = { ...search, [event.target.name]: event.target.value };
         setSearch(data);
-        console.log(data, 'esto es searchData');
-
     }
 
 
     const toSearch = async () => {
 
-        
-
         let result = await axios.get(`https://api.spoonacular.com/food/search${apiKey}&query=apple`);
 
-        console.log(result.data.searchResults, 'result.data');
-        return result;
+        // const arraySearch = result.data.data.results.filter(explore => 
+        //     explore.title.toLowerCase().includes(search.searchBox.toLowerCase())
+        // )
+
+        // setSearch({
+        //     ...search, searchBox: arraySearch
+        // })
+
+        return result.data;
     }
 
     return (
