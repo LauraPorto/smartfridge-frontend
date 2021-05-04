@@ -193,11 +193,44 @@
     width: 16em;
     background-color: yellow; }
 
+.explore-main-container .header-div {
+  background-color: transparent;
+  position: absolute;
+  z-index: 2; }
+
+.explore-main-container .searchbox-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: right; }
+
+.explore-main-container .explore-body {
+  width: 100vw; }
+
 .about-main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
   .about-main-container .header-div {
-    position: absolute top;
-    z-index: 0; }
+    background-color: transparent;
+    position: absolute;
+    z-index: 2; }
+
+.main-recipe-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .main-recipe-info .body-recipe-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30em; }
+    .main-recipe-info .body-recipe-info .img-recipe-info {
+      background-color: #aaaae7;
+      height: 15em; }
+    .main-recipe-info .body-recipe-info .recipe-info-data {
+      background-color: beige;
+      height: 25em; }

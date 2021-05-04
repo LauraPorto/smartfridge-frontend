@@ -1,0 +1,25 @@
+.main-recipe-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .body-recipe-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 30em;
+        .img-recipe-info{
+            background-color: rgb(170, 170, 231);
+            height: 15em;
+
+        }
+        .recipe-info-data {
+            background-color:beige;
+            height: 25em;
+        }
+        
+    }
+}

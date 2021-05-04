@@ -1,0 +1,18 @@
+.explore-main-container {
+    .header-div {
+        background-color: transparent;
+        position: absolute; 
+        z-index: 2
+    }
+
+    .searchbox-container{
+        width: $maxWidth;
+        display: flex;
+        flex-direction: row;
+        align-items: right;
+    }
+
+    .explore-body{
+        width: $maxWidth;
+    }
+}

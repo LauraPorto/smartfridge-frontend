@@ -6,7 +6,8 @@
     align-items: center;
 
     .header-div{
-        position: absolute top;
-        z-index: 0;        
+        background-color: transparent;
+        position: absolute; 
+        z-index: 2      
     }
 }
