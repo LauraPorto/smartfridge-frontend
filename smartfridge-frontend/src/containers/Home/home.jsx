@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/footer';
 import Header from '../../components/Header/header';
 
 import spices from '../../assets/spices.jpg';
-import fruits from '../../assets/fruits.png';
+
 
 
 const Home = () => {
@@ -29,10 +29,9 @@ const Home = () => {
                     <div className="your-ingredient">
                         <div className="sub-text">
                             <h2>¿Quieres probar lo que tus alimentos te ofrecen?</h2>
-                            <Search/>
                         </div>
                         <div className="sub-img">
-                            <img src={fruits} style={{maxWidth: '100%', width: 'auto', height: '35em'}}></img>
+                            
                         </div>
                     </div>
 

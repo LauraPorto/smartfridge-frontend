@@ -4,6 +4,7 @@ import axios from 'axios';
 import Header from '../../components/Header/header';
 import Recipe from '../../components/Recipe/recipe';
 
+
 import {connect} from 'react-redux';
 //Traemos de redux el id de la receta para mostrar sus detalles
 
@@ -38,25 +39,26 @@ const RecipeInfo = (props) => {
                 </div>
                 <div className="recipe-info-data">
                     <div className="info1">
-
+                        Número de comensales
                     </div>
                     <div className="info2">
-
+                        Tiempo en minutos
                     </div>
                     <div className="info-special">
                         <div className="info-icons">
-
+                            Iconos (gluten, lactosa)
                         </div>
                         <div className="info-icons-text">
-
+                            Texto (gluten, lactosa)
                         </div>
                     </div>
                     <div className="more-ingredients">
                         <div className="extended-ingredients">
-
+                            Algunos ingredientes para añadir
                         </div>
                     </div>
                     <div className="recipe-instruction">
+                        Collapse que muestra las instrucciones
                         <Recipe />
                     </div>
                 </div>

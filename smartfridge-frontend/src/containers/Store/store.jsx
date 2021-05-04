@@ -6,6 +6,8 @@ import Search from '../../components/Search/search';
 import Header from '../../components/Header/header';
 import Ingredient from '../../components/Ingredient/ingredient';
 
+import kitchen from '../../assets/kitchen.jpeg';
+
 import { SAVE } from '../../redux/types/recipeType';
 import { connect } from 'react-redux';
 
@@ -48,17 +50,29 @@ const Store = (props) => {
   
 
     return (
-        <div>
+        <div className="main-store">
             <div className="header-div"> <Header/> </div>
             <div className="search-store-container">
                 <Search/>
             </div>
-            <div className="div">ESTO ES STORE
-                <div className="ingredient-container">Componente ingrediente
-                    <Ingredient
-                        // name={store.name}
-                    />
+            <div className="body-store">
+                <div className="store-fridge">
+                    <img src={kitchen} style={{maxWidth: '100%', width: 'auto', height: '33em'}}></img>
+                    <div className="fridge-menu">
+                        <button>boton para borrrar</button>
+                        <button>boton para añadir</button>
+                    </div>
                 </div>
+                <div className="my-products-store">
+                    My Fridge
+                    
+                    <div className="ingredient-container">
+                        <Ingredient
+                            // name={store.name}
+                        />
+                    </div>
+                </div>
+                         
             </div>
             {/* <button onClick={() => getRecipes()}></button> */}
  

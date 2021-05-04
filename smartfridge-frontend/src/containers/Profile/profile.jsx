@@ -28,8 +28,8 @@ const Profile = (props) => {
             if (!token) {
                 return;
             }
-
-            let result = await axios.get();
+           
+            let result = await axios.get(`http://localhost:3001/user/${id}`);
 
             setDataUser(result.data);
         }
@@ -57,7 +57,6 @@ const Profile = (props) => {
             validated: true
         });
 
-
         try {
             let id = props.user?.id;
             let token = props.user?.token;
@@ -66,7 +65,7 @@ const Profile = (props) => {
                 return;
             }
 
-            await axios.put();
+            await axios.put(`http://localhost:3001/user/${id}`);
 
             alert('Guardado con éxito!!!')
         } catch (error) {
@@ -74,9 +73,26 @@ const Profile = (props) => {
         }
     };
 
+    const deleteUser = async () => {
+        try {
+            let id = props.user?.id;
+            let token = props.user?.token;
+
+            if (!token) {
+                return;
+            }
+
+            await axios.delete(`http://localhost:3001/user/${id}`);
+
+            alert('Borrado con éxito!!!')
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
 
     return (
-        <div className='main-container'>
+        <div className='main-container-profile'>
             <div className='register-container'>
             <div className="header-div"> <Header/> </div>
             
@@ -114,6 +130,8 @@ const Profile = (props) => {
                     {/* <FontAwesomeIcon icon={faUserTimes} />
                     <FontAwesomeIcon icon={faAddressCard} /> */}
                     <Button color='primary' onClick={() => updateUser()}>UPDATE</Button>
+                    <Button color='danger' onClick={() => deleteUser()}>DELETE</Button>
+                    
                 </div>
             </div>
         </div>

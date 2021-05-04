@@ -4,6 +4,7 @@ import Login from '../Login/login';
 
 const Header = () => {
 
+
     
 
     return (
@@ -17,6 +18,9 @@ const Header = () => {
                 </div>
                 <div className="nav-item">
                     <a className="nav-link" href="/register">Register</a>
+                </div>
+                <div className="nav-item">
+                    <a className="nav-link" href="">Log Out</a>
                 </div>
                 <div className='btn-login'>
                     <Login/>

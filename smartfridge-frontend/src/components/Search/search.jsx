@@ -23,19 +23,19 @@ const Search = (props) => {
 
     const toSearch = async () => {
 
-        let foodData = await axios.get(`https://api.spoonacular.com/food/search${apiKey}${query}${search.searchBox}`);
+    //     let foodData = await axios.get(`https://api.spoonacular.com/food/search${apiKey}${query}${search.searchBox}`);
 
-        const arraySearch = foodData.data.filter(explore => 
-            explore.title.toLowerCase().includes(search.searchBox.toLowerCase())
-        )
+    //     const arraySearch = foodData.data.filter(explore => 
+    //         explore.title.toLowerCase().includes(search.searchBox.toLowerCase())
+    //     )
 
-        setSearch({
-            ...search, searchBox: arraySearch
-        })
+    //     setSearch({
+    //         ...search, searchBox: arraySearch
+    //     })
 
-        props.dispatch({type: SEARCH, payload: foodData.data});
+    //     props.dispatch({type: SEARCH, payload: foodData.data});
 
-    }
+    };
 
     return (
         <div className='search-container'>
@@ -45,4 +45,5 @@ const Search = (props) => {
     )
 }
 
-export default connect (Search);
+// export default connect (Search);
+export default Search;
