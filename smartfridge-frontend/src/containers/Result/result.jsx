@@ -4,24 +4,27 @@ import { Media } from 'reactstrap';
 
 import Header from '../../components/Header/header';
 
+import { connect } from 'react-redux';
+import {SEARCH} from '../../redux/types/recipeType';
+
 //Debemos de pasar por redux el id de la receta para llamar a los detalles de la receta en recipeInfo
 
 const Result = (props) => {
 
     const [recipeResult, setRecipeResult] = useState({});
-    const [image, setImage] = useState('');
+    // const [image, setImage] = useState({});
 
 
     const getRecipes = async () => {
         const recipeData = await axios.get('https://api.spoonacular.com/recipes/findByIngredients?apiKey=d6e877dd55e74b919c1cf042e3e465bb&ingredients=apple');
 
         setRecipeResult(recipeData.data);
-        setImage(recipeData.image);
+
+        props.dispatch({type: SEARCH, payload: recipeData.data});
 
         console.log(recipeData.data, 'reciperesult');
         console.log(recipeData.data[1], 'numero 1')
-        console.log(recipeData.data.title, 'el título');
-        console.log(recipeResult, 'esto es recipe.result');
+        console.log(recipeResult.data, 'esto es recipe.result');
     };
 
 
@@ -35,9 +38,10 @@ const Result = (props) => {
                     </Media>
                     <Media body className="body-recipe-result">
                     <Media heading className="heading-recipe-result">
-                        {recipeResult[0].title}
+                        {/* {recipeResult[0].title}  */}
                     </Media>
                     Info general de la receta (ingredientes que faltan, ingredientes).
+                    {/* {recipeResult[0].missedIngredients.name} */}
                     </Media>
                 </Media>
                 <Media>
@@ -79,4 +83,12 @@ const Result = (props) => {
     )
 }
 
-export default Result;
+export default connect()(Result);
+
+/*
+Datos para sacar por pantalla: 
+recipeResult.tittle
+recipeResult.image
+recipeResult.missedIngredients.name
+
+*/

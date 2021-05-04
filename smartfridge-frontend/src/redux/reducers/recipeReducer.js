@@ -2,8 +2,7 @@ import { SEARCH } from '../types/recipeType';
 
 
 const initialState = {
-  idRecipe: '',
-  info: {},
+  recipeData: {}
 };
 
 const recipeReducer = (state = initialState, action) => {
@@ -11,8 +10,7 @@ const recipeReducer = (state = initialState, action) => {
     case SEARCH:
       return {
         ...state,
-        info: action.payload.info,
-        idRecipe: action.payload.id 
+        recipeData: action.payload
       }
     default:
       return state;

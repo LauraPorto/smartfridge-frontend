@@ -2,19 +2,16 @@ import React, {useState, useEffect} from 'react';
 
 import Header from '../../components/Header/header';
 import Recipe from '../../components/Recipe/recipe';
+
+import {connect} from 'react-redux';
 //Traemos de redux el id de la receta para mostrar sus detalles
 
 const RecipeInfo = (props) => {
 
-    useEffect(() => {
         
         // const result = axios.get('GET RECIPE DETAILS')
 
-        return () => {
-            
-        }
-    }, [])
-
+    console.log(props, 'estas son las props');
 
     return (
         <div className="main-recipe-info">
@@ -54,4 +51,10 @@ const RecipeInfo = (props) => {
     )
 }
 
-export default RecipeInfo;
+const mapStateToProps = (state) => {
+    return {
+        recipeData: state.recipeReducer
+    }
+}
+
+export default connect(mapStateToProps)(RecipeInfo);

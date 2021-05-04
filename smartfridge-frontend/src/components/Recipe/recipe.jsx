@@ -1,17 +1,12 @@
 import React, {useState, useEffect} from 'react';
 
+import {connect} from 'react-redux';
 
 //Redux para que pase la receta para poder sacar la información de ella
 const Recipe = (props) => {
 
-    useEffect(() => {
-        
-        // const result = axios.get('ANALIZED RECIPE INFO')
-
-        return () => {
-            
-        }
-    }, [])
+    
+ 
 
     return (
         <div>
@@ -39,4 +34,10 @@ const Recipe = (props) => {
     )
 }
 
-export default Recipe
+const mapStateToProps = (state) => {
+    return {
+        recipeData: state.recipeReducer
+    }
+}
+
+export default connect(mapStateToProps)(Recipe);
