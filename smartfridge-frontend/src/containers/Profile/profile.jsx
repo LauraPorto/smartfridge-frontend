@@ -5,6 +5,9 @@ import {validateField, validateFields} from '../../uti';
 import { Button, FormGroup, Input, Label, FormFeedback } from 'reactstrap';
 import Header from '../../components/Header/header';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserTimes, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+
 const Profile = (props) => {
 
     //Hooks para la validación de campos
@@ -76,7 +79,7 @@ const Profile = (props) => {
         <div className='main-container'>
             <div className='register-container'>
             <div className="header-div"> <Header/> </div>
-     
+            
                 <div className='form-container'>
                     <FormGroup>
                         <Label for='name'>Name:</Label>
@@ -108,6 +111,8 @@ const Profile = (props) => {
                         <Input type='password' id='password' name='password' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} placeholder='******'/>
                         <FormFeedback>{validationResult.password}</FormFeedback>
                     </FormGroup>
+                    {/* <FontAwesomeIcon icon={faUserTimes} />
+                    <FontAwesomeIcon icon={faAddressCard} /> */}
                     <Button color='primary' onClick={() => updateUser()}>UPDATE</Button>
                 </div>
             </div>

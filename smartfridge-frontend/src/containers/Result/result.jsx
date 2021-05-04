@@ -8,15 +8,19 @@ import Header from '../../components/Header/header';
 
 const Result = (props) => {
 
+    const [recipeResult, setRecipeResult] = useState({});
 
-    // useEffect(() => {
-        
-    //     const result = axios.get('FIND BY INGREDIENT')
 
-    //     return () => {
-            
-    //     }
-    // }, [])
+    useEffect(() => {
+        getRecipes();
+    },)
+
+    const getRecipes = async () => {
+        const recipeData = await axios.get('https://api.spoonacular.com/recipes/findByIngredients?apiKey=d6e877dd55e74b919c1cf042e3e465bb&ingredients=apple');
+
+        setRecipeResult(recipeData.data);
+        console.log(recipeResult, 'reciperesult');
+    }
 
 
     return (
