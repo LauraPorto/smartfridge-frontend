@@ -9,18 +9,20 @@ import Header from '../../components/Header/header';
 const Result = (props) => {
 
     const [recipeResult, setRecipeResult] = useState({});
+    const [image, setImage] = useState('');
 
-
-    useEffect(() => {
-        getRecipes();
-    },)
 
     const getRecipes = async () => {
         const recipeData = await axios.get('https://api.spoonacular.com/recipes/findByIngredients?apiKey=d6e877dd55e74b919c1cf042e3e465bb&ingredients=apple');
 
         setRecipeResult(recipeData.data);
-        console.log(recipeResult, 'reciperesult');
-    }
+        setImage(recipeData.image);
+
+        console.log(recipeData.data, 'reciperesult');
+        console.log(recipeData.data[1], 'numero 1')
+        console.log(recipeData.data.title, 'el título');
+        console.log(recipeResult, 'esto es recipe.result');
+    };
 
 
     return (
@@ -29,11 +31,11 @@ const Result = (props) => {
             <div className="main-store">
                 <Media>
                     <Media left top href="/RecipeInfo"> 
-                    <Media object data-src="holder.js/64x64" alt="Recipe Image" className="img-recipe-result" />
+                    <Media object src='' alt="Recipe Image" className="img-recipe-result" />
                     </Media>
                     <Media body className="body-recipe-result">
                     <Media heading className="heading-recipe-result">
-                        Título de la receta
+                        {recipeResult[0].title}
                     </Media>
                     Info general de la receta (ingredientes que faltan, ingredientes).
                     </Media>
@@ -71,6 +73,7 @@ const Result = (props) => {
                     Info general de la receta (ingredientes que faltan, ingredientes).
                     </Media>
                 </Media>
+                <button onClick={() => getRecipes()}>RECIPES</button>
             </div>          
         </div>
     )
