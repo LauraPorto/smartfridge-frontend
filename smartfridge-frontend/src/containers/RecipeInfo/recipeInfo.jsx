@@ -9,7 +9,7 @@ import {connect} from 'react-redux';
 
 const RecipeInfo = (props) => {
 
-        
+
 
 
     console.log(props, 'estas son las props');
@@ -19,10 +19,12 @@ const RecipeInfo = (props) => {
     //    getRecipeInfo();
     // }, [])
 
-    const getRecipeInfo = async () => {
-        const recipeInfo = await axios.get('https://api.spoonacular.com/recipes/{id}/information&includeNutrition=true');
-        //Sacamos el ID de las props, que mediante redux nos han traído los datos de la receta seleccionada
-    }
+    // const getRecipeInfo = async () => {
+    //     const recipeInfo = await axios.get (https://api.spoonacular.com/recipes/{id}/analyzedInstructions);
+    //     //Sacamos el ID de las props, que mediante redux nos han traído los datos de la receta seleccionada
+    // }
+
+
 
     return (
         <div className="main-recipe-info">
@@ -55,7 +57,7 @@ const RecipeInfo = (props) => {
                         </div>
                     </div>
                     <div className="recipe-instruction">
-                        <Recipe/>
+                        <Recipe />
                     </div>
                 </div>
             </div>
@@ -63,10 +65,11 @@ const RecipeInfo = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        recipeData: state.recipeReducer
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         recipeDetails: state.recipeReducer
+//     }
+// }
 
-export default connect(mapStateToProps)(RecipeInfo);
+// export default connect(mapStateToProps)(RecipeInfo);
+export default RecipeInfo;
