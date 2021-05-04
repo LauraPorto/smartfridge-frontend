@@ -1,0 +1,15 @@
+.ingredient-main {
+
+    height: 2em;
+    width: 10em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: nth($palette, 3);
+
+    .ingredient-container{
+        color : nth($palette, 1)
+    }
+}

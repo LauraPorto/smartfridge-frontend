@@ -34,10 +34,11 @@ const Recipe = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        recipeData: state.recipeReducer
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         recipeData: state.recipeReducer
+//     }
+// }
 
-export default connect(mapStateToProps)(Recipe);
+// export default connect(mapStateToProps)(Recipe);
+export default Recipe;

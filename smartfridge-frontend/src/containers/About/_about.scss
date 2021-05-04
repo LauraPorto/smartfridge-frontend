@@ -1,0 +1,12 @@
+.about-main-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .header-div{
+        position: absolute top;
+        z-index: 0;        
+    }
+}

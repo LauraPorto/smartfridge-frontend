@@ -80,6 +80,16 @@
     height: 1em;
     width: 4em; }
 
+.ingredient-main {
+  height: 2em;
+  width: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #144d53; }
+  .ingredient-main .ingredient-container {
+    color: #f8ede3; }
+
 .main-container-home {
   display: flex;
   flex-direction: row;
@@ -112,6 +122,17 @@
       .main-container-home .cover-container .cover-page .your-ingredient .sub-img {
         width: 55em; }
 
+.main-container-profile {
+  margin-left: 25em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .main-container-profile .form-container {
+    display: flex;
+    flex-direction: column;
+    width: 30em; }
+
 .main-container {
   background-color: grey;
   height: 100vh;
@@ -133,3 +154,50 @@
       width: 25em;
       height: 30em;
       background-color: beige; }
+
+.main-store .search-store-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: right;
+  height: 3em;
+  width: 100vw;
+  background-color: beige; }
+
+.main-store .body-store .store-fridge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #d4a7a7; }
+  .main-store .body-store .store-fridge .fridge-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 35em;
+    background-color: #82aa82; }
+
+.main-store .body-store .my-products-store {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0px 0px;
+  background-color: #ecd5aa;
+  height: 15em; }
+  .main-store .body-store .my-products-store .ingredient-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5em;
+    width: 16em;
+    background-color: yellow; }
+
+.about-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .about-main-container .header-div {
+    position: absolute top;
+    z-index: 0; }
