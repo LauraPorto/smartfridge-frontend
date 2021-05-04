@@ -8,6 +8,7 @@
 @import './components/Login/login';
 @import './components/Search/search';
 @import './components/Recipe/recipe';
+@import './components/Ingredient/ingredient';
 
 //Containers
 @import './containers/Home/home';
@@ -16,3 +17,5 @@
 @import './containers/Store/store';
 @import './containers/Explore/explore';
 @import './containers/About/about';
+@import './containers/HomeUser/homeUser';
+@import './containers/HomeAdmin/homeAdmin';

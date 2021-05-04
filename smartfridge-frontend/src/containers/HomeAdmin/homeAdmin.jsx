@@ -1,7 +1,6 @@
 import React from 'react'
-import axios from 'axios';
 
-const Ingredient = () => {
+const HomeAdmin = () => {
     return (
         <div>
             
@@ -9,4 +8,4 @@ const Ingredient = () => {
     )
 }
 
-export default Ingredient;
+export default HomeAdmin;

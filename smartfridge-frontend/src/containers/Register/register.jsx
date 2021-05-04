@@ -6,6 +6,8 @@ import {validateField, validateFields} from '../../uti';
 
 import { Button, FormGroup, Input, Label, FormFeedback } from 'reactstrap';
 
+import Header from '../../components/Header/header';
+
 const Register = () => {
 
     //Validación de errores en el formulario
@@ -57,6 +59,7 @@ const Register = () => {
 
     return (
         <div className='main-container'>
+            <div className="header-div"> <Header/> </div>
             <div className='register-container'>
                 <div className='img-container'><img src={cooking1} style={{maxWidth: '100%', width: 'auto', height: 'auto'}}></img></div>
                 <div className='form-container'>

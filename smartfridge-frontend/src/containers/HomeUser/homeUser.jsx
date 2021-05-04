@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import Header from '../../components/Header/header';
 
-const Explore = () => {
+const HomeUser = () => {
     return (
         <div>
             <div className="header-div"> <Header/> </div>
@@ -9,4 +9,4 @@ const Explore = () => {
     )
 }
 
-export default Explore;
+export default HomeUser;
