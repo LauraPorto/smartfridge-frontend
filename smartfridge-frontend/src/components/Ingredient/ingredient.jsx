@@ -3,8 +3,8 @@ import axios from 'axios';
 
 const Ingredient = () => {
     return (
-        <div>
-            
+        <div className="ingredient-main">
+            <div className="ingredient-conatiner"></div>
         </div>
     )
 }
