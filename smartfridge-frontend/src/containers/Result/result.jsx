@@ -5,7 +5,7 @@ import { Media } from 'reactstrap';
 import Header from '../../components/Header/header';
 
 import { connect } from 'react-redux';
-import {SEARCH} from '../../redux/types/recipeType';
+import { SAVE } from '../../redux/types/recipeType';
 
 //Debemos de pasar por redux el id de la receta para llamar a los detalles de la receta en recipeInfo
 
@@ -20,7 +20,7 @@ const Result = (props) => {
 
         setRecipeResult(recipeData.data);
 
-        props.dispatch({type: SEARCH, payload: recipeData.data});
+        props.dispatch({type: SAVE, payload: recipeData.data});
 
         console.log(recipeData.data, 'reciperesult');
         console.log(recipeData.data[1], 'numero 1')
