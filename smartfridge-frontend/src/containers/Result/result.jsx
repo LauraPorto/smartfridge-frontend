@@ -7,16 +7,19 @@ import Header from '../../components/Header/header';
 import { connect } from 'react-redux';
 import { SAVE } from '../../redux/types/recipeType';
 
-//Debemos de pasar por redux el id de la receta para llamar a los detalles de la receta en recipeInfo
 
 const Result = (props) => {
 
     const [recipeResult, setRecipeResult] = useState({});
-    // const [image, setImage] = useState({});
 
+    // //Cuando el componente se monte, llamamos a la api para que nos traiga los resultados se la búsqueda realizada con los ingredientes señalados en Store (que pasamos por redux)
+    // useEffect(() => {
+    //    getRecipes();
+    // }, [])
 
     const getRecipes = async () => {
         const recipeData = await axios.get('https://api.spoonacular.com/recipes/findByIngredients?apiKey=d6e877dd55e74b919c1cf042e3e465bb&ingredients=apple');
+        //APIKEY y props.myIngredients[]
 
         setRecipeResult(recipeData.data);
 
@@ -82,6 +85,13 @@ const Result = (props) => {
         </div>
     )
 }
+
+// //Recibimos por redux los datos de mi store, donde guardamos los ingredientes
+// const mapStateToProps = (state) => {
+//     return {
+//         myIngredients: state.recipeReducer
+//     }
+// }
 
 export default connect()(Result);
 
