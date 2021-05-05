@@ -9,7 +9,11 @@ import {SAVE} from '../../redux/types/recipeType';
 
 const Result = (props) => {
 
-    
+    console.log(props, 'esto son PROPS');
+    console.log(props.recipeData, 'esto es recipe.data')
+
+    const recipe = props.recipeData.recipeData;
+    // console.log(recipe, 'esto es recipe');
 
     // const getRecipeDetails = async () => {
     //     let id = props.id;
@@ -31,10 +35,10 @@ const Result = (props) => {
                     </Media>
                     <Media body className="body-recipe-result">
                     <Media heading className="heading-recipe-result">
-                        {/* {props.title}  */}
+                        {recipe[1].title} 
                     </Media>
                     Info general de la receta (ingredientes que faltan, ingredientes).
-                        {/* {props.missedIngredients.name} */}
+                        {recipe[1].missedIngredients}
                     </Media>
                 </Media>
                 <Media>
@@ -43,7 +47,8 @@ const Result = (props) => {
                     </Media>
                     <Media body className="body-recipe-result">
                     <Media heading className="heading-recipe-result">
-                        Título de la receta
+                        {/* {recipe.title} */}
+                        {props.recipeData.recipeData.title}
                     </Media>
                     Info general de la receta (ingredientes que faltan, ingredientes).
                     </Media>
@@ -76,11 +81,11 @@ const Result = (props) => {
 }
 
 //Recibimos por redux los datos de mi store, donde guardamos los ingredientes
-// const mapStateToProps = (state) => {
-//     return {
-//         recipeData: state.recipeReducer
-//     }
-// }
+const mapStateToProps = (state) => {
+    return {
+        recipeData: state.recipeReducer
+    }
+}
 // const mapDispatchToProps = (state) => {
 //     return {
 //         recipeDetails: state.recipeReducer
@@ -88,7 +93,7 @@ const Result = (props) => {
 // }
 
 // export default connect(mapStateToProps, mapDispatchToProps)(Result);
-export default Result;
+export default connect(mapStateToProps)(Result);
 /*
 Datos para sacar por pantalla: 
 recipeResult.tittle

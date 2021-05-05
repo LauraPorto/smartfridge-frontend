@@ -4,7 +4,7 @@ import {STORE_FOOD} from '../types/recipeType';
 
 const initialState = {
   recipeData: {}, 
-  recipeDetails: {},
+  // recipeDetails: {},
   foodData: {}, 
   myIngredients: []
 };
@@ -14,8 +14,8 @@ const recipeReducer = (state = initialState, action) => {
     case SAVE:
       return {
         ...state,
-        recipeData: action.payload,
-        recipeDetails: action.payload
+        recipeData: action.payload
+        // recipeDetails: action.payload
       }
     case SEARCH:
       return {

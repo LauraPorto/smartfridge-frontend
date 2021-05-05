@@ -15,7 +15,7 @@ import { connect } from 'react-redux';
 const Store = (props) => {
 
     const history = useHistory();
-    const [recipeResult, setRecipeResult] = useState({});
+    // const [recipeResult, setRecipeResult] = useState({});
 
     const [list, setList] = useState([]);
 
@@ -34,18 +34,22 @@ const Store = (props) => {
     //     const store = axios.get('http://localhost:3001/store/')
     // }
 
-    // const getRecipes = async () => {
-    //     const recipeData = await axios.get('https://api.spoonacular.com/recipes/findByIngredients?apiKey=d6e877dd55e74b919c1cf042e3e465bb&ingredients=apple');
-    //     //APIKEY y props.myIngredients[]
+    const getRecipes = async () => {
+        const recipeData = await axios.get('https://api.spoonacular.com/recipes/findByIngredients?apiKey=d6e877dd55e74b919c1cf042e3e465bb&ingredients=cheese');
+        //APIKEY y props.myIngredients[]
 
-    //     setRecipeResult(recipeData.data);
+        //setRecipeResult(recipeData.data);
 
-    //     props.dispatch({type: SAVE, payload: recipeData.data});
+        props.dispatch({type: SAVE, payload: recipeData.data});
 
-    //     console.log(recipeData.data, 'reciperesult');
-    //     console.log(recipeData.data[1], 'numero 1')
-    //     console.log(recipeResult.data, 'esto es recipe.result');
-    // };
+        console.log(recipeData.data, 'reciperesult');
+        console.log(recipeData.data[1], 'numero 1');
+
+        return setTimeout(() => {
+            history.push('/result');
+        }, 300);
+
+    };
 
   
 
@@ -74,11 +78,11 @@ const Store = (props) => {
                 </div>
                          
             </div>
-            {/* <button onClick={() => getRecipes()}></button> */}
+            <button onClick={() => getRecipes()}></button>
  
         </div>
     )
 }
 
-// export default connect()(Store);
-export default Store;
+export default connect()(Store);
+// export default Store;
