@@ -8,6 +8,8 @@ import Header from '../../components/Header/header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserTimes, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 
+import {connect } from 'react-redux';
+
 const Profile = (props) => {
 
     //Hooks para la validación de campos
@@ -18,22 +20,14 @@ const Profile = (props) => {
 
     //Hooks para crear el estado de los datos del usuario
     const [data, setDataUser] = useState({ name: '' });
-
+    
     useEffect(() => {
-        const getUser = async () => {
+        let token = props.user?.token;
 
-            let id = props.user?.id;
-            let token = props.user?.token;
-
-            if (!token) {
-                return;
-            }
-           
-            let result = await axios.get(`http://localhost:3001/user/${id}`);
-
-            setDataUser(result.data);
+        if (!token) {
+            return;
         }
-        getUser();
+        
     }, []);
 
 
@@ -61,13 +55,9 @@ const Profile = (props) => {
             let id = props.user?.id;
             let token = props.user?.token;
 
-            if (!token) {
-                return;
-            }
-
             await axios.put(`http://localhost:3001/user/${id}`);
 
-            alert('Guardado con éxito!!!')
+            return alert('Guardado con éxito!!!');
         } catch (error) {
             console.log(error);
         }
@@ -78,13 +68,9 @@ const Profile = (props) => {
             let id = props.user?.id;
             let token = props.user?.token;
 
-            if (!token) {
-                return;
-            }
-
             await axios.delete(`http://localhost:3001/user/${id}`);
 
-            alert('Borrado con éxito!!!')
+            return alert('Borrado con éxito!!!');
         } catch (error) {
             console.log(error);
         }
@@ -99,32 +85,32 @@ const Profile = (props) => {
                 <div className='form-container'>
                     <FormGroup>
                         <Label for='name'>Name:</Label>
-                        <Input type='text' id='name' name='name' onChange={handleState} valid={validationResult.validated && !validationResult.name} invalid={validationResult.validated && validationResult.name} placeholder={data.name}/>
+                        <Input type='text' id='name' name='name' placeholder={props.user.name} onChange={handleState} valid={validationResult.validated && !validationResult.name} invalid={validationResult.validated && validationResult.name} />
                         <FormFeedback>{validationResult.name}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for='surname'>Surname:</Label>
-                        <Input type='text' id='surname' name='surname' onChange={handleState} valid={validationResult.validated && !validationResult.surname} invalid={validationResult.validated && validationResult.surname} placeholder={data.surname}/>
+                        <Input type='text' id='surname' name='surname' placeholder={props.user.surname} onChange={handleState} valid={validationResult.validated && !validationResult.surname} invalid={validationResult.validated && validationResult.surname}/>
                         <FormFeedback>{validationResult.surname}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for='phone'>Teléfono : </Label>
-                        <Input type='number' id='phone' name='phone' onChange={handleState} valid={validationResult.validated && !validationResult.phone} invalid={validationResult.validated && validationResult.phone} placeholder={data.phone}/>
+                        <Input type='number' id='phone' name='phone' placeholder={props.user.phone} onChange={handleState} valid={validationResult.validated && !validationResult.phone} invalid={validationResult.validated && validationResult.phone} />
                         <FormFeedback>{validationResult.phone}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
-                        <Label for='surname2'>Country:</Label>
-                        <Input type='text' id='country' name='country' onChange={handleState} valid={validationResult.validated && !validationResult.country} invalid={validationResult.validated && validationResult.country} placeholder={data.country}/>
+                        <Label for='country'>Country:</Label>
+                        <Input type='text' id='country' name='country' placeholder={props.user.country} onChange={handleState} valid={validationResult.validated && !validationResult.country} invalid={validationResult.validated && validationResult.country} />
                         <FormFeedback>{validationResult.country}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label form='email'>Email:</Label>
-                        <Input type='text' id='email' name='email' onChange={handleState} valid={validationResult.validated && !validationResult.email} invalid={validationResult.validated && validationResult.email} placeholder={data.email}/>
+                        <Input type='text' id='email' name='email' placeholder={props.user.email} onChange={handleState} valid={validationResult.validated && !validationResult.email} invalid={validationResult.validated && validationResult.email} />
                         <FormFeedback>{validationResult.email}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label form='password'>Password:</Label>
-                        <Input type='password' id='password' name='password' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} placeholder='******'/>
+                        <Input type='password' id='password' name='password' placeholder='******' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} />
                         <FormFeedback>{validationResult.password}</FormFeedback>
                     </FormGroup>
                     {/* <FontAwesomeIcon icon={faUserTimes} />
@@ -138,4 +124,11 @@ const Profile = (props) => {
     )
 }
 
-export default Profile;
+const mapStateToProps = (state) => {
+    return {
+        user: state.userReducer.user, 
+        token: state.userReducer.token
+    }
+}
+
+export default connect(mapStateToProps)(Profile);
