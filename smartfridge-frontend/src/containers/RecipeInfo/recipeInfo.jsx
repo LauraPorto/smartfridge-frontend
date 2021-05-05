@@ -15,17 +15,6 @@ const RecipeInfo = (props) => {
 
     console.log(props, 'estas son las props');
 
-    // //Cuando el componente se monte, llamamos a la api para que nos traiga la información detallada de la receta seleccionada mediante su ID (que nos hemos traído por redux)
-    // useEffect(() => {
-    //    getRecipeInfo();
-    // }, [])
-
-    // const getRecipeInfo = async () => {
-    //     const recipeInfo = await axios.get (https://api.spoonacular.com/recipes/{id}/analyzedInstructions);
-    //     //Sacamos el ID de las props, que mediante redux nos han traído los datos de la receta seleccionada
-    // }
-
-
 
     return (
         <div className="main-recipe-info">

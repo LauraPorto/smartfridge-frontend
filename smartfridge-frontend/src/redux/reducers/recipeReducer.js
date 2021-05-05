@@ -1,10 +1,11 @@
 import { SEARCH } from '../types/recipeType';
 import { SAVE } from '../types/recipeType';
+import { SAVE_DETAILS } from '../types/recipeType';
 import {STORE_FOOD} from '../types/recipeType';
 
 const initialState = {
   recipeData: {}, 
-  // recipeDetails: {},
+  recipeDetails: {},
   foodData: {}, 
   myIngredients: []
 };
@@ -15,7 +16,11 @@ const recipeReducer = (state = initialState, action) => {
       return {
         ...state,
         recipeData: action.payload
-        // recipeDetails: action.payload
+      }
+    case SAVE_DETAILS:
+      return{
+        ...state,
+        recipeDetails: action.payload
       }
     case SEARCH:
       return {
