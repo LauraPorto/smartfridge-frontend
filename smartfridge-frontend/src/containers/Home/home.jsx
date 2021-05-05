@@ -23,7 +23,7 @@ const Home = () => {
                     </div>
 
                     <div className="discover-recipes-container">
-                        <div clasName="discover-text"><h2><a href='/register'>Sign up</a>and discover our recipes</h2></div>
+                        <div className="discover-text"><h2><a href='/register'>Sign up</a>and discover our recipes</h2></div>
                     </div>
 
                     <div className="your-ingredient">

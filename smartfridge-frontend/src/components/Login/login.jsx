@@ -9,17 +9,16 @@ import {validateField, validateFields } from '../../uti';
 //Redux
 import { connect } from 'react-redux';
 import { LOGIN } from '../../redux/types/userType';
-import { ADMINLOGIN } from '../../redux/types/adminType';
+
 
 const Login = (props) => {
+
     //Estado del Modal
     const [state, setState] = useState({
         open: false
     });
 
-    //Creo el estado que se llama validationResult donde se mantiene el estado de validez de 
-    //cada uno de los componentes del formulario y una propiedad (validated) que indica 
-    //si ya se intento enviar el formulario
+    //Hooks para la validación de errores en forumulario
     const [validationResult, setValidationResult] = useState({
         validated: false,
         name: null
@@ -31,11 +30,10 @@ const Login = (props) => {
 
     const history = useHistory();
 
-    //Hook -> Estado del Login
+    //Hook para el estado del Login
     const [dataLogin, setLogin] = useState({
         email: '',
-        password: '',
-        role: 'user'
+        password: ''
     })
 
     //Handlers
@@ -55,7 +53,6 @@ const Login = (props) => {
 
 
     const sendData = async () => {
-        // console.log('Estamos dentro de la función enter');
 
         let validationResult = validateFields(dataLogin);
 
@@ -68,13 +65,13 @@ const Login = (props) => {
 
         try {
             let result = await axios.post('http://localhost:3001/user/login', dataLogin);
-            if(dataLogin.role === 'user'){               
-                props.dispatch({type: LOGIN, payload: result.data});
-                return setTimeout(() => {history.push('/home-user')}, 200);
-            }else if(dataLogin.role === 'admin'){ //
-                props.dispatch({type: ADMINLOGIN, payload: result.data})
-                return setTimeout(() => {history.push('/home-admin')}, 200);
-            }
+                 
+            props.dispatch({type: LOGIN, payload: result.data});
+            return setTimeout(() => {history.push('/home-user')}, 200);
+            // }else if(dataLogin.role === 'admin'){ //
+            //     props.dispatch({type: ADMINLOGIN, payload: result.data})
+            //     return setTimeout(() => {history.push('/home-admin')}, 200);
+            
                                 
         } catch (error) {
             if(error.isAxiosError & error.response?.status === 403){
