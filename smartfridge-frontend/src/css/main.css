@@ -233,3 +233,12 @@
     .main-recipe-info .body-recipe-info .recipe-info-data {
       background-color: beige;
       height: 25em; }
+
+.main-store .body-results .map-recipes {
+  display: flex;
+  flex-direction: row;
+  background-color: #a4a4ca; }
+  .main-store .body-results .map-recipes .map-recipes-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
