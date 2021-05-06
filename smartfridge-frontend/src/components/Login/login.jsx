@@ -67,11 +67,8 @@ const Login = (props) => {
             let result = await axios.post('http://localhost:3001/user/login', dataLogin);
                  
             props.dispatch({type: LOGIN, payload: result.data});
-            return setTimeout(() => {history.push('/home-user')}, 200);
-            // }else if(dataLogin.role === 'admin'){ //
-            //     props.dispatch({type: ADMINLOGIN, payload: result.data})
-            //     return setTimeout(() => {history.push('/home-admin')}, 200);
-            
+            console.log(result, 'result');
+            return history.push('/home-user');
                                 
         } catch (error) {
             if(error.isAxiosError & error.response?.status === 403){
@@ -102,8 +99,8 @@ const Login = (props) => {
                     </FormGroup>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color='primary' onClick={sendData}>Entrar</Button>
-                    <Button color='secundary' onClick={toggleLogin}>Salir</Button>
+                    <Button color='primary' onClick={() => sendData()}>Entrar</Button>
+                    <Button color='secundary' onClick={() => toggleLogin()}>Salir</Button>
                 </ModalFooter>
             </Modal>
         </div>

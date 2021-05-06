@@ -14,8 +14,7 @@ const Header = (props) => {
     const history = useHistory();
     
     const logOut = () => {
-        setTimeout(()=> {
-            history.push('/');
+        setTimeout(()=> {            
             props.dispatch({ type: LOGOUT, payload : {}});
         },500);
     }
@@ -67,8 +66,8 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.user,
-        token: state.token
+        user: state.userReducer.user,
+        token: state.userReducer.token
     }
 } 
 export default connect(mapStateToProps)(Header);

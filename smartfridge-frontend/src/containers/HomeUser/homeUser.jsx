@@ -7,7 +7,8 @@ const HomeUser = () => {
     return (
         <div className="homeuser-main-container">
             <div className="header-div"> <Header/> </div>
-            <div className="carousel-container">
+            Hola personas
+            {/* <div className="carousel-container">
                 <Carousel/>
             </div>
             <div className="access-container">
@@ -17,7 +18,7 @@ const HomeUser = () => {
                 <div className="mystore-access">
                     
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
