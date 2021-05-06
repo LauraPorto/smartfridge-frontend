@@ -15,9 +15,10 @@ import { connect } from 'react-redux';
 const Store = (props) => {
 
     const history = useHistory();
-    // const [recipeResult, setRecipeResult] = useState({});
 
-    const [list, setList] = useState([]);
+    // const [list, setList] = useState({
+    //     myIngredients: []
+    // });
 
     // const selectIngredient = () => {
 
@@ -25,25 +26,21 @@ const Store = (props) => {
     //     //setList(list); //
 
     // }
+ 
+    const ingredients = props.myIngredients.myIngredients;
 
-    // //Llamada axios a BBDD -> guardado en Redux -> llamado para la llamada a la API (result).
-    // const setIngredients = () => {
-    //     const store = axios.put('http://localhost:3001/store/')
-    // }
-    // const getIngredients = () => {
-    //     const store = axios.get('http://localhost:3001/store/')
-    // }
+    console.log(props.myIngredients.myIngredients, 'props');
 
     const getRecipes = async () => {
-        const recipeData = await axios.get('https://api.spoonacular.com/recipes/findByIngredients?apiKey=d6e877dd55e74b919c1cf042e3e465bb&ingredients=cheese');
+        // const recipeData = await axios.get('https://api.spoonacular.com/recipes/findByIngredients?apiKey=d6e877dd55e74b919c1cf042e3e465bb&ingredients=cheese');
         //APIKEY y props.myIngredients[]
 
         //setRecipeResult(recipeData.data);
 
-        props.dispatch({type: SAVE, payload: recipeData.data});
+        // props.dispatch({type: SAVE, payload: recipeData.data});
 
-        console.log(recipeData.data, 'reciperesult');
-        console.log(recipeData.data[1], 'numero 1');
+        // console.log(recipeData.data, 'reciperesult');
+        // console.log(recipeData.data[1], 'numero 1');
 
         return setTimeout(() => {
             history.push('/result');
@@ -51,7 +48,10 @@ const Store = (props) => {
 
     };
 
-  
+    const selectIngredient = () => {
+        
+    }
+
 
     return (
         <div className="main-store">
@@ -71,9 +71,16 @@ const Store = (props) => {
                     My Fridge
                     
                     <div className="ingredient-container">
-                        <Ingredient
-                            // name={store.name}
-                        />
+                        {
+                            ingredients.map(ingredient => 
+                                <div onClick={() => selectIngredient()}>
+                                    <div className = "map-ingredient">
+                                        {ingredient.name}
+                                    </div>
+                                    <img className="map-image" src={ingredient.image}/>
+                                </div>
+                            )
+                        }
                     </div>
                 </div>
                          
@@ -84,5 +91,11 @@ const Store = (props) => {
     )
 }
 
-export default connect()(Store);
+const mapStateToProps = (state) => {
+    return {
+        myIngredients: state.recipeReducer
+    }
+}
+
+export default connect(mapStateToProps)(Store);
 // export default Store;
