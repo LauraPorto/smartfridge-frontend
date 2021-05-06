@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios';
 import {connect} from 'react-redux';
-import {SEARCH} from '../../redux/types/recipeType';
+import {STORE_FOOD} from '../../redux/types/recipeType';
 const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 const query = '&query=';
 
@@ -24,17 +24,22 @@ const Search = (props) => {
     const toSearch = async () => {
 
     //     let foodData = await axios.get(`https://api.spoonacular.com/food/search${apiKey}${query}${search.searchBox}`);
-
-    //     const arraySearch = foodData.data.filter(explore => 
-    //         explore.title.toLowerCase().includes(search.searchBox.toLowerCase())
-    //     )
-
-    //     setSearch({
-    //         ...search, searchBox: arraySearch
-    //     })
-
     //     props.dispatch({type: SEARCH, payload: foodData.data});
 
+        let ingredients = await axios.get(`https://api.spoonacular.com/food/ingredients/search${apiKey}${query}${search.searchBox}`);
+        
+
+        console.log(ingredients.data.results, 'los ingredientes');
+
+        const arraySearch = ingredients.data.results.filter(explore => 
+            explore.name.toLowerCase().includes(search.searchBox.toLowerCase())
+        )
+        props.dispatch({type: STORE_FOOD, payload: ingredients.data.results});
+        setSearch({
+            ...search, searchBox: arraySearch
+        })
+        
+   
     };
 
     return (
@@ -45,5 +50,4 @@ const Search = (props) => {
     )
 }
 
-// export default connect (Search);
-export default Search;
+export default connect()(Search);

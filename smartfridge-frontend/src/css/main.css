@@ -155,15 +155,6 @@
       height: 30em;
       background-color: beige; }
 
-.main-store .search-store-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: right;
-  height: 3em;
-  width: 100vw;
-  background-color: beige; }
-
 .main-store .body-store .store-fridge {
   display: flex;
   flex-direction: row;
@@ -177,21 +168,29 @@
     justify-content: space-around;
     width: 35em;
     background-color: #82aa82; }
+    .main-store .body-store .store-fridge .fridge-menu .search-store-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: right;
+      height: 3em; }
 
 .main-store .body-store .my-products-store {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 0px 0px;
-  background-color: #ecd5aa;
   height: 15em; }
   .main-store .body-store .my-products-store .ingredient-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 5em;
-    width: 16em;
-    background-color: yellow; }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 3em;
+    height: 10em;
+    width: 16em; }
+    .main-store .body-store .my-products-store .ingredient-container .map-ingredient {
+      background-color: aqua;
+      cursor: pointer; }
 
 .explore-main-container .header-div {
   background-color: transparent;
@@ -234,3 +233,12 @@
     .main-recipe-info .body-recipe-info .recipe-info-data {
       background-color: beige;
       height: 25em; }
+
+.main-store .body-results .map-recipes {
+  display: flex;
+  flex-direction: row;
+  background-color: #a4a4ca; }
+  .main-store .body-results .map-recipes .map-recipes-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }

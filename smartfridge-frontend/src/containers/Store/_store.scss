@@ -1,15 +1,6 @@
 .main-store {
     
-    .search-store-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: right;
 
-        height: 3em;
-        width: $maxWidth;
-        background-color:beige;
-    }
     .body-store {
 
         .store-fridge {
@@ -29,6 +20,16 @@
                 width: 35em;
 
                 background-color: rgb(130, 170, 130);
+
+                .search-store-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    align-items: right;
+            
+                    height: 3em;
+
+                }
             }
         }
 
@@ -38,21 +39,22 @@
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(3, 1fr);
             gap: 0px 0px;
-            
-            background-color: rgb(236, 213, 170);  
 
             height: 15em;
 
-
             .ingredient-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                gap: 3em;
 
-                height: 5em;
+                height: 10em;
                 width: 16em;
 
-                background-color: yellow;
+                .map-ingredient {
+                    background-color: aqua;
+                    cursor: pointer;
+                }
             }
         }
         
