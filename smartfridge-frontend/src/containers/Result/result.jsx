@@ -39,9 +39,9 @@ const Result = (props) => {
                             <div className="map-recipes">
                                 <div className = "map-recipes-header">
                                     {recipe.title}
-                                    <img src={recipe.image}/>
+                                    <img src={recipe.image} style={{maxWidth: '100%', width: '18em', height: '15em'}} />
                                 </div>
-                                
+                                {recipe.missedIngredientCount}
                             </div>
                         )
                     }
