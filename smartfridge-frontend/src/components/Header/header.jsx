@@ -25,7 +25,7 @@ const Header = (props) => {
             <ul className="nav justify-content-center">
             {/* Logo de la aplicación */}
             {
-                !props.user
+                !props.user.token
                 ?
                 <>
                 <div className="nav-item">
