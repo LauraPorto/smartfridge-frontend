@@ -1,17 +1,15 @@
-import React from 'react'
-import {useHistory} from 'react-router-dom';
+import React from 'react';
 import Login from '../Login/login';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDoorOpen } from '@fortawesome/free-solid-svg-icons';
+import fridge from '../../assets/fridge.png';
 
 import {connect} from 'react-redux';
 import {LOGOUT} from '../../redux/types/userType';
 
 const Header = (props) => {
 
-
-    const history = useHistory();
     
     const logOut = () => {
         setTimeout(()=> {            
@@ -20,10 +18,11 @@ const Header = (props) => {
     }
 
     return (
-        <div className="header-container">
-            
+        <div className="header-container">           
             <ul className="nav justify-content-center">
-            {/* Logo de la aplicación */}
+            <div className="header-logo">
+                <img src={fridge} style={{width: '2em', height: '2em', marginRight: '35em'}} alt='SMART FRIDGE'></img>
+            </div>   
             {
                 !props.user.token
                 ?

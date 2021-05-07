@@ -3,14 +3,15 @@ import axios from 'axios';
 
 import Header from '../../components/Header/header';
 import Recipe from '../../components/Recipe/recipe';
-
+import Like from '../../components/Like/like';
 
 import {connect} from 'react-redux';
 //Traemos de redux el id de la receta para mostrar sus detalles
 
 const RecipeInfo = (props) => {
 
-
+    const recipeDetails = props.recipeDetails.recipeDetails;
+    console.log(recipeDetails, 'detalles de la receta')
 
 
     console.log(props, 'estas son las props');
@@ -21,29 +22,33 @@ const RecipeInfo = (props) => {
             <div className="header-div"> <Header/> </div>
             <div className="body-recipe-info">
                 <div className="img-recipe-info">
-
+                    {recipeDetails.image}
                 </div>
                 <div className="tittle-recipe-info">
-                    <h1>Título de la receta</h1>
+                    <h1>{recipeDetails.title}</h1>
                 </div>
                 <div className="recipe-info-data">
                     <div className="info1">
-                        Número de comensales
+                        Servings: {recipeDetails.servings}
                     </div>
                     <div className="info2">
-                        Tiempo en minutos
+                        readyInMinutes: {recipeDetails.readyInMinutes}
+                    </div>
+                    <div className="info2">
+                        Price aprox per serving: {recipeDetails.pricePerServing}
                     </div>
                     <div className="info-special">
                         <div className="info-icons">
                             Iconos (gluten, lactosa)
                         </div>
                         <div className="info-icons-text">
-                            Texto (gluten, lactosa)
+                            Diets: {recipeDetails.diets}
                         </div>
                     </div>
                     <div className="more-ingredients">
                         <div className="extended-ingredients">
                             Algunos ingredientes para añadir
+                            <Like/>
                         </div>
                     </div>
                     <div className="recipe-instruction">
@@ -56,11 +61,10 @@ const RecipeInfo = (props) => {
     )
 }
 
-// const mapStateToProps = (state) => {
-//     return {
-//         recipeDetails: state.recipeReducer
-//     }
-// }
+const mapStateToProps = (state) => {
+    return {
+        recipeDetails: state.recipeReducer
+    }
+}
 
-// export default connect(mapStateToProps)(RecipeInfo);
-export default RecipeInfo;
+export default connect(mapStateToProps)(RecipeInfo);
