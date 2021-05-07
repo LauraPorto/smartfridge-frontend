@@ -19,12 +19,16 @@ const Result = (props) => {
     const history = useHistory();
     const recipes = props.recipeData.recipeData;
     console.log(recipes, 'this is recipes');
+    // const missedIngredients = recipes.missedIngredients;
+    // console.log(missedIngredients);
 
     
     const getRecipeInfo = async () => {
 
-        const recipeInfo = await axios.get(`https://api.spoonacular.com/recipes/id/information${apiKey}&includeNutrition=true`);
-        props.dispatch({type: SAVE_DETAILS, payload: recipeInfo.data});
+        let id = props.recipeData.id;
+        console.log(id, 'this is id');
+        // const recipeInfo = await axios.get(`https://api.spoonacular.com/recipes/id/information${apiKey}&includeNutrition=true`);
+        // props.dispatch({type: SAVE_DETAILS, payload: recipeInfo.data});
 
     }
    
@@ -36,12 +40,12 @@ const Result = (props) => {
                 <div className="body-results">
                     {
                         recipes.map(recipe => 
-                            <div className="map-recipes">
+                            <div className="map-recipes" onClick={() => getRecipeInfo()}>
                                 <div className = "map-recipes-header">
                                     {recipe.title}
                                     <img src={recipe.image} style={{maxWidth: '100%', width: '18em', height: '15em'}} />
                                 </div>
-                                {recipe.missedIngredientCount}
+                             
                             </div>
                         )
                     }
