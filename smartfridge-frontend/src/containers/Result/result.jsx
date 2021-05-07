@@ -14,7 +14,7 @@ const query = '&ingredients=';
 const Result = (props) => {
 
     console.log(props, 'esto son PROPS');
-    console.log(props.recipeData, 'esto es recipe.data')
+    console.log(props.recipeData.id, 'esto es recipe.data')
 
     const history = useHistory();
     const recipes = props.recipeData.recipeData;
@@ -22,14 +22,22 @@ const Result = (props) => {
     // const missedIngredients = recipes.missedIngredients;
     // console.log(missedIngredients);
 
+    // const getId = (props) => {
+    //     recipes.map(recipe => {
+    //         return recipe.id;
+    //     })
+    // }
+
     
     const getRecipeInfo = async () => {
 
-        let id = props.recipeData.id;
-        console.log(id, 'this is id');
-        // const recipeInfo = await axios.get(`https://api.spoonacular.com/recipes/id/information${apiKey}&includeNutrition=true`);
-        // props.dispatch({type: SAVE_DETAILS, payload: recipeInfo.data});
+    
+        const recipeInfo = await axios.get(`https://api.spoonacular.com/recipes/633678/information${apiKey}&includeNutrition=true`);
+        props.dispatch({type: SAVE_DETAILS, payload: recipeInfo.data});
 
+        return setTimeout(() => {
+            history.push('/recipeInfo');
+        }, 500);
     }
    
     return (
@@ -43,6 +51,7 @@ const Result = (props) => {
                             <div className="map-recipes" onClick={() => getRecipeInfo()}>
                                 <div className = "map-recipes-header">
                                     {recipe.title}
+                                    {recipe.id}
                                     <img src={recipe.image} style={{maxWidth: '100%', width: '18em', height: '15em'}} />
                                 </div>
                              
