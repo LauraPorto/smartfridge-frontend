@@ -44,7 +44,7 @@ const Result = (props) => {
         <div>
             <div className="header-div"> <Header/> </div>
             <div className="main-store">
-
+                
                 <div className="body-results">
                     {
                         recipes.map(recipe => 

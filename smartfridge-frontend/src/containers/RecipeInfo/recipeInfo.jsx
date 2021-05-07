@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import Header from '../../components/Header/header';
 import Recipe from '../../components/Recipe/recipe';
-
+import Like from '../../components/Like/like';
 
 import {connect} from 'react-redux';
 //Traemos de redux el id de la receta para mostrar sus detalles
@@ -48,6 +48,7 @@ const RecipeInfo = (props) => {
                     <div className="more-ingredients">
                         <div className="extended-ingredients">
                             Algunos ingredientes para añadir
+                            <Like/>
                         </div>
                     </div>
                     <div className="recipe-instruction">
