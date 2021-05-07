@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 import {validateField, validateFields} from '../../uti';
@@ -9,8 +10,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserTimes, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 
 import {connect } from 'react-redux';
+import {LOGOUT} from '../../redux/types/userType';
 
 const Profile = (props) => {
+
+    const history = useHistory();
 
     //Hooks para la validación de campos
     const [validationResult, setValidationResult] = useState({
@@ -29,6 +33,7 @@ const Profile = (props) => {
         }
         
     }, []);
+
 
 
     const handleState = (event) => {
@@ -52,7 +57,7 @@ const Profile = (props) => {
         });
 
         try {
-            let id = props.user?.id;
+            let id = props.user?._id;
             let token = props.user?.token;
 
             await axios.put(`http://localhost:3001/user/${id}`);
@@ -65,12 +70,20 @@ const Profile = (props) => {
 
     const deleteUser = async () => {
         try {
-            let id = props.user?.id;
+            let id = props.user?._id;
             let token = props.user?.token;
 
             await axios.delete(`http://localhost:3001/user/${id}`);
 
-            return alert('Borrado con éxito!!!');
+            const confirmation = window.confirm('Are you sure you want to delete your account?');
+
+            if (confirmation === true){
+                return setTimeout(()=> {            
+                    history.push('/')
+                    props.dispatch({ type: LOGOUT, payload : {}});
+                },500);
+            }
+             
         } catch (error) {
             console.log(error);
         }

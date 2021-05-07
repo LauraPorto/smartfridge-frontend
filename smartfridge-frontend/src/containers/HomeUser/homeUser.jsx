@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header/header';
 
-import Carousel from '../../components/Carousel/carousel';
+// import Carousel from '../../components/Carousel/carousel';
 
 const HomeUser = () => {
     return (

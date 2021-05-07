@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faShareSquare } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 
 
@@ -9,6 +9,11 @@ const Like = (props) => {
 
     const [like, setLiked] = useState({
         liked: false
+    });
+
+    const [codeRecipe, setCodeRecipe] = useState({
+        apiId: '',
+        name: ''
     });
 
     console.log(like.liked, 'this is the like value');
@@ -19,16 +24,22 @@ const Like = (props) => {
         setLiked({liked: likeRecipe})
     }
 
-    const saveRecipe = () => {
+    const saveRecipe = async () => {
+        toggle();
 
-    }
+        let result =  await axios.post('http://localhost:3001/store/', codeRecipe);
+        alert('receta guardada en favoritos');
+    };
 
-    const deleteRecipe = () => {
+    const deleteRecipe = async () => {
+        toggle();
 
+        let result =  await axios.delete('http://localhost:3001/store/', codeRecipe);
+        alert('receta borrada de favoritos');
     }
 
     return (
-        <div className="main-like">
+        <div className="main-like" style={{width: '8em' ,display: 'flex', flexDirectioin: 'row'}}>
             {
                 like.liked === false ? 
                     <div className="like-container">
@@ -47,7 +58,11 @@ const Like = (props) => {
                         />
                     </div>
             }
-        
+            <div className="empty-div" style={{width: '3em'}}></div>
+            <FontAwesomeIcon
+                icon={faShareSquare}
+                style={{color: 'black', width: '2em', height: '2em'}}
+            />
         </div>
     )
 }
