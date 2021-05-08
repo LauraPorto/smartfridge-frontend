@@ -13,7 +13,8 @@ const Like = (props) => {
 
     const [codeRecipe, setCodeRecipe] = useState({
         apiId: '',
-        title: ''
+        title: '', 
+        userId: props.user._id
     });
 
     console.log(like.liked, 'this is the like value');
@@ -70,7 +71,8 @@ const Like = (props) => {
 //Recibimos por redux los datos de mi store, donde guardamos los datos principales de las recetas favoritas
 const mapStateToProps = (state) => {
     return {
-        favorites: state.recipeReducer
+        favorites: state.recipeReducer, 
+        user: state.userReducer
     }
 }
 

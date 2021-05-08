@@ -6,6 +6,7 @@ import Recipe from '../../components/Recipe/recipe';
 import Like from '../../components/Like/like';
 
 import {connect} from 'react-redux';
+import {SAVE_FAV} from '../../redux/types/recipeType';
 //Traemos de redux el id de la receta para mostrar sus detalles
 
 const RecipeInfo = (props) => {
@@ -13,6 +14,10 @@ const RecipeInfo = (props) => {
     const recipeDetails = props.recipeDetails.recipeDetails;
     console.log(recipeDetails, 'detalles de la receta')
 
+    // const selectFavorite = ({recipeDetails}) => {
+    //     //mapeamos el id que trae la api y el title para pasarlo por payload
+    //     props.dispatch({type: SAVE_FAV, payload: })
+    // }
 
     console.log(props, 'estas son las props');
 
@@ -48,7 +53,9 @@ const RecipeInfo = (props) => {
                     <div className="more-ingredients">
                         <div className="extended-ingredients">
                             Algunos ingredientes para añadir
-                            <Like/>
+                            <Like
+                                onClick={() => selectFavorite({recipeDetails})}
+                            />
                         </div>
                     </div>
                     <div className="recipe-instruction">
