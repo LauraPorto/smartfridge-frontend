@@ -13,7 +13,7 @@ const Like = (props) => {
 
     const [codeRecipe, setCodeRecipe] = useState({
         apiId: '',
-        name: ''
+        title: ''
     });
 
     console.log(like.liked, 'this is the like value');
@@ -46,7 +46,7 @@ const Like = (props) => {
                         <FontAwesomeIcon 
                             icon={faHeart} 
                             style={{color: 'grey', width: '2em', height: '2em'}}
-                            onClick={() => toggle()}
+                            onClick={() => saveRecipe()}
                         />
                     </div>
                 : 
@@ -54,7 +54,7 @@ const Like = (props) => {
                         <FontAwesomeIcon 
                             icon={faHeart} 
                             style={{color: 'red', width: '2em', height: '2em'}}
-                            onClick={() => toggle()}
+                            onClick={() => deleteRecipe()}
                         />
                     </div>
             }

@@ -25,9 +25,28 @@ const Store = (props) => {
         myIngredients: []
     });
  
+
+    const selectIngredient = ({ingredient}) => {
+
+        const mapIngredients = ingredients.filter(ingredient => {
+            return ingredient.name
+        })
+
+        const listRecipe = list.myIngredients.push(ingredient.name);
+
+        console.log(list.myIngredients, 'lista para las recetas');
+        console.log(listRecipe, 'listercipe');
+
+        // //setList(list.myIngredients);
+
+        // setList(list.myIngredients.push(ingredients.name));
+        // console.log(list.myIngredients);
+    }
+
+    console.log(list.myIngredients, '58 listmyingredients');
     
     const getRecipes = async () => {
-        const recipeData = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients${apiKey}${query}cheese`);
+        const recipeData = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients${apiKey}${query}${list.myIngredients}`);
         //APIKEY y props.myIngredients[]
 
         props.dispatch({type: SAVE, payload: recipeData.data});
@@ -37,15 +56,6 @@ const Store = (props) => {
         }, 500);
 
     };
-
-    const selectIngredient = () => {
-        // const listRecipe = list.myIngredients.push(ingredients.name);
-
-        // console.log(list.myIngredients, 'lista para las recetas');
-
-        // setList(list.myIngredients.push(ingredients.name));
-        // console.log(list.myIngredients);
-    }
 
 
     return (
@@ -71,7 +81,7 @@ const Store = (props) => {
                     <div className="ingredient-container">
                         {
                             ingredients.map(ingredient => 
-                                <div onClick={() => selectIngredient()}>
+                                <div onClick={() => selectIngredient({ingredient})}>
                                     <div className = "map-ingredient">
                                         {ingredient.name}
                                     </div>
