@@ -1,4 +1,4 @@
-export const SEARCH_FOOD = 'search';
+export const SEARCH_FOOD = 'search_food';
 export const SAVE = 'search';
 export const SAVE_DETAILS = 'save_details';
 export const STORE_FOOD = 'store_food';

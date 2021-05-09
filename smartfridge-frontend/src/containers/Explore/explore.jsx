@@ -7,7 +7,9 @@ import fruits from '../../assets/fruits.png';
 
 const Explore = (props) => {
 
-    console.log(props, 'estas son las props')
+    
+
+    console.log(props, 'estas son las props');
 
     return (
         <div className="explore-main-container">
@@ -25,8 +27,9 @@ const Explore = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        foodData: state.recipeReducer.foodData, 
-        recipeData: state.recipeReducer.recipeData
+        foodInfo: state.recipeReducer,
+        user: state.userReducer
+
     }
 }
 

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import Header from '../../components/Header/header';
 import axios from 'axios';
 import {connect} from 'react-redux';
-import {LOGIN} from '../../redux/types/recipeType';
+
 
 // import Carousel from '../../components/Carousel/carousel';
 

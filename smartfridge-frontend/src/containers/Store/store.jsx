@@ -39,10 +39,11 @@ const Store = (props) => {
         console.log(list.myIngredients, 'lista para las recetas');
         console.log(listRecipe, 'listercipe');
 
-        // props.dispatch({type: SEARCH_FOOD, payload: ingredient.id});
+        props.dispatch({type: SEARCH_FOOD, payload: ingredient.id});
     };
 
     console.log(list.myIngredients, '58 listmyingredients');
+
     
     const getRecipes = async () => {
         const recipeData = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients${apiKey}${query}${list.myIngredients}`);
@@ -53,6 +54,22 @@ const Store = (props) => {
             history.push('/result');
         }, 500);
 
+    };
+
+    const getFoodInfo = async ({ingredient}) => {
+        const mapIngredients = ingredients.filter(ingredient => {
+            return ingredient.id
+        })
+        console.log(ingredient.id, 'ingredient.id')
+        const id = ingredient.id;
+        // https://api.spoonacular.com/food/ingredients/9266/information?amount=1
+        const foodInfo = await axios.get(`https://api.spoonacular.com/food/ingredients/${id}/information${apiKey}`);
+        console.log(foodInfo, 'esto es food info')
+        props.dispatch({type: SEARCH_FOOD, payload: foodInfo});
+
+        return setTimeout(() => {
+            history.push('/explore');
+        }, 500);
     };
 
 
@@ -79,11 +96,12 @@ const Store = (props) => {
                     <div className="ingredient-container">
                         {
                             ingredients.map(ingredient => 
-                                <div onClick={() => selectIngredient({ingredient})}>
-                                    <div className = "map-ingredient">
+                                <div >
+                                    <div className = "map-ingredient" onClick={() => selectIngredient({ingredient})}>
                                         {ingredient.name}
                                     </div>
                                     <img className="map-image" src={ingredient.image}/>
+                                    <button onClick={() => getFoodInfo({ingredient})}>FOOD INFO</button>
                                 </div>
                             )
                         }

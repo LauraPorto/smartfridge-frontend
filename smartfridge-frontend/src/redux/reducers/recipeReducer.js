@@ -7,7 +7,7 @@ import {SAVE_FAV} from '../types/recipeType';
 const initialState = {
   recipeData: {}, 
   recipeDetails: {},
-  foodData: {}, 
+  foodInfo: {}, 
   myIngredients: [], 
   favorites: {}
 };
@@ -27,7 +27,7 @@ const recipeReducer = (state = initialState, action) => {
     case SEARCH_FOOD:
       return {
         ...state,
-        foodData: action.payload
+        foodInfo: action.payload
       }
     case STORE_FOOD:
       return {
