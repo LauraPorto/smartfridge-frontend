@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import {SAVE_DETAILS} from '../../redux/types/recipeType';
 
 const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
-const query = '&ingredients=';
+
 
 const Result = (props) => {
 
