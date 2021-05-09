@@ -3,7 +3,6 @@ import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {STORE_FOOD} from '../../redux/types/recipeType';
-import {SEARCH} from '../../redux/types/recipeType';
 const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 const query = '&query=';
 
@@ -41,31 +40,6 @@ const Search = (props) => {
         })
            
     };
-
-
-
-    // const toSearchFood = async () => {
-
-    //     let foodData = await axios.get(`https://api.spoonacular.com/food/search${apiKey}${query}${search.searchBox}`);
-
-    //     https://api.spoonacular.com/food/ingredients/{id}/information
-
-    //     console.log(foodData.data.searchResults, 'resultado de foodData');
-
-    //     const arraySearch = foodData.data.searchResults.filter(explore => 
-    //         explore.name.toLowerCase().includes(search.searchBox.toLowerCase())
-    //     )
-   
-    //     props.dispatch({type: SEARCH, payload: foodData.data});
-
-    //     setSearch({
-    //         ...search, searchBox: arraySearch
-    //     })
-
-    //     return setTimeout(() => {
-    //         history.push('/explore');
-    //     }, 500);
-    // };
 
     return (
         <div className='search-container'>
