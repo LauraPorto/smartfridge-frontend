@@ -1,5 +1,6 @@
 import React from 'react';
 import Login from '../Login/login';
+import {useHistory} from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDoorOpen } from '@fortawesome/free-solid-svg-icons';
@@ -10,10 +11,12 @@ import {LOGOUT} from '../../redux/types/userType';
 
 const Header = (props) => {
 
-    
+    const history = useHistory();
+
     const logOut = () => {
         setTimeout(()=> {            
             props.dispatch({ type: LOGOUT, payload : {}});
+            history.push('/');
         },500);
     }
 
