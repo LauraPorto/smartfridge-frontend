@@ -47,7 +47,7 @@
         background-color: #cad6cc; }
         .footer-container .footer-distributed .footer-right .button-footer:hover {
           height: 3.5em;
-          width: 21em;
+          width: 6em;
           border: 3px solid #93b496; }
 
 .header-container {
@@ -55,7 +55,7 @@
   height: 80px;
   width: 100vw;
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 2em; }
+  font-size: 1.5em; }
   .header-container .nav {
     display: flex;
     flex-direction: row;
@@ -75,7 +75,7 @@
     background-color: #cad6cc; }
     .header-container .btn-login:hover {
       height: 3.5em;
-      width: 21em;
+      width: 6em;
       border: 3px solid #93b496; }
 
 .search-container {
@@ -107,6 +107,7 @@
     width: 4em; }
 
 .ingredient-main {
+  font-family: "Rasa", serif;
   height: 2em;
   width: 10em;
   display: flex;
@@ -182,42 +183,43 @@
       height: 30em;
       background-color: beige; }
 
-.main-store .body-store .store-fridge {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  background-color: #d4a7a7; }
-  .main-store .body-store .store-fridge .fridge-menu {
+.main-store {
+  font-family: "Rasa", serif; }
+  .main-store .body-store .store-fridge {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 35em;
-    background-color: #82aa82; }
-    .main-store .body-store .store-fridge .fridge-menu .search-store-container {
+    background-color: #d4a7a7; }
+    .main-store .body-store .store-fridge .fridge-menu {
       display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: right;
-      height: 3em; }
-
-.main-store .body-store .my-products-store {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 0px 0px;
-  height: 15em; }
-  .main-store .body-store .my-products-store .ingredient-container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      width: 35em;
+      background-color: #82aa82; }
+      .main-store .body-store .store-fridge .fridge-menu .search-store-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: right;
+        height: 3em; }
+  .main-store .body-store .my-products-store {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 3em;
-    height: 10em;
-    width: 16em; }
-    .main-store .body-store .my-products-store .ingredient-container .map-ingredient {
-      background-color: aqua;
-      cursor: pointer; }
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0px 0px;
+    height: 15em; }
+    .main-store .body-store .my-products-store .ingredient-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 3em;
+      height: 10em;
+      width: 16em; }
+      .main-store .body-store .my-products-store .ingredient-container .map-ingredient {
+        background-color: aqua;
+        cursor: pointer; }
 
 .explore-main-container .header-div {
   background-color: transparent;

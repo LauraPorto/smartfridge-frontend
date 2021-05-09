@@ -28,7 +28,7 @@
 	background-color: $background-color;
 	&:hover {
         height: 3.5em;
-        width: 21em;
+        width: 6em;
         border: 3px solid (nth($palette, 3));
     }
 }
