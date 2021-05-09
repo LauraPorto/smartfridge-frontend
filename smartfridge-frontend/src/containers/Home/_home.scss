@@ -4,6 +4,8 @@
     flex-direction: row;
     align-items: center;
 
+    background-color: nth($palette, 1);
+
 
     .cover-container {
                 
@@ -56,26 +58,3 @@
     }
 
 }
-// .page-food {
-
-//     width: $maxWidth;
-   
-//     display: flex; 
-//     flex-direction: row;
-//     justify-content: flex-end;
-    
-//     background-color: yellow;
-
-    
-
-//     .page-img{
-//         background-color: blue;
-//         width: $mp-m;
-//         height: $mp-m;
-//     }
-//     .page-text{
-//         background-color: green;
-//         width: $mp-m;
-//         height: $mp-m;
-//     }
-// }

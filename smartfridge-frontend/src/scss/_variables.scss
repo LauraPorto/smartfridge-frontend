@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Rasa:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Barlow+Semi+Condensed:ital,wght@1,600&family=Rasa:wght@300&display=swap');
+
 
 //Colores
-$palette: (#f8ede3, #307672, #144d53, #1a3c40);
+$palette: (#f1f1f1, #cad6cc, #93b496, #141414);
 
 $brown: #7c7575;
+
+$fontHeader: 'Barlow Condensed', sans-serif;
+$fontBody: 'Rasa', serif;
+$fontButtons: 'Barlow', sans-serif;
 
 //Márgenes y medidas
 $mp-a: 0px;

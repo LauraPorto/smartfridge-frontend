@@ -13,6 +13,8 @@ import { connect } from 'react-redux';
 
 const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 const query = '&ingredients=';
+const url = 'https://spoonacular.com/cdn/ingredients_{250x250}/';
+
 
 const Store = (props) => {
 
@@ -22,14 +24,14 @@ const Store = (props) => {
     useEffect(() => {
 
         let token = props.user.token;
-        console.log(token, 'esto es el token');
 
         if(token === ''){
             history.push('/')
         }
+
     }, [])
 
-    //Hooks para hacer la lista de ingredientes
+    //Hooks para hacer la lista de ingredientes 
     const [list, setList] = useState({
         myIngredients: []
     });
@@ -40,6 +42,7 @@ const Store = (props) => {
         const mapIngredients = ingredients.filter(ingredient => {
             return ingredient.name, ingredient.id
         })
+
 
         console.log(ingredient.id, 'esto es el id');
 
@@ -74,7 +77,6 @@ const Store = (props) => {
                     <img src={kitchen} style={{maxWidth: '100%', width: 'auto', height: '33em'}}></img>
                     <div className="fridge-menu">
                         <button>boton para borrrar</button>
-                        <button>boton para añadir</button>
                         <div className="search-store-container">
                             <Search/>
                         </div>
@@ -92,7 +94,7 @@ const Store = (props) => {
                                     <div className = "map-ingredient" onClick={() => selectIngredient({ingredient})}>
                                         {ingredient.name}
                                     </div>
-                                    <img className="map-image" src={ingredient.image}/>
+                                    <img className="map-image" src={`https://spoonacular.com/cdn/ingredients_{1000x100}/${ingredient.image}`}/>
                                 </div>
                             )
                         }

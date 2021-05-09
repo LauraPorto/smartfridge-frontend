@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {STORE_FOOD} from '../../redux/types/recipeType';
 const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 const query = '&query=';
-
+const url = 'https://spoonacular.com/cdn/ingredients_{250x250}/';
 
 const Search = (props) => {
 
@@ -15,6 +15,8 @@ const Search = (props) => {
     const [search, setSearch] = useState({
         searchBox: ''
     });
+
+    const [imageUrl, setImageUrl] = useState(url);
 
     const handleState = (event) => {
         let data = { ...search, [event.target.name]: event.target.value };
