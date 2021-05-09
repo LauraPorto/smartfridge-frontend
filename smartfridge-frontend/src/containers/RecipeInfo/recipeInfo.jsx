@@ -1,23 +1,31 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import React, {useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 
 import Header from '../../components/Header/header';
 import Recipe from '../../components/Recipe/recipe';
 import Like from '../../components/Like/like';
 
 import {connect} from 'react-redux';
-import {SAVE_FAV} from '../../redux/types/recipeType';
-//Traemos de redux el id de la receta para mostrar sus detalles
+
+
 
 const RecipeInfo = (props) => {
+
+    const history = useHistory();
+
+    useEffect(() => {
+
+        let token = props.user.token;
+        console.log(token, 'esto es el token');
+
+        if(token === ''){
+            history.push('/')
+        }
+    }, [])
 
     const recipeDetails = props.recipeDetails.recipeDetails;
     console.log(recipeDetails, 'detalles de la receta')
 
-    // const selectFavorite = ({recipeDetails}) => {
-    //     //mapeamos el id que trae la api y el title para pasarlo por payload
-    //     props.dispatch({type: SAVE_FAV, payload: })
-    // }
 
     console.log(props, 'estas son las props');
 
@@ -53,9 +61,7 @@ const RecipeInfo = (props) => {
                     <div className="more-ingredients">
                         <div className="extended-ingredients">
                             Algunos ingredientes para añadir
-                            <Like
-                                onClick={() => selectFavorite({recipeDetails})}
-                            />
+                            <Like/>
                         </div>
                     </div>
                     <div className="recipe-instruction">
@@ -70,7 +76,8 @@ const RecipeInfo = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        recipeDetails: state.recipeReducer
+        recipeDetails: state.recipeReducer,
+        user: state.userReducer
     }
 }
 

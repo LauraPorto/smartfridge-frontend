@@ -13,14 +13,25 @@ import { connect } from 'react-redux';
 
 const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 const query = '&ingredients=';
+const url = 'https://spoonacular.com/cdn/ingredients_{250x250}/';
+
 
 const Store = (props) => {
 
     const history = useHistory();
     const ingredients = props.myIngredients.myIngredients;
 
+    useEffect(() => {
 
-    //Hooks para hacer la lista de ingredientes
+        let token = props.user.token;
+
+        if(token === ''){
+            history.push('/')
+        }
+
+    }, [])
+
+    //Hooks para hacer la lista de ingredientes 
     const [list, setList] = useState({
         myIngredients: []
     });
@@ -29,25 +40,24 @@ const Store = (props) => {
     const selectIngredient = ({ingredient}) => {
 
         const mapIngredients = ingredients.filter(ingredient => {
-            return ingredient.name
+            return ingredient.name, ingredient.id
         })
+
+
+        console.log(ingredient.id, 'esto es el id');
 
         const listRecipe = list.myIngredients.push(ingredient.name);
 
         console.log(list.myIngredients, 'lista para las recetas');
         console.log(listRecipe, 'listercipe');
 
-        // //setList(list.myIngredients);
-
-        // setList(list.myIngredients.push(ingredients.name));
-        // console.log(list.myIngredients);
-    }
+    };
 
     console.log(list.myIngredients, '58 listmyingredients');
+
     
     const getRecipes = async () => {
         const recipeData = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients${apiKey}${query}${list.myIngredients}`);
-        //APIKEY y props.myIngredients[]
 
         props.dispatch({type: SAVE, payload: recipeData.data});
 
@@ -67,7 +77,6 @@ const Store = (props) => {
                     <img src={kitchen} style={{maxWidth: '100%', width: 'auto', height: '33em'}}></img>
                     <div className="fridge-menu">
                         <button>boton para borrrar</button>
-                        <button>boton para añadir</button>
                         <div className="search-store-container">
                             <Search/>
                         </div>
@@ -81,11 +90,11 @@ const Store = (props) => {
                     <div className="ingredient-container">
                         {
                             ingredients.map(ingredient => 
-                                <div onClick={() => selectIngredient({ingredient})}>
-                                    <div className = "map-ingredient">
+                                <div >
+                                    <div className = "map-ingredient" onClick={() => selectIngredient({ingredient})}>
                                         {ingredient.name}
                                     </div>
-                                    <img className="map-image" src={ingredient.image}/>
+                                    <img className="map-image" src={`https://spoonacular.com/cdn/ingredients_{1000x100}/${ingredient.image}`}/>
                                 </div>
                             )
                         }
@@ -101,8 +110,10 @@ const Store = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        myIngredients: state.recipeReducer
+        myIngredients: state.recipeReducer,
+        user: state.userReducer
     }
 }
+
 
 export default connect(mapStateToProps)(Store);

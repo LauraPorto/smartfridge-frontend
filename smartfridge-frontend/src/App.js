@@ -11,7 +11,6 @@ import Store from './containers/Store/store';
 import About from './containers/About/about';
 import Explore from './containers/Explore/explore';
 import HomeUser from './containers/HomeUser/homeUser';
-import HomeAdmin from './containers/HomeAdmin/homeAdmin';
 import RecipeInfo from './containers/RecipeInfo/recipeInfo';
 import Result from './containers/Result/result';
 
@@ -29,7 +28,6 @@ function App() {
           <Route path='/about' exact component={About}/> 
           <Route path='/explore' exact component={Explore}/> 
           <Route path='/home-user' exact component={HomeUser}/> 
-          <Route path='/home-admin' exact component={HomeAdmin}/> 
           <Route path='/recipe-info' exact component={RecipeInfo}/> 
           <Route path='/result' exact component={Result}/> 
         </Switch>

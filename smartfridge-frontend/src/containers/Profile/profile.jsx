@@ -15,6 +15,16 @@ import {LOGOUT} from '../../redux/types/userType';
 const Profile = (props) => {
 
     const history = useHistory();
+    console.log(props.user, 'esto es props.user')
+
+    useEffect(() => {
+
+        let token = props.user.token;
+
+        if(token === ''){
+            history.push('/')
+        }
+    }, [])
 
     //Hooks para la validación de campos
     const [validationResult, setValidationResult] = useState({
@@ -25,16 +35,6 @@ const Profile = (props) => {
     //Hooks para crear el estado de los datos del usuario
     const [data, setDataUser] = useState({ name: '' });
     
-    useEffect(() => {
-        let token = props.user?.token;
-
-        if (!token) {
-            return;
-        }
-        
-    }, []);
-
-
 
     const handleState = (event) => {
         let newData = { ...data, [event.target.name]: event.target.value };
@@ -57,8 +57,7 @@ const Profile = (props) => {
         });
 
         try {
-            let id = props.user?._id;
-            let token = props.user?.token;
+            let id = props.user.user._id;
 
             await axios.put(`http://localhost:3001/user/${id}`);
 
@@ -70,8 +69,7 @@ const Profile = (props) => {
 
     const deleteUser = async () => {
         try {
-            let id = props.user?._id;
-            let token = props.user?.token;
+            let id = props.user.user._id;
 
             await axios.delete(`http://localhost:3001/user/${id}`);
 
@@ -98,27 +96,27 @@ const Profile = (props) => {
                 <div className='form-container'>
                     <FormGroup>
                         <Label for='name'>Name:</Label>
-                        <Input type='text' id='name' name='name' placeholder={props.user.name} onChange={handleState} valid={validationResult.validated && !validationResult.name} invalid={validationResult.validated && validationResult.name} />
+                        <Input type='text' id='name' name='name' placeholder={props.user.user.name} onChange={handleState} valid={validationResult.validated && !validationResult.name} invalid={validationResult.validated && validationResult.name} />
                         <FormFeedback>{validationResult.name}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for='surname'>Surname:</Label>
-                        <Input type='text' id='surname' name='surname' placeholder={props.user.surname} onChange={handleState} valid={validationResult.validated && !validationResult.surname} invalid={validationResult.validated && validationResult.surname}/>
+                        <Input type='text' id='surname' name='surname' placeholder={props.user.user.surname} onChange={handleState} valid={validationResult.validated && !validationResult.surname} invalid={validationResult.validated && validationResult.surname}/>
                         <FormFeedback>{validationResult.surname}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for='phone'>Teléfono : </Label>
-                        <Input type='number' id='phone' name='phone' placeholder={props.user.phone} onChange={handleState} valid={validationResult.validated && !validationResult.phone} invalid={validationResult.validated && validationResult.phone} />
+                        <Input type='number' id='phone' name='phone' placeholder={props.user.user.phone} onChange={handleState} valid={validationResult.validated && !validationResult.phone} invalid={validationResult.validated && validationResult.phone} />
                         <FormFeedback>{validationResult.phone}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for='country'>Country:</Label>
-                        <Input type='text' id='country' name='country' placeholder={props.user.country} onChange={handleState} valid={validationResult.validated && !validationResult.country} invalid={validationResult.validated && validationResult.country} />
+                        <Input type='text' id='country' name='country' placeholder={props.user.user.country} onChange={handleState} valid={validationResult.validated && !validationResult.country} invalid={validationResult.validated && validationResult.country} />
                         <FormFeedback>{validationResult.country}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label form='email'>Email:</Label>
-                        <Input type='text' id='email' name='email' placeholder={props.user.email} onChange={handleState} valid={validationResult.validated && !validationResult.email} invalid={validationResult.validated && validationResult.email} />
+                        <Input type='text' id='email' name='email' placeholder={props.user.user.email} onChange={handleState} valid={validationResult.validated && !validationResult.email} invalid={validationResult.validated && validationResult.email} />
                         <FormFeedback>{validationResult.email}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
@@ -139,8 +137,8 @@ const Profile = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.userReducer.user, 
-        token: state.userReducer.token
+        user: state.userReducer, 
+        token: state.userReducer
     }
 }
 

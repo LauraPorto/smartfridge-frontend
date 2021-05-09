@@ -11,20 +11,20 @@ const Recipe = (props) => {
     return (
         <div>
             <p>
-                <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+                <a className="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
             </p>
-            <div class="row">
-                <div class="col">
-                    <div class="collapse multi-collapse" id="multiCollapseExample1">
-                        <div class="card card-body">
+            <div className="row">
+                <div className="col">
+                    <div className="collapse multi-collapse" id="multiCollapseExample1">
+                        <div className="card card-body">
                             Número de comensales
                             Ingredientes
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="collapse multi-collapse" id="multiCollapseExample2">
-                        <div class="card card-body">
+                <div className="col">
+                    <div className="collapse multi-collapse" id="multiCollapseExample2">
+                        <div className="card card-body">
                             Resumen de las instrucciones
                         </div>
                     </div>

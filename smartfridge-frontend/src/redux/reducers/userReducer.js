@@ -16,11 +16,6 @@ const userReducer = (state = initialState, action) => {
       }
     case LOGOUT:
       return initialState
-      // return {
-      //   ...state,
-      //   user: initialState, 
-      //   token: initialState
-      // }
     case UPDATE:
       return {
         ...state, 

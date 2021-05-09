@@ -18,3 +18,17 @@
         border: 3px solid $borderColor (nth($palette, 3));
     }
 };
+
+@mixin button ($background-color: nth($palette, 2)) {
+	font-family: $fontButtons;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+	background-color: $background-color;
+	&:hover {
+        height: 3.5em;
+        width: 6em;
+        border: 3px solid (nth($palette, 3));
+    }
+}

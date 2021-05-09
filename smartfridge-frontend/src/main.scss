@@ -9,7 +9,7 @@
 @import './components/Search/search';
 @import './components/Recipe/recipe';
 @import './components/Ingredient/ingredient';
-@import './components/Like/like';
+
 
 //Containers
 @import './containers/Home/home';
@@ -19,6 +19,5 @@
 @import './containers/Explore/explore';
 @import './containers/About/about';
 @import './containers/HomeUser/homeUser';
-@import './containers/HomeAdmin/homeAdmin';
 @import './containers/RecipeInfo/recipeInfo';
 @import './containers/Result/result';

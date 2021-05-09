@@ -1,5 +1,6 @@
 import React from 'react';
 import Login from '../Login/login';
+import {useHistory} from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDoorOpen } from '@fortawesome/free-solid-svg-icons';
@@ -10,10 +11,12 @@ import {LOGOUT} from '../../redux/types/userType';
 
 const Header = (props) => {
 
-    
+    const history = useHistory();
+
     const logOut = () => {
         setTimeout(()=> {            
             props.dispatch({ type: LOGOUT, payload : {}});
+            history.push('/');
         },500);
     }
 
@@ -24,7 +27,7 @@ const Header = (props) => {
                 <img src={fridge} style={{width: '2em', height: '2em', marginRight: '35em'}} alt='SMART FRIDGE'></img>
             </div>   
             {
-                !props.user.token
+                props.token === ''
                 ?
                 <>
                 <div className="nav-item">
