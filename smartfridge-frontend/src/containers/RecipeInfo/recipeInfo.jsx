@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, {useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 
 import Header from '../../components/Header/header';
 import Recipe from '../../components/Recipe/recipe';
@@ -10,6 +10,18 @@ import {connect} from 'react-redux';
 
 
 const RecipeInfo = (props) => {
+
+    const history = useHistory();
+
+    useEffect(() => {
+
+        let token = props.user.token;
+        console.log(token, 'esto es el token');
+
+        if(token === ''){
+            history.push('/')
+        }
+    }, [])
 
     const recipeDetails = props.recipeDetails.recipeDetails;
     console.log(recipeDetails, 'detalles de la receta')
@@ -64,7 +76,8 @@ const RecipeInfo = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        recipeDetails: state.recipeReducer
+        recipeDetails: state.recipeReducer,
+        user: state.userReducer
     }
 }
 

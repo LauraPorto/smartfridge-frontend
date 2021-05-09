@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
@@ -19,6 +19,15 @@ const Store = (props) => {
     const history = useHistory();
     const ingredients = props.myIngredients.myIngredients;
 
+    useEffect(() => {
+
+        let token = props.user.token;
+        console.log(token, 'esto es el token');
+
+        if(token === ''){
+            history.push('/')
+        }
+    }, [])
 
     //Hooks para hacer la lista de ingredientes
     const [list, setList] = useState({
@@ -84,7 +93,6 @@ const Store = (props) => {
                                         {ingredient.name}
                                     </div>
                                     <img className="map-image" src={ingredient.image}/>
-                                    {/* <button onClick={() => getFoodInfo({ingredient})}>FOOD INFO</button> */}
                                 </div>
                             )
                         }
@@ -100,7 +108,8 @@ const Store = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        myIngredients: state.recipeReducer
+        myIngredients: state.recipeReducer,
+        user: state.userReducer
     }
 }
 

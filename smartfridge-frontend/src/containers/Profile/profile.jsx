@@ -16,6 +16,17 @@ const Profile = (props) => {
 
     const history = useHistory();
 
+
+    useEffect(() => {
+
+        let token = props.user.token;
+        console.log(token, 'esto es el token');
+
+        if(token === ''){
+            history.push('/')
+        }
+    }, [])
+
     //Hooks para la validación de campos
     const [validationResult, setValidationResult] = useState({
         validated: false,
@@ -139,8 +150,8 @@ const Profile = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.userReducer.user, 
-        token: state.userReducer.token
+        user: state.userReducer, 
+        token: state.userReducer
     }
 }
 

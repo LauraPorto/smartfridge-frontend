@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import Header from '../../components/Header/header';
 import axios from 'axios';
 import {connect} from 'react-redux';
@@ -7,6 +8,18 @@ import {connect} from 'react-redux';
 const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 
 const HomeUser = (props) => {
+
+    const history = useHistory();
+
+    useEffect(() => {
+
+        let token = props.user.token;
+        console.log(token, 'esto es el token');
+
+        if(token === ''){
+            history.push('/')
+        }
+    }, [])
 
     const name = props.user.user.name;
   

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
@@ -13,10 +13,20 @@ const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 
 const Result = (props) => {
 
-    console.log(props, 'esto son PROPS');
-    console.log(props.recipeData.id, 'esto es recipe.data')
-
     const history = useHistory();
+
+    useEffect(() => {
+
+        let token = props.user.token;
+        console.log(token, 'esto es el token');
+
+        if(token === ''){
+            history.push('/')
+        }
+    }, [])
+
+
+
     const recipes = props.recipeData.recipeData;
     console.log(recipes, 'this is recipes');
 
@@ -68,7 +78,8 @@ const Result = (props) => {
 //Recibimos por redux los datos de mi store, donde guardamos los ingredientes
 const mapStateToProps = (state) => {
     return {
-        recipeData: state.recipeReducer
+        recipeData: state.recipeReducer, 
+        user: state.userReducer
     }
 }
 
