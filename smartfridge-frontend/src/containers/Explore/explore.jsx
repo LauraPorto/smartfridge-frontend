@@ -1,15 +1,22 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Header from '../../components/Header/header';
-
+import axios from 'axios';
 import {connect} from 'react-redux';
 import Search from '../../components/Search/search';
 import fruits from '../../assets/fruits.png';
 
+const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
+
 const Explore = (props) => {
 
-    
+    useEffect( () => {
+        getRandom();
+    }, [])
 
-    console.log(props, 'estas son las props');
+    const getRandom = async () => {
+        const random = await axios.get(`https://api.spoonacular.com/recipes/random${apiKey}`);
+        console.log(random.data.recipes, 'recetas aleatorias');
+    };
 
     return (
         <div className="explore-main-container">

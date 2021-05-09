@@ -56,21 +56,21 @@ const Store = (props) => {
 
     };
 
-    const getFoodInfo = async ({ingredient}) => {
-        const mapIngredients = ingredients.filter(ingredient => {
-            return ingredient.id
-        })
-        console.log(ingredient.id, 'ingredient.id')
-        const id = ingredient.id;
-        // https://api.spoonacular.com/food/ingredients/9266/information?amount=1
-        const foodInfo = await axios.get(`https://api.spoonacular.com/food/ingredients/${id}/information${apiKey}`);
-        console.log(foodInfo, 'esto es food info')
-        props.dispatch({type: SEARCH_FOOD, payload: foodInfo});
+    // const getFoodInfo = async ({ingredient}) => {
+    //     const mapIngredients = ingredients.filter(ingredient => {
+    //         return ingredient.id
+    //     })
+    //     console.log(ingredient.id, 'ingredient.id')
+    //     const id = ingredient.id;
+    //     // https://api.spoonacular.com/food/ingredients/9266/information?amount=1
+    //     const foodInfo = await axios.get(`https://api.spoonacular.com/food/ingredients/${id}/information${apiKey}`);
+    //     console.log(foodInfo, 'esto es food info')
+    //     props.dispatch({type: SEARCH_FOOD, payload: foodInfo});
 
-        return setTimeout(() => {
-            history.push('/explore');
-        }, 500);
-    };
+    //     return setTimeout(() => {
+    //         history.push('/explore');
+    //     }, 500);
+    // };
 
 
     return (
@@ -101,7 +101,7 @@ const Store = (props) => {
                                         {ingredient.name}
                                     </div>
                                     <img className="map-image" src={ingredient.image}/>
-                                    <button onClick={() => getFoodInfo({ingredient})}>FOOD INFO</button>
+                                    {/* <button onClick={() => getFoodInfo({ingredient})}>FOOD INFO</button> */}
                                 </div>
                             )
                         }
