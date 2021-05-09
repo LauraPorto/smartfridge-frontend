@@ -4,8 +4,6 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 
 
-// import Carousel from '../../components/Carousel/carousel';
-
 const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 
 const HomeUser = (props) => {

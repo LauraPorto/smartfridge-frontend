@@ -1,4 +1,3 @@
-import { SEARCH_FOOD } from '../types/recipeType';
 import { SAVE } from '../types/recipeType';
 import { SAVE_DETAILS } from '../types/recipeType';
 import {STORE_FOOD} from '../types/recipeType';
@@ -7,7 +6,6 @@ import {SAVE_FAV} from '../types/recipeType';
 const initialState = {
   recipeData: {}, 
   recipeDetails: {},
-  foodInfo: {}, 
   myIngredients: [], 
   favorites: {}
 };
@@ -23,11 +21,6 @@ const recipeReducer = (state = initialState, action) => {
       return{
         ...state,
         recipeDetails: action.payload
-      }
-    case SEARCH_FOOD:
-      return {
-        ...state,
-        foodInfo: action.payload
       }
     case STORE_FOOD:
       return {
