@@ -50,7 +50,7 @@ const Like = (props) => {
     const deleteRecipe = async () => {
         toggle();
 
-        let result =  await axios.delete(`http://localhost:3001/store/${codeRecipe.userId}`, codeRecipe);
+        let result =  await axios.delete('http://localhost:3001/store/', codeRecipe);
         console.log(result, 'this is result');
         alert('receta borrada de favoritos');
     }
