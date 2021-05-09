@@ -26,47 +26,52 @@ const Search = (props) => {
     const toSearch = async () => {
 
         let ingredients = await axios.get(`https://api.spoonacular.com/food/ingredients/search${apiKey}${query}${search.searchBox}`);
-        
 
-        console.log(ingredients.data.results, 'los ingredientes');
+
+        console.log(ingredients.data.results.id, 'los ingredientes');
+       
 
         const arraySearch = ingredients.data.results.filter(explore => 
             explore.name.toLowerCase().includes(search.searchBox.toLowerCase())
         )
         props.dispatch({type: STORE_FOOD, payload: ingredients.data.results});
-        setSearch({
-            ...search, searchBox: arraySearch
-        })
-        
-   
-    };
-
-    const toSearchFood = async () => {
-
-        let foodData = await axios.get(`https://api.spoonacular.com/food/search${apiKey}${query}${search.searchBox}`);
-
-        console.log(foodData.data.searchResults, 'resultado de foodData');
-
-        const arraySearch = foodData.data.searchResults.filter(explore => 
-            explore.name.toLowerCase().includes(search.searchBox.toLowerCase())
-        )
-   
-        props.dispatch({type: SEARCH, payload: foodData.data});
 
         setSearch({
             ...search, searchBox: arraySearch
         })
-
-        return setTimeout(() => {
-            history.push('/explore');
-        }, 500);
+           
     };
+
+
+
+    // const toSearchFood = async () => {
+
+    //     let foodData = await axios.get(`https://api.spoonacular.com/food/search${apiKey}${query}${search.searchBox}`);
+
+    //     https://api.spoonacular.com/food/ingredients/{id}/information
+
+    //     console.log(foodData.data.searchResults, 'resultado de foodData');
+
+    //     const arraySearch = foodData.data.searchResults.filter(explore => 
+    //         explore.name.toLowerCase().includes(search.searchBox.toLowerCase())
+    //     )
+   
+    //     props.dispatch({type: SEARCH, payload: foodData.data});
+
+    //     setSearch({
+    //         ...search, searchBox: arraySearch
+    //     })
+
+    //     return setTimeout(() => {
+    //         history.push('/explore');
+    //     }, 500);
+    // };
 
     return (
         <div className='search-container'>
             <input className='search-box' type='search' name='searchBox' onChange={handleState}></input>
             <button type='submit' className='search-button' onClick={() => toSearch()}>SEARCH</button>
-            <button type='submit' onClick={() => toSearchFood()}>SEARCH NUTRIENTS</button>
+            {/* <button type='submit' onClick={() => toSearchFood()}>SEARCH NUTRIENTS</button> */}
         </div>
     )
 }

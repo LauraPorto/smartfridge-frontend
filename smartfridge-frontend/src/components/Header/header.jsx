@@ -24,7 +24,7 @@ const Header = (props) => {
                 <img src={fridge} style={{width: '2em', height: '2em', marginRight: '35em'}} alt='SMART FRIDGE'></img>
             </div>   
             {
-                !props.user.token
+                props.token === ''
                 ?
                 <>
                 <div className="nav-item">

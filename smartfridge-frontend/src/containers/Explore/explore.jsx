@@ -5,7 +5,10 @@ import {connect} from 'react-redux';
 import Search from '../../components/Search/search';
 import fruits from '../../assets/fruits.png';
 
-const Explore = () => {
+const Explore = (props) => {
+
+    console.log(props, 'estas son las props')
+
     return (
         <div className="explore-main-container">
             <div className="header-div"> <Header/> </div>
@@ -22,7 +25,8 @@ const Explore = () => {
 
 const mapStateToProps = (state) => {
     return {
-        foodData: state.foodData
+        foodData: state.recipeReducer, 
+        recipeData: state.recipeReducer
     }
 }
 

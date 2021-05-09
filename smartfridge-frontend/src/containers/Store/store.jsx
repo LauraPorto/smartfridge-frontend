@@ -8,7 +8,7 @@ import Header from '../../components/Header/header';
 
 import kitchen from '../../assets/kitchen.jpeg';
 
-import { SAVE } from '../../redux/types/recipeType';
+import { SAVE, SEARCH } from '../../redux/types/recipeType';
 import { connect } from 'react-redux';
 
 const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
@@ -29,8 +29,13 @@ const Store = (props) => {
     const selectIngredient = ({ingredient}) => {
 
         const mapIngredients = ingredients.filter(ingredient => {
-            return ingredient.name
+            return ingredient.name, ingredient.id
         })
+
+        const id = ingredient.id;
+        console.log(id, 'esto es el id');
+
+        props.dispatch({type: SEARCH, payload: id});
 
         const listRecipe = list.myIngredients.push(ingredient.name);
 
