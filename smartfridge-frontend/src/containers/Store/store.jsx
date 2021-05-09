@@ -8,7 +8,7 @@ import Header from '../../components/Header/header';
 
 import kitchen from '../../assets/kitchen.jpeg';
 
-import { SAVE, SEARCH } from '../../redux/types/recipeType';
+import { SAVE, SEARCH_FOOD } from '../../redux/types/recipeType';
 import { connect } from 'react-redux';
 
 const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
@@ -32,17 +32,15 @@ const Store = (props) => {
             return ingredient.name, ingredient.id
         })
 
-        const id = ingredient.id;
-        console.log(id, 'esto es el id');
-
-        props.dispatch({type: SEARCH, payload: id});
+        console.log(ingredient.id, 'esto es el id');
 
         const listRecipe = list.myIngredients.push(ingredient.name);
 
         console.log(list.myIngredients, 'lista para las recetas');
         console.log(listRecipe, 'listercipe');
 
-    }
+        // props.dispatch({type: SEARCH_FOOD, payload: ingredient.id});
+    };
 
     console.log(list.myIngredients, '58 listmyingredients');
     
@@ -104,5 +102,6 @@ const mapStateToProps = (state) => {
         myIngredients: state.recipeReducer
     }
 }
+
 
 export default connect(mapStateToProps)(Store);

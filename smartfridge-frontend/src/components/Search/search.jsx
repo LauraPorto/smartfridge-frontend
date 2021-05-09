@@ -28,7 +28,7 @@ const Search = (props) => {
         let ingredients = await axios.get(`https://api.spoonacular.com/food/ingredients/search${apiKey}${query}${search.searchBox}`);
 
 
-        console.log(ingredients.data.results.id, 'los ingredientes');
+        console.log(ingredients.data.results, 'los ingredientes');
        
 
         const arraySearch = ingredients.data.results.filter(explore => 

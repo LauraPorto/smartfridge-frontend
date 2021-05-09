@@ -25,8 +25,8 @@ const Explore = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        foodData: state.recipeReducer, 
-        recipeData: state.recipeReducer
+        foodData: state.recipeReducer.foodData, 
+        recipeData: state.recipeReducer.recipeData
     }
 }
 
