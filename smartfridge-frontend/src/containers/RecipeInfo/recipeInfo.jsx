@@ -54,7 +54,7 @@ const RecipeInfo = (props) => {
                         <div className="extended-ingredients">
                             Algunos ingredientes para añadir
                             <Like
-                                onClick={() => selectFavorite({recipeDetails})}
+                                // onClick={() => selectFavorite({recipeDetails})}
                             />
                         </div>
                     </div>

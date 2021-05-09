@@ -19,26 +19,26 @@ const Result = (props) => {
     const history = useHistory();
     const recipes = props.recipeData.recipeData;
     console.log(recipes, 'this is recipes');
-    // const missedIngredients = recipes.missedIngredients;
-    // console.log(missedIngredients);
 
-    // const getId = (props) => {
-    //     recipes.map(recipe => {
-    //         return recipe.id;
-    //     })
-    // }
 
     
-    const getRecipeInfo = async () => {
+    const getRecipeInfo = async ({recipe}) => {
+ 
+        recipes.filter(recipe => {
+            
+            return recipe.id
+        });
 
+        let id = recipe.id;
+        console.log(id, 'id de la receta');
     
-        const recipeInfo = await axios.get(`https://api.spoonacular.com/recipes/633678/information${apiKey}&includeNutrition=true`);
+        const recipeInfo = await axios.get(`https://api.spoonacular.com/recipes/${id}/information${apiKey}&includeNutrition=true`);
         props.dispatch({type: SAVE_DETAILS, payload: recipeInfo.data});
 
         return setTimeout(() => {
-            history.push('/recipeInfo');
+            history.push('/recipe-info');
         }, 500);
-    }
+    };
    
     return (
         <div>
@@ -48,7 +48,7 @@ const Result = (props) => {
                 <div className="body-results">
                     {
                         recipes.map(recipe => 
-                            <div className="map-recipes" onClick={() => getRecipeInfo()}>
+                            <div className="map-recipes" onClick={() => getRecipeInfo({recipe})}>
                                 <div className = "map-recipes-header">
                                     {recipe.title}
                                     {recipe.id}

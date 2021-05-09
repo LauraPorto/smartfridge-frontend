@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
@@ -37,17 +37,12 @@ const Store = (props) => {
         console.log(list.myIngredients, 'lista para las recetas');
         console.log(listRecipe, 'listercipe');
 
-        // //setList(list.myIngredients);
-
-        // setList(list.myIngredients.push(ingredients.name));
-        // console.log(list.myIngredients);
     }
 
     console.log(list.myIngredients, '58 listmyingredients');
     
     const getRecipes = async () => {
         const recipeData = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients${apiKey}${query}${list.myIngredients}`);
-        //APIKEY y props.myIngredients[]
 
         props.dispatch({type: SAVE, payload: recipeData.data});
 
