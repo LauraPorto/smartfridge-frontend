@@ -153,7 +153,7 @@
     width: 30em; }
 
 .main-container {
-  background-color: grey;
+  background-color: #f1f1f1;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -163,16 +163,33 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    border: 1.5px solid;
+    border-color: gray;
+    margin: 2em;
     background-color: #cad6cc;
-    height: 40em;
-    width: 60em; }
+    height: 35em;
+    width: 60em;
+    box-shadow: 1px 0px 7px 8px gray; }
     .main-container .register-container .img-container {
-      width: 25em; }
+      width: 27.9em; }
     .main-container .register-container .form-container {
       width: 25em;
-      height: 30em;
-      background-color: beige; }
+      height: 35em;
+      margin: 1em; }
+      .main-container .register-container .form-container Input {
+        background-color: #cad6cc;
+        border-color: #f1f1f1; }
+      .main-container .register-container .form-container .regiser-button {
+        font-family: "Barlow", sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        background-color: #cad6cc;
+        width: 20em; }
+        .main-container .register-container .form-container .regiser-button:hover {
+          border: 3px solid #93b496; }
 
 .main-store {
   font-family: "Rasa", serif; }

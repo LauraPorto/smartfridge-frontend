@@ -4,7 +4,7 @@ import cooking1 from '../../assets/cooking1.jpg';
 
 import {validateField, validateFields} from '../../uti';
 
-import { Button, FormGroup, Input, Label, FormFeedback } from 'reactstrap';
+import { FormGroup, Input, Label, FormFeedback } from 'reactstrap';
 
 
 const Register = () => {
@@ -91,7 +91,7 @@ const Register = () => {
                         <Input type='password' id='password' name='password' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} />
                         <FormFeedback>{validationResult.password}</FormFeedback>
                     </FormGroup>
-                    <Button color='primary' onClick={sendData}>SIGN UP</Button>
+                    <button className="register-button" color='primary' onClick={sendData}>SIGN UP</button>
                 </div>
             </div>
         </div>
