@@ -2,14 +2,14 @@ import React from 'react'
 import Footer from '../../components/Footer/footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStore, faSearch, faUtensils, faHamburger } from '@fortawesome/free-solid-svg-icons';
-import yogurt from '../../assets/yogurt.jpg';
+import bread from '../../assets/bread.jpg';
 
 const About = () => {
     return (
         <div className="about-main-container">
             <div className="body-about">
                 <div class="card-body-principal mb-3">
-                    <img src={yogurt} style={{width: '100%', height: '40em'}}></img>
+                    <img src={bread} style={{width: '100%', height: '43em'}}></img>
                 </div>
                 <div className="card-body-secundary">
                     <div class="card-body-title">
