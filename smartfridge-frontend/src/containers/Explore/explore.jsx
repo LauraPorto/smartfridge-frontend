@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react'
 
 import axios from 'axios';
-
-
+import Footer from '../../components/Footer/footer';
 import fruits from '../../assets/fruits.png';
 
 const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
@@ -26,6 +25,7 @@ const Explore = (props) => {
             <div className="explore-body">
                 <img src={fruits} style={{maxWidth: '100%', width: 'auto', height: '35em'}}></img>
             </div>
+            <Footer/>
         </div>
 
     )

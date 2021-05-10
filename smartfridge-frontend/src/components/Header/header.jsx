@@ -25,7 +25,7 @@ const Header = (props) => {
             <nav class="navbar navbar-fixed-top navbar-light  navbar-toggler-right">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/">
-                        <img src={fridge} style={{maxWidth: '100%', width: 'auto', height: '2em'}} alt="smartfridge" class="d-inline-block align-top"/>
+                        <img src={fridge} style={{maxWidth: '100%', width: 'auto', height: '1.5em'}} alt="smartfridge" class="d-inline-block align-top"/>
                         SMARTFRIDGE
                     </a>
                 
@@ -53,7 +53,10 @@ const Header = (props) => {
                         <a class="nav-link" href="/store">Store</a>
                     </div>
                     <div className="navbar-buttons-right" onClick={() => logOut()}>
-                        <FontAwesomeIcon icon={faDoorOpen}/>
+                        <FontAwesomeIcon 
+                        icon={faDoorOpen}
+                        style={{width: '3em'}}
+                        />
                     </div>                    
                     </>                   
                     }               
