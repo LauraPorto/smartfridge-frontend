@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 import Search from '../../components/Search/search';
-import Header from '../../components/Header/header';
+
 
 
 import kitchen from '../../assets/kitchen.jpeg';
@@ -70,7 +70,7 @@ const Store = (props) => {
 
     return (
         <div className="main-store">
-            <div className="header-div"> <Header/> </div>
+
            
             <div className="body-store">
                 <div className="store-fridge">

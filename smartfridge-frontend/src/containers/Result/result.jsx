@@ -3,8 +3,6 @@ import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 
-import Header from '../../components/Header/header';
-
 import { connect } from 'react-redux';
 import {SAVE_DETAILS} from '../../redux/types/recipeType';
 
@@ -52,7 +50,6 @@ const Result = (props) => {
    
     return (
         <div>
-            <div className="header-div"> <Header/> </div>
             <div className="main-store">
                 
                 <div className="body-results">

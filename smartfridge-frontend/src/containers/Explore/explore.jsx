@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import Header from '../../components/Header/header';
+
 import axios from 'axios';
 
 
@@ -20,7 +20,6 @@ const Explore = (props) => {
 
     return (
         <div className="explore-main-container">
-            <div className="header-div"> <Header/> </div>
             <div className="searchbox-container">
 
             </div>

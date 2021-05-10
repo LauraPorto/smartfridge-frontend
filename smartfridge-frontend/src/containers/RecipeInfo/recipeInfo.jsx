@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 
-import Header from '../../components/Header/header';
+
 import Recipe from '../../components/Recipe/recipe';
 import Like from '../../components/Like/like';
 
@@ -32,7 +32,6 @@ const RecipeInfo = (props) => {
 
     return (
         <div className="main-recipe-info">
-            <div className="header-div"> <Header/> </div>
             <div className="body-recipe-info">
                 <div className="img-recipe-info">
                     {recipeDetails.image}

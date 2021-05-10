@@ -1,8 +1,7 @@
 import React from 'react'
 
-import Search from '../../components/Search/search';
 import Footer from '../../components/Footer/footer';
-import Header from '../../components/Header/header';
+
 
 import spices from '../../assets/spices.jpg';
 
@@ -15,7 +14,6 @@ const Home = () => {
     return (
         <div className="main-container-home">
             <div className="cover-container">
-                <div className="header-div"> <Header/> </div>
 
                 <div className='cover-page'>
                     <div className="cover-page-img">

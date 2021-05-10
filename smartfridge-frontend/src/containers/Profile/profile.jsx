@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import {validateField, validateFields} from '../../uti';
 import { Button, FormGroup, Input, Label, FormFeedback } from 'reactstrap';
-import Header from '../../components/Header/header';
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserTimes, faAddressCard } from '@fortawesome/free-solid-svg-icons';
@@ -91,7 +91,6 @@ const Profile = (props) => {
     return (
         <div className='main-container-profile'>
             <div className='register-container'>
-            <div className="header-div"> <Header/> </div>
             
                 <div className='form-container'>
                     <FormGroup>

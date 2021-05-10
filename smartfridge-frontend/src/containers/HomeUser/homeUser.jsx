@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
-import Header from '../../components/Header/header';
 import axios from 'axios';
 import {connect} from 'react-redux';
 
@@ -49,7 +48,6 @@ const HomeUser = (props) => {
 
     return (
         <div className="homeuser-main-container">
-            <div className="header-div"> <Header/> </div>
             Hola {name}
 
         </div>
