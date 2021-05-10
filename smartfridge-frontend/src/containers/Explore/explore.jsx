@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 
 import axios from 'axios';
 import Footer from '../../components/Footer/footer';
@@ -10,17 +10,28 @@ const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 
 const Explore = (props) => {
 
-    useEffect( () => {
-        getRandom();
-    }, [])
 
-    const getRandom = async () => {
-        const random = await axios.get(`https://api.spoonacular.com/recipes/random${apiKey}&number=3`);
-        console.log(random.data.recipes, 'recetas aleatorias');
+    // const [random, setRandom] = useState({
+    //     random1: '',
+    //     random2: '',
+    //     random3: ''
+    // })
 
-        const randomRecipe = random.data.recipes;
-        console.log(randomRecipe, 'this is random')
-    };
+    // useEffect( () => {
+    //     getRandom();
+    // }, [])
+
+    // const getRandom = async () => {
+    //     const random = await axios.get(`https://api.spoonacular.com/recipes/random${apiKey}&number=3`);
+    //     console.log(random.data.recipes, 'recetas aleatorias');
+
+    //     const randomRecipes = random.data.recipes;
+    //     const random1 = randomRecipes[0];
+    //     const random2 = randomRecipes[1];
+    //     const random3 = randomRecipes[2];
+
+    //     setRandom(random1(randomRecipes[0]))
+    // };
 
     return (
         <div className="explore-main-container">
