@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    background-color: nth($palette, 1);
     width: $maxWidth;
 
     .body-recipe-info{
@@ -11,24 +11,29 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
+        .img-recipe-info{
+            
+            height: 30em;
+            width: $maxWidth;
+        
+        }
 
         .title-recipe-info{
 
-            h1{
-                font-family: $fontHeader;
-            }
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
             
-        }
-
-        .img-recipe-info{
-            background-color: rgb(170, 170, 231);
-            height: 30em;
-            width: $maxWidth;
+            font-family: $fontHeader;
 
         }
+
         .recipe-info-data {
-            background-color:beige;
+            background-color: nth($palette, 1);
             height: 25em;
+            width: 40em;
         }
         
     }

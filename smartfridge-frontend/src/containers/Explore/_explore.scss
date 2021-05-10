@@ -1,6 +1,11 @@
+.header-container{
+    z-index: 1;
+}
 .explore-main-container {
     display: flex;
     flex-direction: column;
+
+
     .carousel-inner {
         height: 40em;
 

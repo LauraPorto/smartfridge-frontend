@@ -2,83 +2,112 @@ import React, {useEffect, useState} from 'react'
 
 import axios from 'axios';
 import Footer from '../../components/Footer/footer';
-import vegetables3 from '../../assets/vegetables3.jpg';
-import brigitte from '../../assets/brigitte.jpg';
-import pasta from '../../assets/pasta.jpg';
+// import vegetables3 from '../../assets/vegetables3.jpg';
+// import brigitte from '../../assets/brigitte.jpg';
+// import pasta from '../../assets/pasta.jpg';
+
+import {
+    Carousel,
+    CarouselItem,
+    CarouselControl,
+    CarouselIndicators,
+    CarouselCaption
+  } from 'reactstrap';
 
 const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 
 const Explore = (props) => {
 
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [animating, setAnimating] = useState(false);
 
-    // const [random, setRandom] = useState({
-    //     random1: '',
-    //     random2: '',
-    //     random3: ''
-    // })
+    const [randomList, setRandom] = useState([]);
 
-    // useEffect( () => {
-    //     getRandom();
-    // }, [])
+    useEffect( () => {
+        getRandom();
+    }, [])
 
-    // const getRandom = async () => {
-    //     const random = await axios.get(`https://api.spoonacular.com/recipes/random${apiKey}&number=3`);
-    //     console.log(random.data.recipes, 'recetas aleatorias');
+    const getRandom = async () => {
+        // const random = await axios.get(`https://api.spoonacular.com/recipes/random${apiKey}&number=3`);
+        console.log(random.data.recipes, 'recetas aleatorias');
 
-    //     const randomRecipes = random.data.recipes;
-    //     const random1 = randomRecipes[0];
-    //     const random2 = randomRecipes[1];
-    //     const random3 = randomRecipes[2];
+        const randomRecipes = random.data.recipes;
+        setRandom({randomList: randomRecipes});
+        console.log({randomList}, 'lista random')
+        console.log(randomList, 'lista random')
+        const random1 = randomRecipes[0];
+        console.log(random1, 'this is random1')
+        const random2 = randomRecipes[1];
+        const random3 = randomRecipes[2];
 
-    //     setRandom(random1(randomRecipes[0]))
-    // };
+       
+    };
+
+    const items = [
+        {
+          src: {},
+          altText: 'Slide 1',
+          caption: 'Slide 1'
+        },
+        {
+          src: {},
+          altText: 'Slide 2',
+          caption: 'Slide 2'
+        },
+        {
+          src: {},
+          altText: 'Slide 3',
+          caption: 'Slide 3'
+        }
+    ];
+
+      const next = () => {
+        if (animating) return;
+        const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+        setActiveIndex(nextIndex);
+      }
+    
+      const previous = () => {
+        if (animating) return;
+        const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+        setActiveIndex(nextIndex);
+      }
+    
+      const goToIndex = (newIndex) => {
+        if (animating) return;
+        setActiveIndex(newIndex);
+      }
+    
+      const slides = items.map((item) => {
+        return (
+          <CarouselItem
+            onExiting={() => setAnimating(true)}
+            onExited={() => setAnimating(false)}
+            key={item.src}
+          >
+            <img src={item.src} alt={item.altText} style={{width: '100%', height: '30em'}}/>
+            <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+          </CarouselItem>
+        );
+      });
 
     return (
         <div className="explore-main-container">
-            <div className="container-carousel">
-
-                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        <img src={pasta} style={{width: '100%', height: 'auto'}} class="d-block w-100" alt="..."/>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Plato 1</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
-                        </div>
-                        </div>
-                        <div class="carousel-item">
-                        <img src={vegetables3} style={{width: '100%', height: 'auto'}} class="d-block w-100" alt="..."/>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Plato 2</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                        </div>
-                        <div class="carousel-item">
-                        <img src={brigitte} style={{width: '100%', height: 'auto'}} class="d-block w-100" alt="..."/>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Plato 3</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
-                        </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
+            <div className="carousel-container">
+                <Carousel
+                    activeIndex={activeIndex}
+                    next={next}
+                    previous={previous}
+                    >
+                    <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+                    {slides}
+                    <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+                    <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+                </Carousel>
             </div>
-            {/* <div className="footer-container">
+            <div className="footer-container">
                 <Footer/>
-            </div> */}
+            </div>
             
         </div>
 

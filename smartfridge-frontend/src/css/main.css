@@ -276,6 +276,9 @@
     .main-store .body-store .my-products-store .ingredient-container .map-image {
       width: 20em; }
 
+.header-container {
+  z-index: 1; }
+
 .explore-main-container {
   display: flex;
   flex-direction: column; }
@@ -316,21 +319,25 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #f1f1f1;
   width: 100vw; }
   .main-recipe-info .body-recipe-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-    .main-recipe-info .body-recipe-info .title-recipe-info h1 {
-      font-family: "Barlow Condensed", sans-serif; }
     .main-recipe-info .body-recipe-info .img-recipe-info {
-      background-color: #aaaae7;
       height: 30em;
       width: 100vw; }
+    .main-recipe-info .body-recipe-info .title-recipe-info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-family: "Barlow Condensed", sans-serif; }
     .main-recipe-info .body-recipe-info .recipe-info-data {
-      background-color: beige;
-      height: 25em; }
+      background-color: #f1f1f1;
+      height: 25em;
+      width: 40em; }
 
 .main-store {
   background-color: #f1f1f1;

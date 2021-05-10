@@ -1,8 +1,6 @@
 import React, {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 
-
-import Recipe from '../../components/Recipe/recipe';
 import Like from '../../components/Like/like';
 
 import {connect} from 'react-redux';
@@ -38,6 +36,7 @@ const RecipeInfo = (props) => {
                 </div>
                 <div className="tittle-recipe-info">
                     <h1>{recipeDetails.title}</h1>
+                    <Like/>
                 </div>
                 <div className="recipe-info-data">
                     <div className="info1">
@@ -60,12 +59,11 @@ const RecipeInfo = (props) => {
                     <div className="more-ingredients">
                         <div className="extended-ingredients">
                             Algunos ingredientes para añadir
-                            <Like/>
+                            
                         </div>
                     </div>
                     <div className="recipe-instruction">
-                        Collapse que muestra las instrucciones
-                        <Recipe />
+                                            
                     </div>
                 </div>
             </div>
