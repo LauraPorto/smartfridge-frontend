@@ -3,11 +3,11 @@ import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 import {validateField, validateFields} from '../../uti';
-import { Button, FormGroup, Input, Label, FormFeedback } from 'reactstrap';
-
+import {FormGroup, Input, Label, FormFeedback } from 'reactstrap';
+import profilepic from '../../assets/profilepic.jpg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserTimes, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEnvelope, faPhone, faGlobeEurope, faKey } from '@fortawesome/free-solid-svg-icons';
 
 import {connect } from 'react-redux';
 import {LOGOUT} from '../../redux/types/userType';
@@ -90,45 +90,47 @@ const Profile = (props) => {
 
     return (
         <div className='main-container-profile'>
+            <img src={profilepic} alt='' style={{width: '100vh', height: '100vh', backgroundSize: 'cover'}}></img>
             <div className='register-container'>
-            
                 <div className='form-container'>
-                    <FormGroup>
-                        <Label for='name'>Name:</Label>
+                    <FormGroup className="form-group">
+                        <FontAwesomeIcon icon={faUser} style={{width: '2em', height: '2em', marginRight: '1em'}}/>
                         <Input type='text' id='name' name='name' placeholder={props.user.user.name} onChange={handleState} valid={validationResult.validated && !validationResult.name} invalid={validationResult.validated && validationResult.name} />
                         <FormFeedback>{validationResult.name}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
-                        <Label for='surname'>Surname:</Label>
+                        <FontAwesomeIcon icon={faUser} style={{width: '2em', height: '2em', marginRight: '1em', color: 'transparent'}}/>
                         <Input type='text' id='surname' name='surname' placeholder={props.user.user.surname} onChange={handleState} valid={validationResult.validated && !validationResult.surname} invalid={validationResult.validated && validationResult.surname}/>
                         <FormFeedback>{validationResult.surname}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
-                        <Label for='phone'>Teléfono : </Label>
+                        <FontAwesomeIcon icon={faPhone} style={{width: '2em', height: '2em', marginRight: '1em'}}/>
                         <Input type='number' id='phone' name='phone' placeholder={props.user.user.phone} onChange={handleState} valid={validationResult.validated && !validationResult.phone} invalid={validationResult.validated && validationResult.phone} />
                         <FormFeedback>{validationResult.phone}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
-                        <Label for='country'>Country:</Label>
+                        <FontAwesomeIcon icon={faGlobeEurope} style={{width: '2em', height: '2em', marginRight: '1em'}}/>
                         <Input type='text' id='country' name='country' placeholder={props.user.user.country} onChange={handleState} valid={validationResult.validated && !validationResult.country} invalid={validationResult.validated && validationResult.country} />
                         <FormFeedback>{validationResult.country}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
-                        <Label form='email'>Email:</Label>
+                        <FontAwesomeIcon icon={faEnvelope} style={{width: '2em', height: '2em', marginRight: '1em'}}/>
                         <Input type='text' id='email' name='email' placeholder={props.user.user.email} onChange={handleState} valid={validationResult.validated && !validationResult.email} invalid={validationResult.validated && validationResult.email} />
                         <FormFeedback>{validationResult.email}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
-                        <Label form='password'>Password:</Label>
+                        <FontAwesomeIcon icon={faKey} style={{width: '2em', height: '2em', marginRight: '1em'}}/>
                         <Input type='password' id='password' name='password' placeholder='******' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} />
                         <FormFeedback>{validationResult.password}</FormFeedback>
                     </FormGroup>
-                    {/* <FontAwesomeIcon icon={faUserTimes} />
-                    <FontAwesomeIcon icon={faAddressCard} /> */}
-                    <Button color='primary' onClick={() => updateUser()}>UPDATE</Button>
-                    <Button color='danger' onClick={() => deleteUser()}>DELETE</Button>
+
+                    <div className="buttons-upd">
+                    <button color='primary' onClick={() => updateUser()}>UPDATE</button>
+                    <button color='danger' onClick={() => deleteUser()}>DELETE</button>
+                </div>
                     
                 </div>
+                
             </div>
         </div>
     )
