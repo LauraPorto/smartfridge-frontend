@@ -25,8 +25,11 @@
             flex-direction: row;
             align-items: center;
 
+            h1{
+                font-family: $fontHeader;
+            }
+            margin: 2em;
             
-            font-family: $fontHeader;
 
         }
         .container{
@@ -37,7 +40,7 @@
                     align-items: center;
                     justify-content: center;
 
-                    height: 10em;
+                    height: 11em;
 
                     background-color: nth($palette, 2);
 
@@ -52,6 +55,11 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+
+                h3{
+                    font-family: $fontHeader;
+                }
+
                 .ing {
 
                     font-family: $fontBody;
@@ -65,6 +73,15 @@
 
                 }
 
+            }
+
+            .row {
+                .analized-recipe{
+                    font-family: $fontBody;
+                    font-size: $mp-j;
+
+                    margin: 2em;
+                }
                 
             }
         }

@@ -333,13 +333,15 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      font-family: "Barlow Condensed", sans-serif; }
+      margin: 2em; }
+      .main-recipe-info .body-recipe-info .title-recipe-info h1 {
+        font-family: "Barlow Condensed", sans-serif; }
     .main-recipe-info .body-recipe-info .container .col-4 .info {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 10em;
+      height: 11em;
       background-color: #cad6cc;
       font-family: "Barlow Condensed", sans-serif;
       font-size: 24px; }
@@ -347,6 +349,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center; }
+      .main-recipe-info .body-recipe-info .container .col-8 h3 {
+        font-family: "Barlow Condensed", sans-serif; }
       .main-recipe-info .body-recipe-info .container .col-8 .ing {
         font-family: "Rasa", serif;
         font-size: 24px; }
@@ -354,6 +358,10 @@
           display: flex;
           flex-direction: row;
           justify-content: space-between; }
+    .main-recipe-info .body-recipe-info .container .row .analized-recipe {
+      font-family: "Rasa", serif;
+      font-size: 24px;
+      margin: 2em; }
 
 .main-store {
   background-color: #f1f1f1;

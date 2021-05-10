@@ -34,12 +34,14 @@ const RecipeInfo = (props) => {
                 </div>
                 <div className="tittle-recipe-info">
                     <h1>{recipeDetails.title}</h1>
-                    <Like/>
                 </div>
                 <div className="container">
                     <div class="row">
                         <div class="col-4">
                             <div className="info info-1">
+                                <div style={{margin: '2em'}}>
+                                    <Like/> 
+                                </div>
                                 <div>
                                 For {recipeDetails.servings} servings
                                 </div>
@@ -53,13 +55,13 @@ const RecipeInfo = (props) => {
                             <div className="info info-2">
                                 <div className="nutrition-info">
                                     <div>
-                                        percentCarbs: {nutritions.caloricBreakdown.percentCarbs}
+                                        Percent of Carbohydrathes: {nutritions.caloricBreakdown.percentCarbs}
                                     </div>
                                     <div>
-                                        percentFat: {nutritions.caloricBreakdown.percentFat}
+                                        Percent of Fat: {nutritions.caloricBreakdown.percentFat}
                                     </div>
                                     <div>
-                                        percentProtein: {nutritions.caloricBreakdown.percentProtein}
+                                        Percent of Proteins: {nutritions.caloricBreakdown.percentProtein}
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +76,7 @@ const RecipeInfo = (props) => {
                             </div>
                         </div>
                         <div class="col-8">
-                            <div className=" ing ingredients-used"><h2>ORIGINAL INGREDIENTS</h2>
+                            <div className=" ing ingredients-used"><h3>ORIGINAL INGREDIENTS</h3>
                                 {
                                     nutritions.ingredients.map(ingredient => 
                                         <div className="maps">                                          
@@ -88,7 +90,7 @@ const RecipeInfo = (props) => {
                                     )
                                 }
                             </div>
-                            <div className="ing ingredients-extend"><h2>EXTENDED INGREDIENTS</h2>
+                            <div className="ing ingredients-extend"><h3>EXTENDED INGREDIENTS</h3>
                                 {
                                     extendedIngredients.map(ingredient => 
                                         <div className="maps">
@@ -99,7 +101,7 @@ const RecipeInfo = (props) => {
                                     )
                                 }
                             </div>
-                            <div className="more-nutrients">¿QUIERES MÁS INFORMACIÓN DE LOS INGREDIENTES?</div>
+                            {/* <div className="more-nutrients">¿QUIERES MÁS INFORMACIÓN DE LOS INGREDIENTES?</div> */}
                         </div>
                     </div>
                     <div className="row">
