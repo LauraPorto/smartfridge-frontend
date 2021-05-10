@@ -34,7 +34,7 @@ const RecipeInfo = (props) => {
         <div className="main-recipe-info">
             <div className="body-recipe-info">
                 <div className="img-recipe-info">
-                    {recipeDetails.image}
+                    <img src={recipeDetails.image} style={{width: '100%', height: '30em'}}></img>
                 </div>
                 <div className="tittle-recipe-info">
                     <h1>{recipeDetails.title}</h1>
