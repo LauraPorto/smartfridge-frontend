@@ -193,41 +193,68 @@
 
 .main-store {
   font-family: "Rasa", serif; }
+  .main-store .empty-div {
+    height: 5em;
+    background-color: #cad6cc; }
   .main-store .body-store .store-fridge {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    background-color: #d4a7a7; }
+    background-color: #cad6cc; }
     .main-store .body-store .store-fridge .fridge-menu {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
       width: 35em;
-      background-color: #82aa82; }
+      background-color: #cad6cc; }
+      .main-store .body-store .store-fridge .fridge-menu .fridge-menu-msn {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 4em; }
       .main-store .body-store .store-fridge .fridge-menu .search-store-container {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-items: right;
+        height: 15em;
+        margin: 3em; }
+      .main-store .body-store .store-fridge .fridge-menu .button-recipes {
+        font-family: "Barlow", sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        background-color: #cad6cc;
+        width: 20em;
         height: 3em; }
-  .main-store .body-store .my-products-store {
+        .main-store .body-store .store-fridge .fridge-menu .button-recipes:hover {
+          border: 3px solid #93b496; }
+        .main-store .body-store .store-fridge .fridge-menu .button-recipes p {
+          font-family: "Barlow", sans-serif;
+          color: #141414; }
+  .main-store .body-store .my-products-store .selected-ingredients {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    color: #141414; }
+  .main-store .body-store .my-products-store .ingredient-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 0px 0px;
-    height: 15em; }
-    .main-store .body-store .my-products-store .ingredient-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      gap: 3em;
-      height: 10em;
-      width: 16em; }
-      .main-store .body-store .my-products-store .ingredient-container .map-ingredient {
-        background-color: aqua;
-        cursor: pointer; }
+    gap: 3em;
+    height: 10em;
+    margin-left: 2em; }
+    .main-store .body-store .my-products-store .ingredient-container .map-ingredient {
+      background-color: #cad6cc;
+      cursor: pointer;
+      width: 20em;
+      display: flex;
+      justify-content: center;
+      font-size: 16px;
+      color: #141414; }
+    .main-store .body-store .my-products-store .ingredient-container .map-image {
+      width: 20em; }
 
 .explore-main-container {
   display: flex;
