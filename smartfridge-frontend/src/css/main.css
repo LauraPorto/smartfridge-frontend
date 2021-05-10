@@ -227,10 +227,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center; }
-  .about-main-container .header-div {
-    background-color: transparent;
-    position: absolute;
-    z-index: 2; }
+  .about-main-container .card-body-secundary {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 55em;
+    font-family: "Rasa", serif;
+    font-size: 16px; }
+    .about-main-container .card-body-secundary .card-body-title {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 128px;
+      height: 10em; }
+    .about-main-container .card-body-secundary .card {
+      border: none;
+      width: 65em;
+      margin-left: 10em; }
+      .about-main-container .card-body-secundary .card icon {
+        color: #93b496; }
+    .about-main-container .card-body-secundary .card-text {
+      width: 30em; }
 
 .main-recipe-info {
   display: flex;

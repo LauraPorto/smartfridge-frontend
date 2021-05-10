@@ -5,9 +5,35 @@
     justify-content: center;
     align-items: center;
 
-    .header-div{
-        background-color: transparent;
-        position: absolute; 
-        z-index: 2      
+    .card-body-secundary {
+
+        width: $maxWidth;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 55em;
+
+        font-family: $fontBody;
+        font-size: $mp-h;
+
+        .card-body-title{
+            font-family: $fontHeader;
+            font-size: $mp-q;
+            height: 10em;
+        }
+
+        .card {
+            border: none;
+            width: 65em;
+            margin-left: 10em;
+            icon {
+                color: nth($palette, 3)
+            }
+        }
+        .card-text {
+            width: 30em;
+        }
     }
+  
+
 }
