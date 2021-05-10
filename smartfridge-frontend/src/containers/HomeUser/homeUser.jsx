@@ -13,11 +13,14 @@ const HomeUser = (props) => {
     useEffect(() => {
 
         let token = props.user.token;
-        console.log(token, 'esto es el token');
+
 
         if(token === ''){
             history.push('/')
         }
+
+        getFavRecipes();
+
     }, [])
 
     const name = props.user.user.name;
@@ -41,10 +44,6 @@ const HomeUser = (props) => {
 
     };
 
-    useEffect(() => {
-        getFavRecipes();
-        
-    }, [])
 
     return (
         <div className="homeuser-main-container">
@@ -56,7 +55,7 @@ const HomeUser = (props) => {
                             <div class="menu-user"></div>
                             <div class="card-body-menu">
                                 <h5 class="card-title">Presupuestos personalizados en Ortodoncias</h5>
-                                <p class="card-text">La ortodoncia es una especialidad de la odontología que corrige la malposición de los dientes para colocarlos en su lugar correcto</p>
+                                
                             </div>
                         </div>
                     </div>
@@ -65,7 +64,7 @@ const HomeUser = (props) => {
                         <div class="menu-user"></div>
                         <div class="card-body-menu">
                             <h5 class="card-title">Descuentos en Estética Dental</h5>
-                            <p class="card-text">Se trata de un tratamiento mínimamente invasivo, con altas propiedades estéticas y muy predecible</p>
+                           
                         </div>
                         </div>
                     </div>
@@ -74,7 +73,7 @@ const HomeUser = (props) => {
                         <div class="menu-user"></div>
                         <div class="card-body-menu">
                             <h5 class="card-title">Protesis Dental</h5>
-                            <p class="card-text">Las prótesis dentales son los dientes postizos que sustituyen a los dientes naturales. Cuando falta uno o varios dientes</p>
+                           
                         </div>
                         </div>
                     </div>
@@ -83,7 +82,7 @@ const HomeUser = (props) => {
                         <div class="menu-user"></div>
                         <div class="card-body-menu">
                             <h5 class="card-title">Odontología Infantil</h5>
-                            <p class="card-text">En septiembre, con la vuelta al cole, descuentos en el presupuesto de ortodoncias para los más peques de la familia.</p>
+                        
                         </div>
                         </div>
                     </div>

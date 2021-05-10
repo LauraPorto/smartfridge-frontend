@@ -340,11 +340,27 @@
       background-color: beige;
       height: 25em; }
 
-.main-store .body-results .map-recipes {
-  display: flex;
-  flex-direction: row;
-  background-color: #a4a4ca; }
-  .main-store .body-results .map-recipes .map-recipes-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
+.main-store {
+  background-color: #f1f1f1;
+  height: 100vh; }
+  .main-store .empty-div-result {
+    height: 5em; }
+  .main-store .body-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 3em;
+    margin: 3em;
+    background-color: #f1f1f1;
+    width: 100vw;
+    font-family: "Rasa", serif; }
+    .main-store .body-results .map-recipes {
+      height: 20em;
+      width: 20em;
+      cursor: pointer; }
+      .main-store .body-results .map-recipes .map-recipes-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+      .main-store .body-results .map-recipes .map-recipes-title {
+        font-size: 160px; }
