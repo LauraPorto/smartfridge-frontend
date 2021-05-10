@@ -1,18 +1,13 @@
 .explore-main-container {
-    .header-div {
-        background-color: transparent;
-        position: absolute; 
-        z-index: 2
-    }
+    display: flex;
+    flex-direction: column;
+    .carousel-inner {
+        height: 40em;
 
-    .searchbox-container{
-        width: $maxWidth;
-        display: flex;
-        flex-direction: row;
-        align-items: right;
+        .carousel-caption {
+            position: fixed;
+            margin-bottom: 3em;
+        }
     }
-
-    .explore-body{
-        width: $maxWidth;
-    }
+    
 }

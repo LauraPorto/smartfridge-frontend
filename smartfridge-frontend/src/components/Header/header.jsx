@@ -14,9 +14,9 @@ const Header = (props) => {
     const history = useHistory();
 
     const logOut = () => {
-        setTimeout(()=> {            
-            props.dispatch({ type: LOGOUT, payload : {}});
-            history.push('/');
+        setTimeout(()=> {           
+            props.dispatch({ type: LOGOUT, payload : {}})
+            history.push('/'); 
         },500);
     }
 
@@ -41,7 +41,7 @@ const Header = (props) => {
                     </div>
                     <div class="navbar-buttons-right">
                         <Login/>
-                        <button>SIGN IN</button>
+                        <button><a href="/register">SIGN IN</a></button>
                     </div>
                     </>
                     :

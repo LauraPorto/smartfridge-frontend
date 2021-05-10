@@ -229,19 +229,14 @@
         background-color: aqua;
         cursor: pointer; }
 
-.explore-main-container .header-div {
-  background-color: transparent;
-  position: absolute;
-  z-index: 2; }
-
-.explore-main-container .searchbox-container {
-  width: 100vw;
+.explore-main-container {
   display: flex;
-  flex-direction: row;
-  align-items: right; }
-
-.explore-main-container .explore-body {
-  width: 100vw; }
+  flex-direction: column; }
+  .explore-main-container .carousel-inner {
+    height: 40em; }
+    .explore-main-container .carousel-inner .carousel-caption {
+      position: fixed;
+      margin-bottom: 3em; }
 
 .about-main-container {
   display: flex;
