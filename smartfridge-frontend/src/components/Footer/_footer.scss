@@ -1,43 +1,62 @@
 .footer-container {
 
-    width: $maxWidth;
-    height: $mp-t;
-    background-color: nth($palette, 4);
-    opacity: 0.8;
-
     .footer-distributed {
 
         display: contents;
-        
 
         .footer-left{
-            width: 45em;
 
             display: flex;
             flex-direction: row;
-            
+            justify-content: space-around;
+            width: $maxWidth;
+            background-color: nth($palette, 4);
+            opacity: 0.9;
+            height: $mp-s;
+
+            .navbar-brand-logo{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
             img {
-                color: nth($palette, 4)
+                color: nth($palette, 2)
             }
 
             h1 {
-                color: nth($palette, 4);
+                color: nth($palette, 1);
                 font-family: $fontHeader;
             }
 
-            p{
-                color: nth($palette, 4);
-                font-size: x-large;
+            .footer-icons{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 1.8em;
+
+                p{
+                    color: nth($palette, 1);
+                    font-size: large;
+                    font-family: $fontHeader;
+                    margin-top: 0.5em;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+    
+                .input-footer{
+                    @include input($backgroundColor: nth($palette, 4), $borderColor: nth($palette, 3));
+                }
+                .button-footer{
+                    width: 25em;
+                    @include button($background-color: nth($palette, 3))
+                    
+                }
+
             }
 
-            .input-footer{
-                @include input($backgroundColor: nth($palette, 3), $borderColor: nth($palette, 4));
-            }
-            .button-footer{
-                width: 25em;
-                @include button;
-
-            }
         }
 
     }

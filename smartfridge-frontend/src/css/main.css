@@ -1,48 +1,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Rasa:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Barlow+Semi+Condensed:ital,wght@1,600&family=Rasa:wght@300&display=swap");
-.footer-container {
-  width: 100vw;
-  height: 224px;
-  background-color: #141414;
-  opacity: 0.8; }
-  .footer-container .footer-distributed {
-    display: contents; }
-    .footer-container .footer-distributed .footer-left {
-      width: 45em;
+.footer-container .footer-distributed {
+  display: contents; }
+  .footer-container .footer-distributed .footer-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100vw;
+    background-color: #141414;
+    opacity: 0.9;
+    height: 192px; }
+    .footer-container .footer-distributed .footer-left .navbar-brand-logo {
       display: flex;
-      flex-direction: row; }
-      .footer-container .footer-distributed .footer-left img {
-        color: #141414; }
-      .footer-container .footer-distributed .footer-left h1 {
-        color: #141414;
-        font-family: "Barlow Condensed", sans-serif; }
-      .footer-container .footer-distributed .footer-left p {
-        color: #141414;
-        font-size: x-large; }
-      .footer-container .footer-distributed .footer-left .input-footer {
+      align-items: center;
+      justify-content: center; }
+    .footer-container .footer-distributed .footer-left img {
+      color: #cad6cc; }
+    .footer-container .footer-distributed .footer-left h1 {
+      color: #f1f1f1;
+      font-family: "Barlow Condensed", sans-serif; }
+    .footer-container .footer-distributed .footer-left .footer-icons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1.8em; }
+      .footer-container .footer-distributed .footer-left .footer-icons p {
+        color: #f1f1f1;
+        font-size: large;
+        font-family: "Barlow Condensed", sans-serif;
+        margin-top: 0.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+      .footer-container .footer-distributed .footer-left .footer-icons .input-footer {
         width: 20em;
-        background: #93b496;
+        background: #141414;
         border-radius: 3px;
         height: 2.5em;
         line-height: 45px;
         padding: 0 40px 0 10px;
         transition: .3s ease all;
-        border: 3px solid #141414; }
-        .footer-container .footer-distributed .footer-left .input-footer:hover {
+        border: 3px solid #93b496; }
+        .footer-container .footer-distributed .footer-left .footer-icons .input-footer:hover {
           height: 3em;
           width: 21em;
-          border: 3px solid #141414 #93b496; }
-      .footer-container .footer-distributed .footer-left .button-footer {
+          border: 3px solid #93b496 #93b496; }
+      .footer-container .footer-distributed .footer-left .footer-icons .button-footer {
         width: 25em;
         font-family: "Barlow", sans-serif;
         font-weight: 600;
         font-size: 13px;
         text-transform: uppercase;
         letter-spacing: 3px;
-        background-color: #cad6cc;
+        background-color: #93b496;
         width: 20em; }
-        .footer-container .footer-distributed .footer-left .button-footer:hover {
+        .footer-container .footer-distributed .footer-left .footer-icons .button-footer:hover {
           border: 3px solid #93b496; }
 
 .header-container {
