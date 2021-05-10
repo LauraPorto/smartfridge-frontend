@@ -6,7 +6,6 @@ import Like from '../../components/Like/like';
 import {connect} from 'react-redux';
 
 
-
 const RecipeInfo = (props) => {
 
     const history = useHistory();
@@ -22,11 +21,10 @@ const RecipeInfo = (props) => {
     }, [])
 
     const recipeDetails = props.recipeDetails.recipeDetails;
-    console.log(recipeDetails, 'detalles de la receta')
-
-
-    console.log(props, 'estas son las props');
-
+    const nutritions = recipeDetails.nutrition;
+    const extendedIngredients = recipeDetails.extendedIngredients;
+    const diets = recipeDetails.diets;
+ 
 
     return (
         <div className="main-recipe-info">
@@ -38,32 +36,76 @@ const RecipeInfo = (props) => {
                     <h1>{recipeDetails.title}</h1>
                     <Like/>
                 </div>
-                <div className="recipe-info-data">
-                    <div className="info1">
-                        Servings: {recipeDetails.servings}
-                    </div>
-                    <div className="info2">
-                        readyInMinutes: {recipeDetails.readyInMinutes}
-                    </div>
-                    <div className="info2">
-                        Price aprox per serving: {recipeDetails.pricePerServing}
-                    </div>
-                    <div className="info-special">
-                        <div className="info-icons">
-                            Iconos (gluten, lactosa)
+                <div className="container">
+                    <div class="row">
+                        <div class="col-4">
+                            <div className="info info-1">
+                                <div>
+                                For {recipeDetails.servings} servings
+                                </div>
+                                <div>
+                                Ready in {recipeDetails.readyInMinutes} minutes
+                                </div>
+                                <div>
+                                  Price aprox per serving: {recipeDetails.pricePerServing}
+                                </div>
+                            </div>
+                            <div className="info info-2">
+                                <div className="nutrition-info">
+                                    <div>
+                                        percentCarbs: {nutritions.caloricBreakdown.percentCarbs}
+                                    </div>
+                                    <div>
+                                        percentFat: {nutritions.caloricBreakdown.percentFat}
+                                    </div>
+                                    <div>
+                                        percentProtein: {nutritions.caloricBreakdown.percentProtein}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="info info-3">
+                                {
+                                    diets.map(diet => 
+                                        <div className="map-diet">
+                                            Diets: {diets}
+                                        </div>
+                                    )
+                                }
+                            </div>
                         </div>
-                        <div className="info-icons-text">
-                            Diets: {recipeDetails.diets}
+                        <div class="col-8">
+                            <div className=" ing ingredients-used"><h2>ORIGINAL INGREDIENTS</h2>
+                                {
+                                    nutritions.ingredients.map(ingredient => 
+                                        <div className="maps">                                          
+                                            <div className="map-used-name">
+                                                {ingredient.name}
+                                            </div>
+                                            <div className="map-used-units">
+                                                {ingredient.amount} {ingredient.unit}
+                                            </div>
+                                        </div>                                       
+                                    )
+                                }
+                            </div>
+                            <div className="ing ingredients-extend"><h2>EXTENDED INGREDIENTS</h2>
+                                {
+                                    extendedIngredients.map(ingredient => 
+                                        <div className="maps">
+                                            <div className="map-extended">   
+                                                {ingredient.original}
+                                            </div>
+                                        </div>                                       
+                                    )
+                                }
+                            </div>
+                            <div className="more-nutrients">¿QUIERES MÁS INFORMACIÓN DE LOS INGREDIENTES?</div>
                         </div>
                     </div>
-                    <div className="more-ingredients">
-                        <div className="extended-ingredients">
-                            Algunos ingredientes para añadir
-                            
+                    <div className="row">
+                        <div className="analized-recipe">
+                            {recipeDetails.instructions}
                         </div>
-                    </div>
-                    <div className="recipe-instruction">
-                                            
                     </div>
                 </div>
             </div>

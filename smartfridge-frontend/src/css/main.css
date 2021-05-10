@@ -334,10 +334,26 @@
       flex-direction: row;
       align-items: center;
       font-family: "Barlow Condensed", sans-serif; }
-    .main-recipe-info .body-recipe-info .recipe-info-data {
-      background-color: #f1f1f1;
-      height: 25em;
-      width: 40em; }
+    .main-recipe-info .body-recipe-info .container .col-4 .info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 10em;
+      background-color: #cad6cc;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 24px; }
+    .main-recipe-info .body-recipe-info .container .col-8 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      .main-recipe-info .body-recipe-info .container .col-8 .ing {
+        font-family: "Rasa", serif;
+        font-size: 24px; }
+        .main-recipe-info .body-recipe-info .container .col-8 .ing .maps {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between; }
 
 .main-store {
   background-color: #f1f1f1;

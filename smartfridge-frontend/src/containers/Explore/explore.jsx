@@ -23,25 +23,25 @@ const Explore = (props) => {
 
     const [randomList, setRandom] = useState([]);
 
-    useEffect( () => {
-        getRandom();
-    }, [])
+    // useEffect( () => {
+    //     getRandom();
+    // }, [])
 
-    const getRandom = async () => {
-        // const random = await axios.get(`https://api.spoonacular.com/recipes/random${apiKey}&number=3`);
-        console.log(random.data.recipes, 'recetas aleatorias');
+    // const getRandom = async () => {
+    //     // const random = await axios.get(`https://api.spoonacular.com/recipes/random${apiKey}&number=3`);
+    //     console.log(random.data.recipes, 'recetas aleatorias');
 
-        const randomRecipes = random.data.recipes;
-        setRandom({randomList: randomRecipes});
-        console.log({randomList}, 'lista random')
-        console.log(randomList, 'lista random')
-        const random1 = randomRecipes[0];
-        console.log(random1, 'this is random1')
-        const random2 = randomRecipes[1];
-        const random3 = randomRecipes[2];
+    //     const randomRecipes = random.data.recipes;
+    //     setRandom({randomList: randomRecipes});
+    //     console.log({randomList}, 'lista random')
+    //     console.log(randomList, 'lista random')
+    //     const random1 = randomRecipes[0];
+    //     console.log(random1, 'this is random1')
+    //     const random2 = randomRecipes[1];
+    //     const random3 = randomRecipes[2];
 
        
-    };
+    // };
 
     const items = [
         {
