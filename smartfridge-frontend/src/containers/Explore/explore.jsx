@@ -60,16 +60,16 @@ const Explore = (props) => {
         <div className="explore-main-container">
             <div className="explore-container-img">
                 <div className="img-exp" onClick={() => getRandom()}>
-                  <img src={pasta} style={{width: '60%', height: '20em', margin: '2em', marginTop: '5em'}}></img>
-                  Recetas Random
+                  <img src={pasta} style={{width: '60%', height: '15em', margin: '2em', marginTop: '5em'}}></img>
+                  Random Recipes
                 </div>
                 <div className="img-exp" onClick={() => getVegan()}>
-                  <img src={toast} style={{width: '60%', height: '20em', margin: '2em'}}></img>
-                  Recetas Random
+                  <img src={toast} style={{width: '60%', height: '15em', margin: '2em'}}></img>
+                  Vegan Recetas 
                 </div>
                 <div className="img-exp" onClick={() => getGlutenFree()}>
-                  <img src={sweet} style={{width: '60%', height: '20em', margin: '2em'}}></img>
-                  Recetas Random
+                  <img src={sweet} style={{width: '60%', height: '15em', margin: '2em'}}></img>
+                  Gluten Free Recipes
                 </div>
             </div>
             <div className="footer-container">

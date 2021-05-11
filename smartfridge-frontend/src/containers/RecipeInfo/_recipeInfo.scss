@@ -40,12 +40,16 @@
                     align-items: center;
                     justify-content: center;
 
-                    height: 11em;
+                    height: 15em;
 
                     background-color: nth($palette, 2);
 
                     font-family: $fontHeader;
                     font-size: $mp-j;
+
+                    .map-diet{
+                       padding-left: 2em;
+                    }
 
                 }
 

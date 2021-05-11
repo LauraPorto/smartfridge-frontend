@@ -123,14 +123,14 @@ const Profile = (props) => {
                         <FormFeedback>{validationResult.password}</FormFeedback>
                     </FormGroup>
 
-                    <div className="buttons-upd">
-                    <button color='primary' onClick={() => updateUser()}>UPDATE</button>
-                    <button color='danger' onClick={() => deleteUser()}>DELETE</button>
-                </div>
-                    
                 </div>
                 
             </div>
+            <div className="buttons-upd">
+                <button id="btn-profile" onClick={() => updateUser()}>UPDATE</button>
+                <button id="btn-profile" onClick={() => deleteUser()}>DELETE</button>
+            </div>
+
         </div>
     )
 }

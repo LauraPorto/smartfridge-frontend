@@ -68,7 +68,7 @@ const RecipeInfo = (props) => {
                                 {
                                     diets.map(diet => 
                                         <div className="map-diet">
-                                            Diets: {diets}
+                                           {diets}
                                         </div>
                                     )
                                 }
@@ -100,7 +100,6 @@ const RecipeInfo = (props) => {
                                     )
                                 }
                             </div>
-                            {/* <div className="more-nutrients">¿QUIERES MÁS INFORMACIÓN DE LOS INGREDIENTES?</div> */}
                         </div>
                     </div>
                     <div className="row">

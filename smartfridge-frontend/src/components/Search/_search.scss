@@ -16,7 +16,10 @@
     }
 
     .search-button {
-        height: 1em;
+        height: 3em;
         width: 4em;
+        margin-top: 0.5em;
+
+        @include button;
     }
 }

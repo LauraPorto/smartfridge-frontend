@@ -54,7 +54,8 @@
         text-transform: uppercase;
         letter-spacing: 3px;
         background-color: #93b496;
-        width: 20em; }
+        width: 20em;
+        color: #141414; }
         .footer-container .footer-distributed .footer-left .footer-icons .button-footer:hover {
           border: 3px solid #93b496; }
 
@@ -69,10 +70,24 @@
     display: contents; }
     .header-container .navbar .container-fluid .navbar-nav .nav-link {
       color: #141414 .header-container .navbar .container-fluid .navbar-nav .nav-link hover;
-        color-font-size: 24px; }
+        color-font-size: 32px; }
   .header-container .navbar .container-fluid .navbar-buttons-right {
     display: contents;
     cursor: pointer; }
+    .header-container .navbar .container-fluid .navbar-buttons-right button {
+      font-family: "Barlow", sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      background-color: transparent;
+      width: 20em;
+      color: #141414;
+      color: #141414; }
+      .header-container .navbar .container-fluid .navbar-buttons-right button:hover {
+        border: 3px solid #93b496; }
+      .header-container .navbar .container-fluid .navbar-buttons-right button a {
+        color: #141414; }
 
 .search-container {
   height: 4em;
@@ -83,7 +98,7 @@
   align-items: center; }
   .search-container .search-box {
     width: 20em;
-    background: #f1f1f1;
+    background: transparent;
     border-radius: 3px;
     height: 2.5em;
     line-height: 45px;
@@ -95,8 +110,19 @@
       width: 21em;
       border: 3px solid #141414 #93b496; }
   .search-container .search-button {
-    height: 1em;
-    width: 4em; }
+    height: 3em;
+    width: 4em;
+    margin-top: 0.5em;
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background-color: transparent;
+    width: 20em;
+    color: #141414; }
+    .search-container .search-button:hover {
+      border: 3px solid #93b496; }
 
 .main-container-home {
   display: flex;
@@ -118,17 +144,19 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      background-color: #f1f1f1; }
+      background-color: #f1f1f1;
+      font-family: "Barlow Condensed", sans-serif; }
     .main-container-home .cover-container .cover-page .your-ingredient {
       width: 100vw;
       height: 15em;
       background-color: #cad6cc;
       display: flex;
-      flex-direction: row; }
-      .main-container-home .cover-container .cover-page .your-ingredient .sub-text {
-        width: 50em; }
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; }
       .main-container-home .cover-container .cover-page .your-ingredient .sub-img {
-        width: 55em; }
+        width: 40em;
+        margin-left: 10em; }
 
 .main-container-profile {
   width: 100vw;
@@ -154,22 +182,19 @@
         width: 25em; }
         .main-container-profile .register-container .form-container .form-group Input {
           background-color: #fbf8f0; }
-        .main-container-profile .register-container .form-container .form-group .buttons-upd {
-          display: flex;
-          flex-direction: column; }
-          .main-container-profile .register-container .form-container .form-group .buttons-upd button {
-            font-family: "Barlow", sans-serif;
-            font-weight: 600;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            background-color: #cad6cc;
-            width: 20em;
-            height: 2em;
-            width: 20em;
-            margin: 0.5em; }
-            .main-container-profile .register-container .form-container .form-group .buttons-upd button:hover {
-              border: 3px solid #93b496; }
+  .main-container-profile .buttons-upd #btn-profile {
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background-color: transparent;
+    width: 20em;
+    color: #141414;
+    height: 3em;
+    width: 20em; }
+    .main-container-profile .buttons-upd #btn-profile:hover {
+      border: 3px solid #93b496; }
 
 .main-container {
   background-image: url("https://images.pexels.com/photos/1323712/pexels-photo-1323712.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
@@ -205,8 +230,9 @@
         font-size: 13px;
         text-transform: uppercase;
         letter-spacing: 3px;
-        background-color: #cad6cc;
-        width: 20em; }
+        background-color: transparent;
+        width: 20em;
+        color: #141414; }
         .main-container .register-container .form-container .regiser-button:hover {
           border: 3px solid #93b496; }
 
@@ -230,13 +256,13 @@
       background-color: #cad6cc; }
       .main-store .body-store .store-fridge .fridge-menu .fridge-menu-msn {
         font-family: "Barlow Condensed", sans-serif;
-        font-size: 4em; }
+        font-size: 3em; }
       .main-store .body-store .store-fridge .fridge-menu .search-store-container {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-items: right;
-        height: 15em;
+        height: 10em;
         margin: 3em;
         background-color: #cad6cc; }
       .main-store .body-store .store-fridge .fridge-menu .button-recipes {
@@ -245,8 +271,9 @@
         font-size: 13px;
         text-transform: uppercase;
         letter-spacing: 3px;
-        background-color: #cad6cc;
+        background-color: transparent;
         width: 20em;
+        color: #141414;
         height: 3em; }
         .main-store .body-store .store-fridge .fridge-menu .button-recipes:hover {
           border: 3px solid #93b496; }
@@ -256,7 +283,7 @@
   .main-store .body-store .my-products-store .selected-ingredients {
     display: flex;
     justify-content: center;
-    font-size: 24px;
+    font-size: 32px;
     color: #141414; }
   .main-store .body-store .my-products-store .ingredient-container {
     display: grid;
@@ -286,6 +313,8 @@
   justify-content: center;
   font-family: "Barlow Condensed", sans-serif;
   font-size: 32px; }
+  .explore-main-container img {
+    cursor: pointer; }
 
 .about-main-container {
   display: flex;
@@ -374,10 +403,12 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 11em;
+      height: 15em;
       background-color: #cad6cc;
       font-family: "Barlow Condensed", sans-serif;
       font-size: 24px; }
+      .main-recipe-info .body-recipe-info .container .col-4 .info .map-diet {
+        padding-left: 2em; }
     .main-recipe-info .body-recipe-info .container .col-8 {
       display: flex;
       flex-direction: column;

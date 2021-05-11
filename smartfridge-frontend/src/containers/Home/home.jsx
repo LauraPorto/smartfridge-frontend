@@ -3,6 +3,9 @@ import React from 'react'
 import Footer from '../../components/Footer/footer';
 import spices from '../../assets/spices.jpg';
 import saladcheese from '../../assets/saladcheese.png';
+import instagram from '../../assets/instagram.png';
+import fb from '../../assets/fb.png';
+import google from '../../assets/google.png';
 
 
 const Home = () => {
@@ -27,11 +30,10 @@ const Home = () => {
                     </div>
 
                     <div className="your-ingredient">
-                        <div className="sub-text">
-                            <h2>Blablabla</h2>
-                        </div>
                         <div className="sub-img">
-                            
+                            <img src={instagram} style={{width: '4em', margin: '2em'}}></img>
+                            <img src={fb} style={{width: '4em', margin: '2em'}}></img>
+                            <img src={google} style={{width: '4em', margin: '2em'}}></img>
                         </div>
                     </div>
 

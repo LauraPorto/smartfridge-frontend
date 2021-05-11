@@ -16,13 +16,22 @@
                 .nav-link{
                     color: nth($palette, 4)
                     &hover{
-                        font-size: $mp-j;
+                        font-size: $mp-k;
                     }
                 }
             }
             .navbar-buttons-right {
                 display: contents;
                 cursor: pointer;
+
+                button{
+                    @include button;
+                    color: nth($palette,4);
+
+                    a{
+                        color: nth($palette, 4);
+                    }
+                }
             }
         }
    }

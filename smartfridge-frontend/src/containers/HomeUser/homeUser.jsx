@@ -37,7 +37,6 @@ const HomeUser = (props) => {
         const resultsInfo = await axios.get(`http://localhost:3001/store/${userId}`);
 
         const results = resultsInfo.data;
-        console.log(results, 'esto son results')
 
         // const mapResult = results.map(result => {
         //     return data.resultsDB.push(result.title)

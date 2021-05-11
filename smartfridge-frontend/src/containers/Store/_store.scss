@@ -29,7 +29,7 @@
 
                 .fridge-menu-msn{
                     font-family: $fontHeader;
-                    font-size: 4em;
+                    font-size: 3em;
                 }
 
                 .search-store-container {
@@ -38,7 +38,7 @@
                     justify-content: flex-end;
                     align-items: right;
             
-                    height: 15em;
+                    height: 10em;
 
                     margin: 3em;
                     background-color: nth($palette, 2)
@@ -62,7 +62,7 @@
             .selected-ingredients{
                 display: flex;
                 justify-content: center;
-                font-size: $mp-j;
+                font-size: $mp-k;
                 color: nth($palette, 4);
             }
 

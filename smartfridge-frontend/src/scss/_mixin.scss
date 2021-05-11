@@ -1,4 +1,4 @@
-@mixin input ($backgroundColor: nth($palette, 1), $borderColor: nth($palette, 4)){
+@mixin input ($backgroundColor: transparent, $borderColor: nth($palette, 4)){
     width: 20em;
 	background: $backgroundColor;
 	border-radius: 3px;
@@ -14,14 +14,15 @@
     }
 };
 
-@mixin button ($background-color: nth($palette, 2)) {
+@mixin button ($background-color: transparent, $width:20em) {
 	font-family: $fontButtons;
     font-weight: 600;
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 3px;
 	background-color: $background-color;
-	width: 20em;
+	width: $width;
+	color: nth($palette, 4);
 	&:hover {
         border: 3px solid (nth($palette, 3));
     }

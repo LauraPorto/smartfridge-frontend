@@ -32,21 +32,22 @@
                     background-color: #fbf8f0;
                 }
 
-                .buttons-upd{
-
-                    display: flex;
-                    flex-direction: column;
-
-                    button{
-                        @include button;
-                        height: 2em;
-                        width: 20em;
-                        margin: 0.5em;
-                    }
-                }
             }
 
         }
     } 
+
+    .buttons-upd{
+
+        // display: flex;
+        // flex-direction: row;
+
+        #btn-profile{
+            @include button;
+            height: 3em;
+            width: 20em;
+        }
+       
+    }
 
 }
