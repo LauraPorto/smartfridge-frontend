@@ -31,6 +31,10 @@ const Store = (props) => {
 
     }, [])
 
+    useEffect(() => {
+        
+    })
+
     //Hooks para hacer la lista de ingredientes 
     const [list, setList] = useState({
         myIngredients: []

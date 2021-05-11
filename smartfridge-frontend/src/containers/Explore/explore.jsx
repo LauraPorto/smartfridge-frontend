@@ -15,39 +15,46 @@ const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 const Explore = (props) => {
 
   const history = useHistory();
-
-  console.log(props.user.user, 'estas son las props');
+  const user = props.user;
 
     const getRandom = async () => {
 
-      const random = await axios.get(`https://api.spoonacular.com/recipes/random${apiKey}`)
-
-      const recipes = random.data.recipes;
-      console.log(recipes, 'this is random');
-
-      props.dispatch({type: SAVE, payload: recipes});
-      history.push('/result');
-
+      if(user.token === ''){
+        history.push('/register')
+      }else{
+        const random = await axios.get(`https://api.spoonacular.com/recipes/random${apiKey}`)
+        const recipes = random.data.recipes;
+        props.dispatch({type: SAVE, payload: recipes});
+        history.push('/result');
+      }      
     };
 
     const getVegan = async () => {
-      const vegan = await axios.get(`https://api.spoonacular.com/recipes/complexSearch${apiKey}&diet=vegan`);
 
-      const recipes = vegan.data.results;
-      console.log(recipes, 'this is vegan');
+      if(user.token === ''){
+        history.push('/register')
+      }else{
+        const vegan = await axios.get(`https://api.spoonacular.com/recipes/complexSearch${apiKey}&diet=vegan`);
 
-      props.dispatch({type: SAVE, payload: recipes});
-      history.push('/result');
-    }
+        const recipes = vegan.data.results;
+        props.dispatch({type: SAVE, payload: recipes});
+        history.push('/result');
+      }
+    };
 
     const getGlutenFree = async () => {
-      const gluten = await axios.get(`https://api.spoonacular.com/recipes/complexSearch${apiKey}&intolerances=gluten`);
 
-      const recipes = gluten.data.results;
-      console.log(recipes, 'this is gluten');
-      props.dispatch({type: SAVE, payload: recipes})
-      history.push('/result');
-    }
+      if(user.token === ''){
+        history.push('/register')
+      }else{
+        const gluten = await axios.get(`https://api.spoonacular.com/recipes/complexSearch${apiKey}&intolerances=gluten`);
+
+        const recipes = gluten.data.results;
+        props.dispatch({type: SAVE, payload: recipes})
+        history.push('/result');
+      }
+ 
+    };
 
     return (
         <div className="explore-main-container">
@@ -73,7 +80,8 @@ const Explore = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.userReducer
+    user: state.userReducer, 
+    token: state.userReducer
   }
 }
 

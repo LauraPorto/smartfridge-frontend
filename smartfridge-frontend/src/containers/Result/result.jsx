@@ -9,7 +9,7 @@ const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 
 
 const Result = (props) => {
-    console.log(props, 'LAS PUTAS PROPS');
+
     const history = useHistory();
 
     useEffect(() => {
@@ -21,12 +21,8 @@ const Result = (props) => {
         }
     }, [])
 
-
-
     const recipes = props.recipeData;
-    console.log(recipes, 'this is recipes');
-    
-
+ 
     
     const getRecipeInfo = async ({recipe}) => {
  
