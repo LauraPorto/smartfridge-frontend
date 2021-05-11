@@ -1,0 +1,41 @@
+.main-building{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: nth($palette, 1);
+
+    .video-build{
+        height: $maxHeight;
+        width: 45em;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .titles-build{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        height: 15em;
+        width: 30em;
+
+        .building-title{
+            font-size: $mp-m;
+            font-family: $fontHeader;
+        }
+        .building-subtitle{
+            font-size: $mp-l;
+            font-family: $fontBody;
+
+        }
+
+    }
+
+    
+}

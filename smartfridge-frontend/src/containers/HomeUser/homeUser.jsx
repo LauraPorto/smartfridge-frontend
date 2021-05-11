@@ -28,7 +28,7 @@ const HomeUser = (props) => {
     }, [])
 
     const name = props.user.user.name;
-
+    
   
     const getFavRecipes = async () => {
 
@@ -39,16 +39,9 @@ const HomeUser = (props) => {
         const results = resultsInfo.data;
         console.log(results, 'esto son results')
 
-        const mapResult = results.map(result => {
-            return data.resultsDB.push(result.title)
-        })
-
-        // const apiId = mapResults;
-
-        // const myFavs = await axios.get(`https://api.spoonacular.com/recipes/${apiId}/information${apiKey}`);
-
-        // const myFavsInfo = myFavs.data;
-        // console.log(myFavsInfo, 'esto es la información de mis recetas favoritas');
+        // const mapResult = results.map(result => {
+        //     return data.resultsDB.push(result.title)
+        // })
 
     };
 
@@ -56,7 +49,7 @@ const HomeUser = (props) => {
     return (
         <div className="homeuser-main-container">
             <div className="homeuser-title">
-                Hello {name} !
+                Hello {name}!
             </div>
             <div className="body-homeuser">
                 <div class="row row-cols-1 row-cols-md-2 g-4">

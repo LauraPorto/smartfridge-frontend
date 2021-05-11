@@ -407,3 +407,29 @@
         align-items: center; }
       .main-store .body-results .map-recipes .map-recipes-title {
         font-size: 160px; }
+
+.main-building {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1; }
+  .main-building .video-build {
+    height: 100vh;
+    width: 45em;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .main-building .titles-build {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 15em;
+    width: 30em; }
+    .main-building .titles-build .building-title {
+      font-size: 48px;
+      font-family: "Barlow Condensed", sans-serif; }
+    .main-building .titles-build .building-subtitle {
+      font-size: 40px;
+      font-family: "Rasa", serif; }

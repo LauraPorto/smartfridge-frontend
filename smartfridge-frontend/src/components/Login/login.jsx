@@ -40,7 +40,7 @@ const Login = (props) => {
     const handleState = (event) => {
         let data = { ...dataLogin, [event.target.name]: event.target.value };
         setLogin(data);
-        // console.log(data)
+
 
         //
         setValidationResult({

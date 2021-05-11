@@ -19,9 +19,9 @@ import Header from './components/Header/header';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
+    <div className="App">     
       <BrowserRouter>
+       <Header/>
         <Switch>
           <Route path='/' exact component={Home}/>
           <Route path='/profile' exact component={Profile}/>
