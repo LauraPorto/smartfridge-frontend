@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
-
 import { connect } from 'react-redux';
 import {SAVE_DETAILS} from '../../redux/types/recipeType';
 
@@ -10,13 +9,12 @@ const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 
 
 const Result = (props) => {
-
+    console.log(props, 'LAS PUTAS PROPS');
     const history = useHistory();
 
     useEffect(() => {
-
+        
         let token = props.user.token;
-        console.log(token, 'esto es el token');
 
         if(token === ''){
             history.push('/')
@@ -25,9 +23,9 @@ const Result = (props) => {
 
 
 
-    const recipes = props.recipeData.recipeData;
+    const recipes = props.recipeData;
     console.log(recipes, 'this is recipes');
-
+    
 
     
     const getRecipeInfo = async ({recipe}) => {
@@ -76,7 +74,7 @@ const Result = (props) => {
 //Recibimos por redux los datos de mi store, donde guardamos los ingredientes
 const mapStateToProps = (state) => {
     return {
-        recipeData: state.recipeReducer, 
+        recipeData: state.recipeReducer.recipeData, 
         user: state.userReducer
     }
 }

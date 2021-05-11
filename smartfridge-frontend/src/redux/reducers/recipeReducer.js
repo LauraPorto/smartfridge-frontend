@@ -5,7 +5,7 @@ import {STORE_FOOD} from '../types/recipeType';
 
 const initialState = {
   recipeData: {}, 
-  recipeDetails: {},
+  recipeDetails: {} || [],
   myIngredients: []
 };
 
