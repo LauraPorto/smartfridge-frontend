@@ -67,33 +67,43 @@ const HomeUser = (props) => {
                             )
                         } */}
                         <div class="card-menu">
-                            <div class="card-body-menu" href='/profile'>
-                                <FontAwesomeIcon icon={faUser} style={{width: '6em', height: '6em', color: '#93b496'}}/>
-                                <h5 class="card-title">Consulta tu perfil</h5>
+                            <div class="card-body-menu">
+                                <a href='/profile'>
+                                    <FontAwesomeIcon icon={faUser} style={{width: '6em', height: '6em', color: '#93b496'}}/>
+                                    <h5 class="card-title">Consulta tu perfil</h5>
+                                </a>
+                               
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card-menu">
                             <div class="card-body-menu">
-                                <FontAwesomeIcon icon={faHeart} style={{width: '6em', height: '6em', color: '#93b496'}}/>
-                                <h5 class="card-title">Consulta tus recetas favoritas</h5>
+                                <a href='/building'>
+                                    <FontAwesomeIcon icon={faHeart} style={{width: '6em', height: '6em', color: '#93b496'}}/>
+                                    <h5 class="card-title">Consulta tus recetas favoritas</h5>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card-menu">
-                            <div class="card-body-menu" href='/explore'>
-                                <FontAwesomeIcon icon={faSearch} style={{width: '6em', height: '6em', color: '#93b496'}}/>
-                                <h5 class="card-title">Explora nuestras recetas</h5>   
+                            <div class="card-body-menu">
+                                <a href='/explore'>
+                                    <FontAwesomeIcon icon={faSearch} style={{width: '6em', height: '6em', color: '#93b496'}}/>
+                                    <h5 class="card-title">Explora nuestras recetas</h5> 
+                                </a>
+                          
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card-menu">
-                            <div class="card-body-menu" href='/store'>
-                                <FontAwesomeIcon icon={faUtensils} style={{width: '6em', height: '6em', color: '#93b496'}}/>
-                                <h5 class="card-title">Mira qué te ofrece tu nevera</h5>
+                            <div class="card-body-menu">
+                                <a href='/store'>
+                                    <FontAwesomeIcon icon={faUtensils} style={{width: '6em', height: '6em', color: '#93b496'}}/>
+                                    <h5 class="card-title">Mira qué te ofrece tu nevera</h5>
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -13,6 +13,7 @@ import Explore from './containers/Explore/explore';
 import HomeUser from './containers/HomeUser/homeUser';
 import RecipeInfo from './containers/RecipeInfo/recipeInfo';
 import Result from './containers/Result/result';
+import Building from '../src/containers/Building/building';
 
 import Header from './components/Header/header';
 
@@ -31,6 +32,7 @@ function App() {
           <Route path='/home-user' exact component={HomeUser}/> 
           <Route path='/recipe-info' exact component={RecipeInfo}/> 
           <Route path='/result' exact component={Result}/> 
+          <Route path='/building' exact component={Building}/> 
         </Switch>
       </BrowserRouter>
     </div>

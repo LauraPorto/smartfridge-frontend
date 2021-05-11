@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Footer from '../../components/Footer/footer';
-
 import spices from '../../assets/spices.jpg';
 import saladcheese from '../../assets/saladcheese.png';
 

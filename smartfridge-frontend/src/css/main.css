@@ -282,11 +282,6 @@
 .explore-main-container {
   display: flex;
   flex-direction: column; }
-  .explore-main-container .carousel-inner {
-    height: 40em; }
-    .explore-main-container .carousel-inner .carousel-caption {
-      position: fixed;
-      margin-bottom: 3em; }
 
 .about-main-container {
   display: flex;
@@ -315,12 +310,16 @@
       width: 30em; }
 
 .homeuser-main-container {
-  background-color: #f1f1f1; }
+  background-color: #f1f1f1;
+  height: 100vh;
+  display: flex;
+  flex-direction: row-reverse; }
   .homeuser-main-container .homeuser-title {
     font-size: 40px;
     font-family: "Barlow Condensed", sans-serif;
     height: 4em;
     margin-right: 2em;
+    margin-left: 2em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
