@@ -82,16 +82,15 @@ Once the user is registered, they will be able to access their personal space wh
 
 ## ⛏️ Built With <a name = "tech_stack"></a>
 
-- [ReactJS](https://www.mongodb.com/) - Web Framework
-- [Express](https://expressjs.com/) - Server Framework
-- [JavaScript](https://vuejs.org/) - Web Framework
-- [Bootstrap](https://nodejs.org/en/) - Server Environment
-- [Reacstrap](https://nodejs.org/en/) - Server Environment
-- [Axios](https://nodejs.org/en/) - Server Environment
-- [NodeJs](https://nodejs.org/en/) - Server Environment
-- [Redux](https://nodejs.org/en/) - Server Environment
-- [Sass](https://nodejs.org/en/) - Server Environment
-- [GitFlow](https://nodejs.org/en/) - Workflow Methodology
+- [ReactJS](https://es.reactjs.org/) - JavaScript Framework
+- [JavaScript](https://www.javascript.com/) - Web Framework
+- [Bootstrap](https://www.npmjs.com/package/bootstrap) - Library
+- [Reacstrap](https://www.npmjs.com/package/reactstrap) - Library
+- [Axios](https://www.axios.com/) - Server Environment
+- [NodeJs](https://nodejs.org/en/) - Server Framework
+- [Redux](https://es.redux.js.org/) - JavaScript Library
+- [Sass](https://sass-lang.com/) - Library
+- [GitFlow](https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow) - Workflow Methodology
 
 
 ## ✍️ Authors <a name = "authors"></a>
