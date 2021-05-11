@@ -1,51 +1,110 @@
-import React, {useEffect} from 'react'
-import {useHistory} from 'react-router-dom';
+import React, {useEffect, useState} from 'react'
+
 import axios from 'axios';
 import Footer from '../../components/Footer/footer';
-// import vegetables3 from '../../assets/vegetables3.jpg';
-// import brigitte from '../../assets/brigitte.jpg';
-// import pasta from '../../assets/pasta.jpg';
+import vegetables3 from '../../assets/vegetables3.jpg';
+import brigitte from '../../assets/brigitte.jpg';
+import pasta from '../../assets/pasta.jpg';
 
+import {
+    Carousel,
+    CarouselItem,
+    CarouselControl,
+    CarouselIndicators,
+    CarouselCaption
+  } from 'reactstrap';
 
 const apiKey = '?apiKey=d6e877dd55e74b919c1cf042e3e465bb';
 
 const Explore = (props) => {
 
-  const history = useHistory();
 
-    useEffect( () => {
-        getRandom();
-    }, [])
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [animating, setAnimating] = useState(false);
 
-    const getRandom = async () => {
-        const random = await axios.get(`https://api.spoonacular.com/recipes/random${apiKey}&number=3`);
-        console.log(random.data.recipes, 'recetas aleatorias');
+    // const [random, setRandom] = useState({
+    //     random1: '',
+    //     random2: '',
+    //     random3: ''
+    // })
 
-        const randomRecipes = random.data.recipes;
+    // useEffect( () => {
+    //     getRandom();
+    // }, [])
 
-        const random1 = randomRecipes[0];
-        const random2 = randomRecipes[1];
-        const random3 = randomRecipes[2];
+    // const getRandom = async () => {
+    //     const random = await axios.get(`https://api.spoonacular.com/recipes/random${apiKey}&number=3`);
+    //     console.log(random.data.recipes, 'recetas aleatorias');
 
-       
-    };
+    //     const randomRecipes = random.data.recipes;
+    //     const random1 = randomRecipes[0];
+    //     const random2 = randomRecipes[1];
+    //     const random3 = randomRecipes[2];
 
+    //     setRandom(random1(randomRecipes[0]))
+    // };
+
+    const items = [
+        {
+          src: {pasta},
+          altText: 'Slide 1',
+          caption: 'Slide 1'
+        },
+        {
+          src: {brigitte},
+          altText: 'Slide 2',
+          caption: 'Slide 2'
+        },
+        {
+          src: {vegetables3},
+          altText: 'Slide 3',
+          caption: 'Slide 3'
+        }
+      ];
+
+      const next = () => {
+        if (animating) return;
+        const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+        setActiveIndex(nextIndex);
+      }
+    
+      const previous = () => {
+        if (animating) return;
+        const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+        setActiveIndex(nextIndex);
+      }
+    
+      const goToIndex = (newIndex) => {
+        if (animating) return;
+        setActiveIndex(newIndex);
+      }
+    
+      const slides = items.map((item) => {
+        return (
+          <CarouselItem
+            onExiting={() => setAnimating(true)}
+            onExited={() => setAnimating(false)}
+            key={item.src}
+          >
+            <img src={item.src} alt={item.altText} style={{width: '100%', height: '30em'}}/>
+            <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+          </CarouselItem>
+        );
+      });
 
     return (
         <div className="explore-main-container">
-            <div className="explore-container">
-                <div className="img-explore">
-                  <img></img>
-                  <h2></h2>
-                </div>
-                <div className="img-explore">
-                  <img></img>
-                  <h2></h2>
-                </div>
-                <div className="img-explore">
-                  <img></img>
-                  <h2></h2>
-                </div>
+            <div className="carousel-container">
+                <Carousel
+                    activeIndex={activeIndex}
+                    next={next}
+                    previous={previous}
+                    >
+                    <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+                    {slides}
+                    <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+                    <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+                </Carousel>
             </div>
             <div className="footer-container">
                 <Footer/>
