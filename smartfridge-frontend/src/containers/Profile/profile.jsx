@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 import {validateField, validateFields} from '../../uti';
-import {FormGroup, Input, Label, FormFeedback } from 'reactstrap';
+import {FormGroup, Input, FormFeedback } from 'reactstrap';
 import profilepic from '../../assets/profilepic.jpg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

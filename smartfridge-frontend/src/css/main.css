@@ -314,6 +314,29 @@
     .about-main-container .card-body-secundary .card-text {
       width: 30em; }
 
+.homeuser-main-container {
+  background-color: #f1f1f1; }
+  .homeuser-main-container .homeuser-title {
+    font-size: 40px;
+    font-family: "Barlow Condensed", sans-serif;
+    height: 4em;
+    margin-right: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end; }
+  .homeuser-main-container .body-homeuser {
+    background-color: #f1f1f1;
+    width: 40em;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .homeuser-main-container .body-homeuser .card-menu {
+      height: 15em;
+      width: 15em;
+      display: flex;
+      flex-direction: column; }
+
 .main-recipe-info {
   display: flex;
   flex-direction: column;
