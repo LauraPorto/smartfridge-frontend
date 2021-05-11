@@ -1,12 +1,12 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="https://i.imgur.com/AZ2iWek.png" alt="Project logo"></a>
+ <img src="https://www.flaticon.com/svg/vstatic/svg/1662/1662402.svg?token=exp=1620736423~hmac=702bbf26fb7519da9894e8e54cc9b591" alt="Project logo"></a>
 </p>
 <h3 align="center">SMARTFRIDGE Project - Frontend</h3>
 
 <div align="center">
 
-[![Hackathon](https://img.shields.io/badge/hackathon-name-orange.svg)](http://hackathon.url.com)
+
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
@@ -35,24 +35,23 @@
 
 ## 🧐 Problem Statement <a name = "problem_statement"></a>
 
-Este proyecto aborda la parte Frontend del proyecto full stack para final del bootcamps de GeeksHubs. La idea del trabajo es poder buscar recetas fácilmente con los ingredientes que hay en tu nevera. De este modo, se ofrecen las diferentes posibilidades para poder encontrar tu plato ideal sin esfuerzo, mediante una lista de tus alimentos para la búsqueda.
-Además de esto, también existe la opción de explorar por la aplicación y descubrir recetas nuevas en función de diferentes criterios, como la dieta (gluten, vegan, etc.), la preparación en minutos o los ingredientes extendidos para dicha receta. Además, podrás guardar en favoritos todas las recetas que quieras, para poder tener acceso rápido a tus platos favoritos. 
+This project addresses the Frontend part of the full stack project at the end of the GeeksHubs bootcamps. The idea of ​​the job is to be able to easily search for recipes with the ingredients that are in your fridge. In this way, the different possibilities are offered to be able to find your ideal dish without effort, by means of a list of your foods to search.
+In addition to this, there is also the option to explore the application and discover new recipes based on different criteria, such as diet (gluten, vegan, etc.), preparation in minutes or extended ingredients for said recipe. In addition, you can save all the recipes you want to favorites, so you can have quick access to your favorite dishes.
 
 
 ## 💡 Idea / Solution <a name = "idea"></a>
 
-En esta parte frontend del proyecto, se ofrece un recorrido por las distintas funcionalidades de la aplicación, mediante la implementación de contenedores y componentes que permiten una experiencia de usuario fluída. 
-Así, sin necesidad de realizar un registro o log in, el usuario puede navegar por la vista Home, explorar las diferentes recetas (sin acceso a su información), así como conocer los diferentes servicios que ofrece la web. Por supuesto, existe la opción de hacer un registro y un log in.
-Una vez el usuario ya está registrado, se podrá acceder a su espacio personal en el que se guardarán sus datos personales, con la opción de actualiza y borrar la cuenta (en su vista perfil). Además de esto, y como punto fuerte de esta web, el usuario puede acceder a su 'cocina', en la que realizará una búsqueda de los ingredientes que tiene en su casa o que quiere usar para buscar la receta, en la vista 'Store'. Desde aquí, se ofrecerá una vista de resultados con todas las recetas que coiniciden con la búsqueda, a partir de la cual se pueden extraer sus detalles, como la información nutricional, las instrucciones, ingredientes usados y sus medidas, así como ingredientes extra que se podrían añadir. Además, en esta vista ('Recipe Info'), también se podrán guardar tus recetas favoritas en la base de datos, para poder tener acceso fácil a su información. 
+In this frontend part of the project, a tour of the different functionalities of the application is offered, through the implementation of containers and components that allow a fluid user experience.
+A search for multiple ingredients of different recipes is offered for registered users with all the necessary information (images, extended ingredients, diets ...), thus exploring different functionalities and results in relation to the indicated ingredients.
 
 
 ## ⛓️ Dependencies / Limitations <a name = "limitations"></a>
 
-Existen algunas pequeñas limitaciones dentro de esta web. Así, en la búsqueda de ingredientes para las recetas, las imágenes que vienen de la API no se visualizan.
+There are some small limitations within this website. Thus, when searching for ingredients for recipes, the images that come from the API are not displayed.
 
 ## 🚀 Future Scope <a name = "future_scope"></a>
 
-En el futuro, se implementarán más funcionalidades como nuevos criterios de búsqueda o información nutricional para cada ingrediente de manera individual, además del que ofrece la receta. Además, se podrán visualizar también las recetas guardadas en favoritos y las vistas reservadas para el rol de usuario (Admin).
+In the future, more functionalities will be implemented such as new search criteria or nutritional information for each ingredient individually, in addition to the one offered by the recipe. In addition, the recipes saved in favorites and the views reserved for the user role (Admin) can also be viewed.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -61,7 +60,7 @@ and testing purposes. See [deployment](#deployment) for notes on how to deploy t
 
 ### Prerequisites
 
-Para poder instalar el proyecto, se ha de tener instalado NodeJS, usándose en este caso la versión ***. Arrancamos el proyecto y todas sus dependencias mediante el comando: 
+In order to install the project, NodeJS must be installed, using the version 15.7.0 in this case. We start the project and all its dependencies using the command:
 
 ```
 npm install
@@ -69,9 +68,7 @@ npm install
 
 ### Installing
 
-Una vez instaladas las dependencias, el proyecto empieza mediante la ejecución del comando:
-
-Say what the step will be
+Once the dependencies are installed, the project starts by running the command:
 
 ```
 npm start
@@ -80,7 +77,8 @@ npm start
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+Without the need to register or log in, the user can navigate the Home view, explore the different recipes (without access to their information), as well as learn about the different services offered by the web. Of course, there is the option of logging in and out.
+Once the user is registered, they will be able to access their personal space where their personal data will be saved, with the option to update and delete the account (in their profile view). In addition to this, and as a strong point of this website, the user can access their 'kitchen', where they will search for the ingredients they have at home or that they want to use to search for the recipe, in the 'Store' view '. From here, a results view will be offered with all the recipes that match the search, from which their details can be extracted, such as nutritional information, instructions, ingredients used and their measurements, as well as extra ingredients that are they might add. In addition, in this view ('Recipe Info'), you can also save your favorite recipes in the database, in order to have easy access to their information.
 
 ## ⛏️ Built With <a name = "tech_stack"></a>
 
@@ -91,18 +89,16 @@ Add notes about how to use the system.
 - [Reacstrap](https://nodejs.org/en/) - Server Environment
 - [Axios](https://nodejs.org/en/) - Server Environment
 - [NodeJs](https://nodejs.org/en/) - Server Environment
-- [Docker](https://nodejs.org/en/) - Server Environment
+- [Redux](https://nodejs.org/en/) - Server Environment
+- [Sass](https://nodejs.org/en/) - Server Environment
 - [GitFlow](https://nodejs.org/en/) - Workflow Methodology
+
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+- [@LauraPorto](https://github.com/LauraPorto) - Idea & Initial work
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors)
-who participated in this project.
 
 ## 🎉 Acknowledgments <a name = "acknowledgments"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+To all my fellow Bootcamps, for help, support, and laughs, when needed.
