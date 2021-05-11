@@ -23,6 +23,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-left: 5em;
 
         .card-menu{
             height: 15em;
@@ -30,7 +31,16 @@
             display: flex;
             flex-direction: column;
 
-            
+            .card-title{
+                font-family: $fontBody;
+                font-size: $mp-k;
+
+                width: 12em;
+
+                margin: 1em;
+
+                color: nth($palette, 4);
+            }
         }
     }
 }

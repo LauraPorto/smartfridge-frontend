@@ -32,7 +32,6 @@ const Result = (props) => {
         });
 
         let id = recipe.id;
-        console.log(id, 'id de la receta');
     
         const recipeInfo = await axios.get(`https://api.spoonacular.com/recipes/${id}/information${apiKey}&includeNutrition=true`);
         props.dispatch({type: SAVE_DETAILS, payload: recipeInfo.data});

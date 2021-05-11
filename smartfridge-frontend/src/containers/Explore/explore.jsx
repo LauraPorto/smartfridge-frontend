@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react'
 import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 import Footer from '../../components/Footer/footer';
-import vegetables3 from '../../assets/vegetables3.jpg';
-import brigitte from '../../assets/brigitte.jpg';
+import sweet from '../../assets/sweet.jpg';
+import toast from '../../assets/toast.jpg';
 import pasta from '../../assets/pasta.jpg';
 
 import {SAVE} from '../../redux/types/recipeType';
@@ -60,13 +60,16 @@ const Explore = (props) => {
         <div className="explore-main-container">
             <div className="explore-container-img">
                 <div className="img-exp" onClick={() => getRandom()}>
-                  <img src={pasta} style={{width: '100%', height: '25em'}}></img>
+                  <img src={pasta} style={{width: '60%', height: '20em', margin: '2em', marginTop: '5em'}}></img>
+                  Recetas Random
                 </div>
                 <div className="img-exp" onClick={() => getVegan()}>
-                  <img src={pasta} style={{width: '100%', height: '25em'}}></img>
+                  <img src={toast} style={{width: '60%', height: '20em', margin: '2em'}}></img>
+                  Recetas Random
                 </div>
                 <div className="img-exp" onClick={() => getGlutenFree()}>
-                  <img src={pasta} style={{width: '100%', height: '25em'}}></img>
+                  <img src={sweet} style={{width: '60%', height: '20em', margin: '2em'}}></img>
+                  Recetas Random
                 </div>
             </div>
             <div className="footer-container">

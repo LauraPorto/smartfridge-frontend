@@ -13,10 +13,10 @@ const Building = (props) => {
             </div>
             <div className="titles-build">
                 <div className="building-title">
-                    View in building 
+                    View in building ...
                 </div>
                 <div className="building-subtitle">
-                {name}, estamos trabajando para ofrecerte la mejor experiencia !
+                {name}, this part of the website is still being cooked, it will be at your table really soon
                 </div>
             </div>
          

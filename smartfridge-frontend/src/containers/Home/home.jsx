@@ -21,7 +21,7 @@ const Home = () => {
                             <img src={saladcheese} style={{maxWidth: '100%', width: '40em', height: '45em'}}></img>
                         </div>
                         <div>
-                            <h2><a href='/register'>Sign up</a>and discover our recipes</h2>
+                            <h2><a href='/register'>Sign up</a> and discover a whole new world of flavors and sensations</h2>
                         </div>
                       
                     </div>

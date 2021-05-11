@@ -13,7 +13,6 @@ const RecipeInfo = (props) => {
     useEffect(() => {
 
         let token = props.user.token;
-        console.log(token, 'esto es el token');
 
         if(token === ''){
             history.push('/')

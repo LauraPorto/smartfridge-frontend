@@ -39,7 +39,6 @@ const Register = () => {
 
         let data = { ...dataRegister, [event.target.name]: event.target.value };
         setRegister(data)
-        console.log('update data', dataRegister);
     }
 
 
@@ -53,7 +52,6 @@ const Register = () => {
         });
 
         let result = await axios.post('http://localhost:3001/user/signup', dataRegister);
-        console.log(result, 'esto es result');
     }
 
     return (
@@ -72,7 +70,7 @@ const Register = () => {
                         <FormFeedback>{validationResult.surname}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
-                        <Label for='phone'>Teléfono : </Label>
+                        <Label for='phone'>Phone : </Label>
                         <Input type='number' id='phone' name='phone' onChange={handleState} valid={validationResult.validated && !validationResult.phone} invalid={validationResult.validated && validationResult.phone} />
                         <FormFeedback>{validationResult.phone}</FormFeedback>
                     </FormGroup>

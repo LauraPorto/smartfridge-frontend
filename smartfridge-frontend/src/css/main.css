@@ -281,7 +281,11 @@
 
 .explore-main-container {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 32px; }
 
 .about-main-container {
   display: flex;
@@ -329,12 +333,19 @@
     width: 40em;
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    margin-left: 5em; }
     .homeuser-main-container .body-homeuser .card-menu {
       height: 15em;
       width: 15em;
       display: flex;
       flex-direction: column; }
+      .homeuser-main-container .body-homeuser .card-menu .card-title {
+        font-family: "Rasa", serif;
+        font-size: 32px;
+        width: 12em;
+        margin: 1em;
+        color: #141414; }
 
 .main-recipe-info {
   display: flex;

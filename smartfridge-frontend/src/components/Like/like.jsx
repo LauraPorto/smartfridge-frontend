@@ -7,18 +7,9 @@ import { connect } from 'react-redux';
 
 const Like = (props) => {
 
-    console.log(props, 'esto son las props');
-    console.log(props.user._id, 'user id');
-    console.log(props.recipeDetails.id, 'api id');
-    console.log(props.recipeDetails.title, 'api title');
-
     const recipe = props.recipeDetails.recipeDetails;
-    console.log(recipe, 'receta details');
-    console.log(recipe.id, 'id de la receta');
-    console.log(recipe.title, 'titulo de la receta');
 
     const user = props.user.user;
-    console.log(user, 'esto es user');
 
     const [like, setLiked] = useState({
         liked: false
@@ -30,8 +21,6 @@ const Like = (props) => {
         userId: user._id
     });
 
-    console.log(like.liked, 'this is the like value');
-    console.log(codeRecipe.apiId, 'apidid');
 
     const toggle = () => {
         let likeRecipe = like.liked;
@@ -43,16 +32,15 @@ const Like = (props) => {
         toggle();
 
         let result =  await axios.post('http://localhost:3001/store/', codeRecipe);
-        console.log(result, 'this is result SAVE');
-        alert('receta guardada en favoritos');
+
+        alert('Recipe saved in Favorites');
     };
 
     const deleteRecipe = async () => {
         toggle();
 
         let result =  await axios.delete('http://localhost:3001/store/', codeRecipe);
-        console.log(result, 'this is result');
-        alert('receta borrada de favoritos');
+        alert('Recipe deleted');
     }
 
     return (

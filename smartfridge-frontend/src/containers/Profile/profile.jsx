@@ -15,7 +15,6 @@ import {LOGOUT} from '../../redux/types/userType';
 const Profile = (props) => {
 
     const history = useHistory();
-    console.log(props.user, 'esto es props.user')
 
     useEffect(() => {
 
@@ -61,7 +60,7 @@ const Profile = (props) => {
 
             await axios.put(`http://localhost:3001/user/${id}`);
 
-            return alert('Guardado con éxito!!!');
+            return alert('Update Success!!!');
         } catch (error) {
             console.log(error);
         }

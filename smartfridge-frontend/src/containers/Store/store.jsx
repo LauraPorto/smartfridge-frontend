@@ -4,8 +4,6 @@ import axios from 'axios';
 
 import Search from '../../components/Search/search';
 
-
-
 import kitchen from '../../assets/kitchen.jpeg';
 
 import { SAVE } from '../../redux/types/recipeType';
@@ -48,16 +46,10 @@ const Store = (props) => {
         })
 
 
-        console.log(ingredient.id, 'esto es el id');
-
         const listRecipe = list.myIngredients.push(ingredient.name);
-
-        console.log(list.myIngredients, 'lista para las recetas');
-        console.log(listRecipe, 'listercipe');
 
     };
 
-    console.log(list.myIngredients, '58 listmyingredients');
 
     
     const getRecipes = async () => {
@@ -79,9 +71,8 @@ const Store = (props) => {
                 <div className="store-fridge">
                     <img src={kitchen} style={{maxWidth: '100%', width: '35em', height: '38em'}}></img>
                     <div className="fridge-menu">
-                        {/* <button>boton para borrrar</button> */}
                         <div className="fridge-menu-msn">
-                            <p>Busca tus ingredientes y blablabla</p>
+                            <p>Select the ingredients you like most and let us find you your next favorite dish</p>
                         </div>
                         <div className="search-store-container">
                             <Search/>
@@ -91,7 +82,6 @@ const Store = (props) => {
                 </div>
                 <div className="my-products-store">
                     <div className="selected-ingredients">
-                        MIS ELEMENTOS SELECCIONADOS
                     </div>
                     
                     <div className="ingredient-container">

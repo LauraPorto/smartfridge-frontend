@@ -63,7 +63,7 @@ const HomeUser = (props) => {
                             <div class="card-body-menu">
                                 <a href='/profile'>
                                     <FontAwesomeIcon icon={faUser} style={{width: '6em', height: '6em', color: '#93b496'}}/>
-                                    <h5 class="card-title">Consulta tu perfil</h5>
+                                    <h5 class="card-title">Check your profile</h5>
                                 </a>
                                
                             </div>
@@ -74,7 +74,7 @@ const HomeUser = (props) => {
                             <div class="card-body-menu">
                                 <a href='/building'>
                                     <FontAwesomeIcon icon={faHeart} style={{width: '6em', height: '6em', color: '#93b496'}}/>
-                                    <h5 class="card-title">Consulta tus recetas favoritas</h5>
+                                    <h5 class="card-title">Your favorite recipes</h5>
                                 </a>
                             </div>
                         </div>
@@ -84,7 +84,7 @@ const HomeUser = (props) => {
                             <div class="card-body-menu">
                                 <a href='/explore'>
                                     <FontAwesomeIcon icon={faSearch} style={{width: '6em', height: '6em', color: '#93b496'}}/>
-                                    <h5 class="card-title">Explora nuestras recetas</h5> 
+                                    <h5 class="card-title">Search for new recipes</h5> 
                                 </a>
                           
                             </div>
@@ -95,7 +95,7 @@ const HomeUser = (props) => {
                             <div class="card-body-menu">
                                 <a href='/store'>
                                     <FontAwesomeIcon icon={faUtensils} style={{width: '6em', height: '6em', color: '#93b496'}}/>
-                                    <h5 class="card-title">Mira qué te ofrece tu nevera</h5>
+                                    <h5 class="card-title">What is your fridge offering?</h5>
                                 </a>
                             </div>
                         </div>

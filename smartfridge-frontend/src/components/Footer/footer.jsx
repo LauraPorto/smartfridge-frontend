@@ -14,7 +14,7 @@ const Footer = () => {
                     </a>
                     <div className="footer-icons">
                         <p className="footer-company-about">Keep in touch and stay up to date.
-                        <input className="input-footer" placeholder="introduce tu email"></input>
+                        <input className="input-footer" placeholder="introduce your email"></input>
                         <button className="button-footer">SEND DATA</button>
                         </p>
                     </div>

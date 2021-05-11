@@ -13,14 +13,14 @@ const About = () => {
                 </div>
                 <div className="card-body-secundary">
                     <div class="card-body-title">
-                        <h1 class="card-title">Las mejores recetas para ti</h1>
+                        <h1 class="card-title">The best recipes for you</h1>
                     </div>
                     <div class="card mb-3">
                         <div class="row g-0">
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h3 class="card-title">¿Qué tienes en la cocina?</h3>
-                                    <p class="card-text">Busca los ingredientes que tienes para encontrar qué recetas cocinar</p>
+                                    <h3 class="card-title">What do you have in the kitchen?</h3>
+                                    <p class="card-text">Look for ingredients you have to find which recipe to cook</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -41,8 +41,8 @@ const About = () => {
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h3 class="card-title">Busca las mejores recetas</h3>
-                                    <p class="card-text">Con los ingredientes seleccionados, busca recetas de todo tipo de cocinas</p>
+                                    <h3 class="card-title">Find the best recipes</h3>
+                                    <p class="card-text">With the chosen ingredients, look for recipes of all kind of cooking recipes</p>
                                 </div>
                             </div>
                         </div>
@@ -51,8 +51,8 @@ const About = () => {
                         <div class="row g-0">
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h3 class="card-title">Información en las recetas</h3>
-                                    <p class="card-text">Las recetas no sólo te ofrecen las instrucciones para su realización, sino también contenido adicional como carga nutricional de las recetas, recetas similares, ingredientes sustitutivos</p>
+                                    <h3 class="card-title">Recipes Information</h3>
+                                    <p class="card-text">The recipes not only offer you information on how to make them, but also show additional information such as nutritional value, similar recipes and extended recipes</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -73,8 +73,8 @@ const About = () => {
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h3 class="card-title">Disfruta</h3>
-                                    <p class="card-text">Explora más recetas, coge ideas, guarda recetas en favoritos para tenerlas siempre</p>
+                                    <h3 class="card-title">Enjoy</h3>
+                                    <p class="card-text">Explore more recipes, take ideas, save your favorites</p>
                                 </div>
                             </div>
                         </div>

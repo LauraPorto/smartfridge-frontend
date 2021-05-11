@@ -26,10 +26,7 @@ const Search = (props) => {
 
     const toSearch = async () => {
 
-        let ingredients = await axios.get(`https://api.spoonacular.com/food/ingredients/search${apiKey}${query}${search.searchBox}`);
-
-
-        console.log(ingredients.data.results, 'los ingredientes');
+        let ingredients = await axios.get(`https://api.spoonacular.com/food/ingredients/search${apiKey}${query}${search.searchBox}`)
        
 
         const arraySearch = ingredients.data.results.filter(explore => 
@@ -47,7 +44,6 @@ const Search = (props) => {
         <div className='search-container'>
             <input className='search-box' type='search' name='searchBox' onChange={handleState}></input>
             <button type='submit' className='search-button' onClick={() => toSearch()}>SEARCH</button>
-            {/* <button type='submit' onClick={() => toSearchFood()}>SEARCH NUTRIENTS</button> */}
         </div>
     )
 }

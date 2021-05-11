@@ -84,7 +84,7 @@ const Login = (props) => {
 
             <Modal isOpen={state.open}>
                 <ModalHeader>
-                    Iniciar Sesión
+                    Log In
                     </ModalHeader>
                 <ModalBody>
                     <FormGroup>
@@ -93,14 +93,14 @@ const Login = (props) => {
                         <FormFeedback>{validationResult.email}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
-                        <Label form='password'>Contraseña</Label>
+                        <Label form='password'>Password</Label>
                         <Input type='password' id='password' name='password' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} />
                         <FormFeedback>{validationResult.password}</FormFeedback>
                     </FormGroup>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color='primary' onClick={() => sendData()}>Entrar</Button>
-                    <Button color='secundary' onClick={() => toggleLogin()}>Salir</Button>
+                    <Button color='primary' onClick={() => sendData()}>Confirm</Button>
+                    <Button color='secundary' onClick={() => toggleLogin()}>Cancel</Button>
                 </ModalFooter>
             </Modal>
         </div>
