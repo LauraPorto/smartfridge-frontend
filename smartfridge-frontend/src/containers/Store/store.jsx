@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 import Search from '../../components/Search/search';
-import Header from '../../components/Header/header';
+
 
 
 import kitchen from '../../assets/kitchen.jpeg';
@@ -70,21 +70,24 @@ const Store = (props) => {
 
     return (
         <div className="main-store">
-            <div className="header-div"> <Header/> </div>
-           
+            <div className="empty-div"></div>
             <div className="body-store">
                 <div className="store-fridge">
-                    <img src={kitchen} style={{maxWidth: '100%', width: 'auto', height: '33em'}}></img>
+                    <img src={kitchen} style={{maxWidth: '100%', width: '35em', height: '38em'}}></img>
                     <div className="fridge-menu">
-                        <button>boton para borrrar</button>
+                        {/* <button>boton para borrrar</button> */}
+                        <div className="fridge-menu-msn">
+                            <p>Busca tus ingredientes y blablabla</p>
+                        </div>
                         <div className="search-store-container">
                             <Search/>
                         </div>
+                        <button className="button-recipes" onClick={() => getRecipes()}><p>Get Recipes</p></button>
                     </div>
                 </div>
                 <div className="my-products-store">
                     <div className="selected-ingredients">
-                        Mis elementos seleccionados
+                        MIS ELEMENTOS SELECCIONADOS
                     </div>
                     
                     <div className="ingredient-container">
@@ -94,7 +97,7 @@ const Store = (props) => {
                                     <div className = "map-ingredient" onClick={() => selectIngredient({ingredient})}>
                                         {ingredient.name}
                                     </div>
-                                    <img className="map-image" src={`https://spoonacular.com/cdn/ingredients_{1000x100}/${ingredient.image}`}/>
+                                    <img className="map-image" src={`https://spoonacular.com/cdn/ingredients_{100x100}/${ingredient.image}`}/>
                                 </div>
                             )
                         }
@@ -102,8 +105,6 @@ const Store = (props) => {
                 </div>
                          
             </div>
-            <button onClick={() => getRecipes()}></button>
- 
         </div>
     )
 }

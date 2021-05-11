@@ -1,5 +1,6 @@
 .main-container{
-    background-color: grey;
+   
+    background-image: url('https://images.pexels.com/photos/1323712/pexels-photo-1323712.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
 
     height: $maxHeight;
     display: flex; 
@@ -12,22 +13,34 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
 
+        border: 1.5px solid;
+        border-color: rgba(128,128,128,1);
+        margin: 2em;
         background-color: nth($palette, 2);
-        height: 40em;
+        height: 35em;
         width: 60em;
+        box-shadow:  1px 0px 7px 8px rgba(128,128,128,1);
 
         .img-container {
-            width: 25em;
+            width: 27.9em;
             
         }
 
         .form-container {
             width: 25em;
-            height: 30em;
+            height: 35em;
+            margin: 1em;
 
-            background-color: beige;
+            Input{
+                background-color: nth($palette, 2);
+                border-color: nth($palette, 1);
+            }
+
+            .regiser-button {
+                @include button
+            }
         }
     }
 }

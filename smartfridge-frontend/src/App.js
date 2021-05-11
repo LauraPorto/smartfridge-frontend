@@ -14,11 +14,12 @@ import HomeUser from './containers/HomeUser/homeUser';
 import RecipeInfo from './containers/RecipeInfo/recipeInfo';
 import Result from './containers/Result/result';
 
-// import Header from './components/Header/header';
+import Header from './components/Header/header';
 
 function App() {
   return (
     <div className="App">
+      <Header/>
       <BrowserRouter>
         <Switch>
           <Route path='/' exact component={Home}/>

@@ -2,6 +2,11 @@
     
     font-family: $fontBody;
 
+    .empty-div{
+        height: 5em;
+        background-color: nth($palette, 2)
+    }
+
     .body-store {
 
         .store-fridge {
@@ -10,7 +15,7 @@
             align-items: center;
             justify-content: space-around;
 
-            background-color: rgb(212, 167, 167);
+            background-color: nth($palette, 2);
 
             .fridge-menu {
                 display: flex;
@@ -20,7 +25,12 @@
 
                 width: 35em;
 
-                background-color: rgb(130, 170, 130);
+                background-color: nth($palette, 2);
+
+                .fridge-menu-msn{
+                    font-family: $fontHeader;
+                    font-size: 4em;
+                }
 
                 .search-store-container {
                     display: flex;
@@ -28,33 +38,56 @@
                     justify-content: flex-end;
                     align-items: right;
             
-                    height: 3em;
+                    height: 15em;
 
+                    margin: 3em;
+                    background-color: nth($palette, 2)
+
+                }
+
+                .button-recipes{
+                    @include button;
+                    height: 3em;
+                    
+                    p{
+                        font-family: $fontButtons;
+                        color: nth($palette, 4);
+                    }
                 }
             }
         }
 
         .my-products-store {
-           
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 0px 0px;
-
-            height: 15em;
+        
+            .selected-ingredients{
+                display: flex;
+                justify-content: center;
+                font-size: $mp-j;
+                color: nth($palette, 4);
+            }
 
             .ingredient-container {
                 display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                grid-template-rows: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
                 gap: 3em;
 
                 height: 10em;
-                width: 16em;
+                margin-left: 2em;
 
                 .map-ingredient {
-                    background-color: aqua;
+                    background-color: nth($palette, 2);
                     cursor: pointer;
+                    width: 20em;
+
+                    display: flex;
+                    justify-content: center;
+                    font-size: $mp-h;
+                    color: nth($palette, 4);
+                }
+
+                .map-image{
+                    width: 20em;
                 }
             }
         }

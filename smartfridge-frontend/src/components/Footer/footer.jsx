@@ -1,5 +1,5 @@
 import React from 'react';
-
+import fridge from '../../assets/fridge.png';
 
 
 const Footer = () => {
@@ -7,21 +7,18 @@ const Footer = () => {
         <div className="footer-container">
             <footer className="footer-distributed">
                 <div className="footer-left">
-                   <h3>Company<span>logo</span></h3>
-                    <p className="footer-company-name"> Company Name © 2015</p>
+                    <a class="navbar-brand-logo" href="/">
+                        <img src={fridge} style={{maxWidth: '100%', width: '3.5em', height: '3.5em', color: '#93b496'}} alt="smartfridge" class="d-inline-block align-top"
+                        />
+                        <h1>SMARTFRIDGE</h1>
+                    </a>
                     <div className="footer-icons">
-                        <a href="#"><i className="fa fa-facebook"></i></a>
-                        <a href="#"><i className="fa fa-twitter"></i></a>
-                        <a href="#"><i className="fa fa-linkedin"></i></a>
+                        <p className="footer-company-about">Keep in touch and stay up to date.
+                        <input className="input-footer" placeholder="introduce tu email"></input>
+                        <button className="button-footer">SEND DATA</button>
+                        </p>
                     </div>
                 </div>
-
-                <div className="footer-right">
-                    <p className="footer-company-about">Keep in touch and stay up to date.</p>
-                    <input className="input-footer" placeholder="introduce tu email"></input>
-                    <button className="button-footer">SEND DATA</button>
-                </div>
-
             </footer>
         </div>
     )

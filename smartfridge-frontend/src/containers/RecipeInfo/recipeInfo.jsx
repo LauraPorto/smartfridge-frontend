@@ -1,12 +1,9 @@
 import React, {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 
-import Header from '../../components/Header/header';
-import Recipe from '../../components/Recipe/recipe';
 import Like from '../../components/Like/like';
 
 import {connect} from 'react-redux';
-
 
 
 const RecipeInfo = (props) => {
@@ -24,49 +21,93 @@ const RecipeInfo = (props) => {
     }, [])
 
     const recipeDetails = props.recipeDetails.recipeDetails;
-    console.log(recipeDetails, 'detalles de la receta')
-
-
-    console.log(props, 'estas son las props');
-
+    const nutritions = recipeDetails.nutrition;
+    const extendedIngredients = recipeDetails.extendedIngredients;
+    const diets = recipeDetails.diets;
+ 
 
     return (
         <div className="main-recipe-info">
-            <div className="header-div"> <Header/> </div>
             <div className="body-recipe-info">
                 <div className="img-recipe-info">
-                    {recipeDetails.image}
+                    <img src={recipeDetails.image} style={{width: '100%', height: '30em'}}></img>
                 </div>
                 <div className="tittle-recipe-info">
                     <h1>{recipeDetails.title}</h1>
                 </div>
-                <div className="recipe-info-data">
-                    <div className="info1">
-                        Servings: {recipeDetails.servings}
-                    </div>
-                    <div className="info2">
-                        readyInMinutes: {recipeDetails.readyInMinutes}
-                    </div>
-                    <div className="info2">
-                        Price aprox per serving: {recipeDetails.pricePerServing}
-                    </div>
-                    <div className="info-special">
-                        <div className="info-icons">
-                            Iconos (gluten, lactosa)
+                <div className="container">
+                    <div class="row">
+                        <div class="col-4">
+                            <div className="info info-1">
+                                <div style={{margin: '2em'}}>
+                                    <Like/> 
+                                </div>
+                                <div>
+                                For {recipeDetails.servings} servings
+                                </div>
+                                <div>
+                                Ready in {recipeDetails.readyInMinutes} minutes
+                                </div>
+                                <div>
+                                  Price aprox per serving: {recipeDetails.pricePerServing}
+                                </div>
+                            </div>
+                            <div className="info info-2">
+                                <div className="nutrition-info">
+                                    <div>
+                                        Percent of Carbohydrathes: {nutritions.caloricBreakdown.percentCarbs}
+                                    </div>
+                                    <div>
+                                        Percent of Fat: {nutritions.caloricBreakdown.percentFat}
+                                    </div>
+                                    <div>
+                                        Percent of Proteins: {nutritions.caloricBreakdown.percentProtein}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="info info-3">
+                                {
+                                    diets.map(diet => 
+                                        <div className="map-diet">
+                                            Diets: {diets}
+                                        </div>
+                                    )
+                                }
+                            </div>
                         </div>
-                        <div className="info-icons-text">
-                            Diets: {recipeDetails.diets}
+                        <div class="col-8">
+                            <div className=" ing ingredients-used"><h3>ORIGINAL INGREDIENTS</h3>
+                                {
+                                    nutritions.ingredients.map(ingredient => 
+                                        <div className="maps">                                          
+                                            <div className="map-used-name">
+                                                {ingredient.name}
+                                            </div>
+                                            <div className="map-used-units">
+                                                {ingredient.amount} {ingredient.unit}
+                                            </div>
+                                        </div>                                       
+                                    )
+                                }
+                            </div>
+                            <div className="ing ingredients-extend"><h3>EXTENDED INGREDIENTS</h3>
+                                {
+                                    extendedIngredients.map(ingredient => 
+                                        <div className="maps">
+                                            <div className="map-extended">   
+                                                {ingredient.original}
+                                            </div>
+                                        </div>                                       
+                                    )
+                                }
+                            </div>
+                            {/* <div className="more-nutrients">¿QUIERES MÁS INFORMACIÓN DE LOS INGREDIENTES?</div> */}
                         </div>
                     </div>
-                    <div className="more-ingredients">
-                        <div className="extended-ingredients">
-                            Algunos ingredientes para añadir
-                            <Like/>
+                    <div className="row">
+                        <div className="analized-recipe">
+                            {recipeDetails.instructions}
                         </div>
-                    </div>
-                    <div className="recipe-instruction">
-                        Collapse que muestra las instrucciones
-                        <Recipe />
                     </div>
                 </div>
             </div>

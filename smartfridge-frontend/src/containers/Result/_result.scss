@@ -1,13 +1,33 @@
 .main-store {
+    background-color: nth($palette, 1);
+    height: $maxHeight;
+    
+
+    .empty-div-result{
+        height: 5em;
+    }
+
     .body-results{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 3em;
+        background-color: nth($palette, 1);
+    
+        font-family: $fontBody;
         .map-recipes{
-            display: flex;
-            flex-direction: row;
-            background-color: rgb(164, 164, 202);
+            height: 20em;
+            width: 20em;
+            cursor: pointer;
+
             .map-recipes-header{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+
+            }
+            .map-recipes-title{
+                font-size: $mp-r;
             }
            
         }

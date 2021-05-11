@@ -1,0 +1,31 @@
+.homeuser-main-container{
+    background-color: nth($palette, 1);
+    .homeuser-title{
+        font-size: $mp-l;
+        font-family: $fontHeader;
+        height: 4em;
+        margin-right: 2em;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items:flex-end;
+    }
+
+    .body-homeuser{
+        background-color: nth($palette, 1);
+        width: 40em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .card-menu{
+            height: 15em;
+            width: 15em;
+            display: flex;
+            flex-direction: column;
+
+            
+        }
+    }
+}
