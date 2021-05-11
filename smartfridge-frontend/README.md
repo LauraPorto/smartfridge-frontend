@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="https://www.flaticon.com/svg/vstatic/svg/1662/1662402.svg?token=exp=1620736423~hmac=702bbf26fb7519da9894e8e54cc9b591" alt="Project logo"></a>
+ <img src="src/assets/fridge.png" alt="Project logo"></a>
 </p>
 <h3 align="center">SMARTFRIDGE Project - Frontend</h3>
 
