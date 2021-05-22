@@ -41,7 +41,7 @@ const Header = (props) => {
                     </div>
                     <div class="navbar-buttons-right">
                         <Login/>
-                        <button><a href="/register">SIGN IN</a></button>
+                        <button><a href="/register">SIGN UP</a></button>
                     </div>
                     </>
                     :

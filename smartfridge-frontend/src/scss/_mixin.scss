@@ -14,7 +14,7 @@
     }
 };
 
-@mixin button ($background-color: transparent, $width:20em) {
+@mixin button ($background-color: transparent, $width:18em) {
 	font-family: $fontButtons;
     font-weight: 600;
     font-size: 13px;
@@ -22,6 +22,7 @@
     letter-spacing: 3px;
 	background-color: $background-color;
 	width: $width;
+	height: 2.2em;
 	color: nth($palette, 4);
 	&:hover {
         border: 3px solid (nth($palette, 3));

@@ -54,7 +54,8 @@
         text-transform: uppercase;
         letter-spacing: 3px;
         background-color: #93b496;
-        width: 20em;
+        width: 18em;
+        height: 2.2em;
         color: #141414; }
         .footer-container .footer-distributed .footer-left .footer-icons .button-footer:hover {
           border: 3px solid #93b496; }
@@ -81,7 +82,8 @@
       text-transform: uppercase;
       letter-spacing: 3px;
       background-color: transparent;
-      width: 20em;
+      width: 18em;
+      height: 2.2em;
       color: #141414;
       color: #141414; }
       .header-container .navbar .container-fluid .navbar-buttons-right button:hover {
@@ -119,7 +121,8 @@
     text-transform: uppercase;
     letter-spacing: 3px;
     background-color: transparent;
-    width: 20em;
+    width: 18em;
+    height: 2.2em;
     color: #141414; }
     .search-container .search-button:hover {
       border: 3px solid #93b496; }
@@ -189,7 +192,8 @@
     text-transform: uppercase;
     letter-spacing: 3px;
     background-color: transparent;
-    width: 20em;
+    width: 18em;
+    height: 2.2em;
     color: #141414;
     height: 3em;
     width: 20em; }
@@ -220,20 +224,27 @@
     .main-container .register-container .form-container {
       width: 25em;
       height: 35em;
-      margin: 1em; }
+      margin: 1em;
+      overflow: scroll; }
       .main-container .register-container .form-container Input {
         background-color: #cad6cc;
         border-color: #f1f1f1; }
-      .main-container .register-container .form-container .regiser-button {
+      .main-container .register-container .form-container FormFeedback {
+        height: 3px;
+        width: 20px;
+        font-size: 3px; }
+      .main-container .register-container .form-container .register-button {
         font-family: "Barlow", sans-serif;
         font-weight: 600;
         font-size: 13px;
         text-transform: uppercase;
         letter-spacing: 3px;
         background-color: transparent;
-        width: 20em;
-        color: #141414; }
-        .main-container .register-container .form-container .regiser-button:hover {
+        width: 10em;
+        height: 2.2em;
+        color: #141414;
+        margin: 2px; }
+        .main-container .register-container .form-container .register-button:hover {
           border: 3px solid #93b496; }
 
 .main-store {
@@ -272,7 +283,8 @@
         text-transform: uppercase;
         letter-spacing: 3px;
         background-color: transparent;
-        width: 20em;
+        width: 18em;
+        height: 2.2em;
         color: #141414;
         height: 3em; }
         .main-store .body-store .store-fridge .fridge-menu .button-recipes:hover {

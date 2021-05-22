@@ -65,7 +65,7 @@ const Explore = (props) => {
                 </div>
                 <div className="img-exp" onClick={() => getVegan()}>
                   <img src={toast} style={{width: '60%', height: '15em', margin: '2em'}}></img>
-                  Vegan Recetas 
+                  Vegan Recipes 
                 </div>
                 <div className="img-exp" onClick={() => getGlutenFree()}>
                   <img src={sweet} style={{width: '60%', height: '15em', margin: '2em'}}></img>

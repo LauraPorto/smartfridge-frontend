@@ -80,11 +80,11 @@ const Login = (props) => {
     return (
         <div className="login">
 
-            <div className="button-login button" onClick={toggleLogin}>Log In</div>
+            <div className="button-login button" onClick={toggleLogin}>Sign In</div>
 
             <Modal isOpen={state.open}>
                 <ModalHeader>
-                    Log In
+                    Sign In
                     </ModalHeader>
                 <ModalBody>
                     <FormGroup>
