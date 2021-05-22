@@ -75,20 +75,32 @@
                 height: 10em;
                 margin-left: 2em;
 
-                .map-ingredient {
-                    background-color: nth($palette, 2);
-                    cursor: pointer;
-                    width: 20em;
+                .ing-result{
 
                     display: flex;
-                    justify-content: center;
-                    font-size: $mp-h;
-                    color: nth($palette, 4);
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 10em;
+                    
+                    .map-ingredient {
+                        background-color: nth($palette, 2);
+                        cursor: pointer;
+                        width: 17em;
+                        
+
+                        display: flex;
+                        justify-content: center;
+                        font-size: $mp-i;
+                        color: nth($palette, 4);
+                    }
+
+                    .map-image{
+                        width: 18em;        
+
+                    }
                 }
 
-                .map-image{
-                    width: 20em;
-                }
             }
         }
         

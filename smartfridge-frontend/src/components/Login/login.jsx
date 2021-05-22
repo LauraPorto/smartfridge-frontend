@@ -81,28 +81,29 @@ const Login = (props) => {
         <div className="login">
 
             <div className="button-login button" onClick={toggleLogin}>Sign In</div>
-
-            <Modal isOpen={state.open}>
-                <ModalHeader>
-                    Sign In
+            <div className="modal-custom">      
+                <Modal isOpen={state.open}>
+                    <ModalHeader>
+                        Sign In
                     </ModalHeader>
-                <ModalBody>
-                    <FormGroup>
-                        <Label form='email'>Email</Label>
-                        <Input type='text' id='user' name='email' onChange={handleState} valid={validationResult.validated && !validationResult.email} invalid={validationResult.validated && validationResult.email} />
-                        <FormFeedback>{validationResult.email}</FormFeedback>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label form='password'>Password</Label>
-                        <Input type='password' id='password' name='password' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} />
-                        <FormFeedback>{validationResult.password}</FormFeedback>
-                    </FormGroup>
-                </ModalBody>
-                <ModalFooter>
-                    <Button color='primary' onClick={() => sendData()}>Confirm</Button>
-                    <Button color='secundary' onClick={() => toggleLogin()}>Cancel</Button>
-                </ModalFooter>
-            </Modal>
+                    <ModalBody >
+                        <FormGroup>
+                            <Label form='email'>Email</Label>
+                            <Input type='text' id='user' name='email' onChange={handleState} valid={validationResult.validated && !validationResult.email} invalid={validationResult.validated && validationResult.email} />
+                            <FormFeedback>{validationResult.email}</FormFeedback>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label form='password'>Password</Label>
+                            <Input type='password' id='password' name='password' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} />
+                            <FormFeedback>{validationResult.password}</FormFeedback>
+                        </FormGroup>
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button color='primary' onClick={() => sendData()}>Confirm</Button>
+                        <Button color='secundary' onClick={() => toggleLogin()}>Cancel</Button>
+                    </ModalFooter>
+                </Modal>
+            </div>
         </div>
     );
 };
