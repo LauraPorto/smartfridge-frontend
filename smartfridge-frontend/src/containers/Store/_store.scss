@@ -17,6 +17,16 @@
 
             background-color: nth($palette, 2);
 
+            .pre-list {
+                font-family: $fontBody;
+                font-size: 20px;
+                height: 8em;
+                width: 15em;
+               
+                overflow: scroll;
+
+            }
+
             .fridge-menu {
                 display: flex;
                 flex-direction: column;
@@ -24,6 +34,8 @@
                 justify-content: space-around;
 
                 width: 35em;
+
+                margin: 2em;
 
                 background-color: nth($palette, 2);
 
@@ -37,8 +49,6 @@
                     flex-direction: row;
                     justify-content: flex-end;
                     align-items: right;
-            
-                    height: 10em;
 
                     margin: 3em;
                     background-color: nth($palette, 2)
@@ -46,21 +56,17 @@
                 }
 
                 .button-recipes{
-                    @include button;
+                    @include button($width: 30em);
                     height: 3em;
+                   
                     
                     p{
                         font-family: $fontButtons;
                         color: nth($palette, 4);
+                        margin-top: 0.5em;
                     }
                 }
 
-                .testing-map{
-                    height: 6em;
-                    width: 15em;
-                    border-color: aqua;
-                    border: 3px solid;
-                }
             }
         }
 

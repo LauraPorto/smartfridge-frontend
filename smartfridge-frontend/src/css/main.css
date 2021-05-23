@@ -261,12 +261,19 @@ Modal {
     align-items: center;
     justify-content: space-around;
     background-color: #cad6cc; }
+    .main-store .body-store .store-fridge .pre-list {
+      font-family: "Rasa", serif;
+      font-size: 20px;
+      height: 8em;
+      width: 15em;
+      overflow: scroll; }
     .main-store .body-store .store-fridge .fridge-menu {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
       width: 35em;
+      margin: 2em;
       background-color: #cad6cc; }
       .main-store .body-store .store-fridge .fridge-menu .fridge-menu-msn {
         font-family: "Barlow Condensed", sans-serif;
@@ -276,7 +283,6 @@ Modal {
         flex-direction: row;
         justify-content: flex-end;
         align-items: right;
-        height: 10em;
         margin: 3em;
         background-color: #cad6cc; }
       .main-store .body-store .store-fridge .fridge-menu .button-recipes {
@@ -286,7 +292,7 @@ Modal {
         text-transform: uppercase;
         letter-spacing: 3px;
         background-color: transparent;
-        width: 18em;
+        width: 30em;
         height: 2.2em;
         color: #141414;
         height: 3em; }
@@ -294,12 +300,8 @@ Modal {
           border: 3px solid #93b496; }
         .main-store .body-store .store-fridge .fridge-menu .button-recipes p {
           font-family: "Barlow", sans-serif;
-          color: #141414; }
-      .main-store .body-store .store-fridge .fridge-menu .testing-map {
-        height: 6em;
-        width: 15em;
-        border-color: aqua;
-        border: 3px solid; }
+          color: #141414;
+          margin-top: 0.5em; }
   .main-store .body-store .my-products-store .selected-ingredients {
     display: flex;
     justify-content: center;

@@ -28,26 +28,23 @@ const Store = (props) => {
 
     // }, [])
 
-   
-
     //Hooks para hacer la lista de ingredientes 
-    const [list, setList] = useState([
-        // myIngredients: []
-    ]);
+    const [list, setList] = useState([]);
+    const [value, setValue] = useState(true);
     
     const selectIngredient = ({ingredient}) => {
 
         setList([...list, ingredient.name]);
-        console.log(list, 'lista de dentro ')
-        
     };
-    
- 
-    console.log(list, 'lista de fuera')
-  
+
+    const dataArr = new Set(list);
+    let result = [...dataArr];
+    const mapResult = result.map(res => {
+        return <li>{res}</li>
+    })
 
     const getRecipes = async () => {
-        const recipeData = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients${apiKey}${query}${list.myIngredients}`);
+        const recipeData = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients${apiKey}${query}${list}`);
 
         props.dispatch({type: SAVE, payload: recipeData.data});
 
@@ -71,7 +68,7 @@ const Store = (props) => {
                         <div className="search-store-container">
                             <Search/>
                         </div>
-                        <pre color="black">{list}</pre>
+                        <pre className="pre-list">Your ingredients list : {mapResult}</pre>
                         <button className="button-recipes" onClick={() => getRecipes()}><p>Get Recipes</p></button>
                     </div>
                 </div>
