@@ -54,6 +54,13 @@
                         color: nth($palette, 4);
                     }
                 }
+
+                .testing-map{
+                    height: 6em;
+                    width: 15em;
+                    border-color: aqua;
+                    border: 3px solid;
+                }
             }
         }
 
@@ -82,7 +89,7 @@
                     justify-content: space-between;
                     align-items: center;
                     height: 10em;
-                    
+
                     .map-ingredient {
                         background-color: nth($palette, 2);
                         cursor: pointer;

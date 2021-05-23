@@ -295,6 +295,11 @@ Modal {
         .main-store .body-store .store-fridge .fridge-menu .button-recipes p {
           font-family: "Barlow", sans-serif;
           color: #141414; }
+      .main-store .body-store .store-fridge .fridge-menu .testing-map {
+        height: 6em;
+        width: 15em;
+        border-color: aqua;
+        border: 3px solid; }
   .main-store .body-store .my-products-store .selected-ingredients {
     display: flex;
     justify-content: center;
