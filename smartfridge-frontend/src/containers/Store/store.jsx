@@ -18,19 +18,18 @@ const Store = (props) => {
     const history = useHistory();
     const ingredients = props.myIngredients.myIngredients;
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     let token = props.user.token;
+        let token = props.user.token;
 
-    //     if(token === ''){
-    //         history.push('/')
-    //     }
+        if(token === ''){
+            history.push('/')
+        }
 
-    // }, [])
+    }, [])
 
     //Hooks para hacer la lista de ingredientes 
     const [list, setList] = useState([]);
-    const [value, setValue] = useState(true);
     
     const selectIngredient = ({ingredient}) => {
 
