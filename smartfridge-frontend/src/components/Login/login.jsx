@@ -81,26 +81,26 @@ const Login = (props) => {
         <div className="login">
 
             <div className="button-login button" onClick={toggleLogin}>Sign In</div>
-            <div className="modal-custom">      
+            <div className="modal-custom" style={{background: '#f1f1f1'}}>      
                 <Modal isOpen={state.open}>
-                    <ModalHeader>
-                        Sign In
+                    <ModalHeader style={{fontFamily: 'Barlow, sans-serif', fontSize: '20px'}}>
+                        SIGN IN
                     </ModalHeader>
                     <ModalBody >
                         <FormGroup>
-                            <Label form='email'>Email</Label>
+                            <Label form='email' style={{fontFamily: 'Barlow Condensed, sans-serif', fontSize: '20px'}}>Email</Label>
                             <Input type='text' id='user' name='email' onChange={handleState} valid={validationResult.validated && !validationResult.email} invalid={validationResult.validated && validationResult.email} />
                             <FormFeedback>{validationResult.email}</FormFeedback>
                         </FormGroup>
                         <FormGroup>
-                            <Label form='password'>Password</Label>
+                            <Label form='password' style={{fontFamily: 'Barlow Condensed, sans-serif', fontSize: '20px'}}>Password</Label>
                             <Input type='password' id='password' name='password' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} />
                             <FormFeedback>{validationResult.password}</FormFeedback>
                         </FormGroup>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color='primary' onClick={() => sendData()}>Confirm</Button>
-                        <Button color='secundary' onClick={() => toggleLogin()}>Cancel</Button>
+                        <Button style={{fontFamily: 'Barlow Condensed, sans-serif', background: '#93b496', color: '#141414'}} onClick={() => sendData()}>CONFIRM</Button>
+                        <Button style={{fontFamily: 'Barlow Condensed, sans-serif', background_color: 'transparent', color: '#141414'}} onClick={() => toggleLogin()}>CANCEL</Button>
                     </ModalFooter>
                 </Modal>
             </div>
