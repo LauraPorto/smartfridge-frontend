@@ -33,7 +33,6 @@ const Header = (props) => {
                     props.token === ''
                     ?
                     <>
-
                     <div class="navbar-nav mr-auto ml-auto text-center">             
                         <a class="nav-link" href="/">Home</a>
                         <a class="nav-link" href="/explore">Explore</a>
