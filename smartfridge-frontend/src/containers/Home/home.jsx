@@ -4,7 +4,7 @@ import Footer from '../../components/Footer/footer';
 import spices from '../../assets/spices.jpg';
 import saladcheese from '../../assets/saladcheese.png';
 import instagram from '../../assets/instagram.png';
-import fb from '../../assets/fb.png';
+import facebook from '../../assets/facebook.png';
 import google from '../../assets/google.png';
 
 
@@ -31,9 +31,9 @@ const Home = () => {
 
                     <div className="your-ingredient">
                         <div className="sub-img">
-                            <img src={instagram} style={{width: '4em', margin: '2em'}}></img>
-                            <img src={fb} style={{width: '4em', margin: '2em'}}></img>
-                            <img src={google} style={{width: '4em', margin: '2em'}}></img>
+                            <img src={instagram} style={{width: '5em', margin: '3em'}}></img>
+                            <img src={facebook} style={{width: '5em', margin: '3em'}}></img>
+                            <img src={google} style={{width: '5em', margin: '3em'}}></img>
                         </div>
                     </div>
 
