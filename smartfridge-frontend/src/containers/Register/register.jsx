@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 import cooking1 from '../../assets/cooking1.jpg';
 
@@ -8,6 +9,8 @@ import { FormGroup, Input, Label, FormFeedback } from 'reactstrap';
 
 
 const Register = () => {
+
+    const history = useHistory();
 
     //Validación de errores en el formulario
     const [validationResult, setValidationResult] = useState({
@@ -52,6 +55,10 @@ const Register = () => {
         });
 
         let result = await axios.post('http://localhost:5000/user/signup', dataRegister);
+
+        return setTimeout(()=> {            
+            history.push('/home')
+        },2000);
     }
 
     return (

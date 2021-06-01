@@ -47,6 +47,11 @@
             height: 3em;
             width: 20em;
         }
+        #btn-profile-delete{
+            @include button ($borderHover: 3px solid $delete);
+            height: 3em;
+            width: 20em;
+        }
        
     }
 

@@ -128,7 +128,7 @@ const Profile = (props) => {
             </div>
             <div className="buttons-upd">
                 <button id="btn-profile" onClick={() => updateUser()}>UPDATE</button>
-                <button id="btn-profile" onClick={() => deleteUser()}>DELETE</button>
+                <button id="btn-profile-delete" onClick={() => deleteUser()}>DELETE</button>
             </div>
 
         </div>
