@@ -34,7 +34,7 @@ const HomeUser = (props) => {
 
         const userId = props.user.user._id;
 
-        const resultsInfo = await axios.get(`http://localhost:3001/store/${userId}`);
+        const resultsInfo = await axios.get(`http://localhost:5000/store/${userId}`);
 
         const results = resultsInfo.data;
 

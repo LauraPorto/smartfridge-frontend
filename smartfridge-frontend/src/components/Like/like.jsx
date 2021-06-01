@@ -31,7 +31,7 @@ const Like = (props) => {
     const saveRecipe = async () => {
         toggle();
 
-        let result =  await axios.post('http://localhost:3001/store/', codeRecipe);
+        let result =  await axios.post('http://localhost:5000/store/', codeRecipe);
 
         alert('Recipe saved in Favorites');
     };
@@ -39,7 +39,7 @@ const Like = (props) => {
     const deleteRecipe = async () => {
         toggle();
 
-        let result =  await axios.delete('http://localhost:3001/store/', codeRecipe);
+        let result =  await axios.delete('http://localhost:5000/store/', codeRecipe);
         alert('Recipe deleted');
     }
 

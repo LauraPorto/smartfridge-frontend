@@ -58,7 +58,7 @@ const Profile = (props) => {
         try {
             let id = props.user.user._id;
 
-            await axios.put(`http://localhost:3001/user/${id}`);
+            await axios.put(`http://localhost:5000/user/${id}`);
 
             return alert('Update Success!!!');
         } catch (error) {
@@ -70,7 +70,7 @@ const Profile = (props) => {
         try {
             let id = props.user.user._id;
 
-            await axios.delete(`http://localhost:3001/user/${id}`);
+            await axios.delete(`http://localhost:5000/user/${id}`);
 
             const confirmation = window.confirm('Are you sure you want to delete your account?');
 
