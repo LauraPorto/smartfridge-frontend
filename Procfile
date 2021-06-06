@@ -1,1 +1,1 @@
-web: node index.js
+web: node smartfridge-frontend/src/index.js
