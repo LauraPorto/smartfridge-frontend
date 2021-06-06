@@ -80,6 +80,9 @@ npm start
 Without the need to register or log in, the user can navigate the Home view, explore the different recipes (without access to their information), as well as learn about the different services offered by the web. Of course, there is the option of logging in and out.
 Once the user is registered, they will be able to access their personal space where their personal data will be saved, with the option to update and delete the account (in their profile view). In addition to this, and as a strong point of this website, the user can access their 'kitchen', where they will search for the ingredients they have at home or that they want to use to search for the recipe, in the 'Store' view '. From here, a results view will be offered with all the recipes that match the search, from which their details can be extracted, such as nutritional information, instructions, ingredients used and their measurements, as well as extra ingredients that are they might add. In addition, in this view ('Recipe Info'), you can also save your favorite recipes in the database, in order to have easy access to their information.
 
+Check the [Backend](https://github.com/LauraPorto/smartfridge-backend) to know the complete project !
+
+
 ## ⛏️ Built With <a name = "tech_stack"></a>
 
 - [ReactJS](https://es.reactjs.org/) - JavaScript Framework
